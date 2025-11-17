@@ -40,9 +40,9 @@ const TrustedBySection = () => {
 
         {/* Rendez-vous bookés avec */}
         <div>
-          <h2 className="text-center text-sm font-semibold text-muted-foreground uppercase tracking-wide mb-8">
-            Rendez-vous bookés avec
-          </h2>
+        <h2 className="text-center text-sm font-semibold text-muted-foreground uppercase tracking-wide mb-8">
+          {t('trustedBy.meetingsTitle')}
+        </h2>
           
           <div className="relative overflow-hidden">
             <div className="flex flex-wrap justify-center gap-x-8 gap-y-6 items-center">
