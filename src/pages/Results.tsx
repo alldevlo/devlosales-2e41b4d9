@@ -5,8 +5,16 @@ import Footer from "@/components/layout/Footer";
 import { Link } from "react-router-dom";
 import { ArrowRight, TrendingUp, Users, Target, Zap } from "lucide-react";
 import { Button } from "@/components/ui/button";
+import { useLanguage } from "@/contexts/LanguageContext";
+import { dictionaries } from "@/i18n/locales";
+import { languagePaths, routeTranslations } from "@/i18n/config";
 
 const Results = () => {
+  const { language } = useLanguage();
+  const t = dictionaries[language];
+  const langPrefix = languagePaths[language];
+  const routes = routeTranslations[language];
+
   useEffect(() => {
     window.scrollTo(0, 0);
   }, []);
@@ -119,10 +127,9 @@ const Results = () => {
   return (
     <>
       <Helmet>
-        <title>Études de Cas | Résultats de nos campagnes de prospection B2B | devlo</title>
-        <meta name="description" content="Découvrez nos études de cas de prospection commerciale B2B : +3000 rendez-vous qualifiés, 7% de prospects intéressés en moyenne, campagnes multicanales ultra-personnalisées dans tous les secteurs." />
-        <meta name="keywords" content="études de cas prospection B2B, résultats prospection commerciale, cas clients devlo, génération leads B2B, rendez-vous qualifiés, campagnes outbound" />
-        <link rel="canonical" href="https://devlo.ch/resultats" />
+        <title>{t.results.title} | devlo</title>
+        <meta name="description" content={t.results.subtitle} />
+        <link rel="canonical" href={`https://devlo.ch/${language === 'fr' ? '' : `${language}/`}${routes.results}`} />
       </Helmet>
 
       <div className="flex min-h-screen flex-col">
@@ -134,20 +141,15 @@ const Results = () => {
             <div className="container px-4 md:px-6">
               <div className="max-w-4xl mx-auto text-center">
                 <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold mb-6">
-                  Nos Résultats :{" "}
-                  <span className="bg-gradient-to-r from-secondary to-secondary-light bg-clip-text text-transparent">
-                    Études de Cas Réelles
-                  </span>
+                  {t.results.title}
                 </h1>
                 
                 <p className="text-lg md:text-xl text-primary-foreground/90 leading-relaxed mb-8">
-                  Découvrez comment nous avons aidé des entreprises B2B de tous secteurs à générer des milliers de rendez-vous qualifiés 
-                  grâce à nos campagnes de prospection commerciale multicanales ultra-personnalisées.
+                  {t.results.subtitle}
                 </p>
 
                 <p className="text-xl font-semibold">
-                  <span className="text-secondary">7% de prospects intéressés</span> en moyenne en 2024 • 
-                  Classés parmi les meilleures agences outbound
+                  <span className="text-secondary">{t.contact.p2.split(' ')[0]} {t.contact.p2.split(' ')[1]} {t.contact.p2.split(' ')[2]} {t.contact.p2.split(' ')[3]}</span>
                 </p>
               </div>
             </div>
@@ -246,8 +248,8 @@ const Results = () => {
                   identifions vos opportunités et vous proposons une stratégie de prospection sur mesure.
                 </p>
                 <Button asChild size="lg" variant="secondary" className="text-lg px-8 hover-scale">
-                  <Link to="/contact">
-                    Planifier votre consultation gratuite
+                  <Link to={`${langPrefix}/${routes.contact}`}>
+                    {t.cta.schedule.primary}
                     <ArrowRight className="ml-2 h-5 w-5" />
                   </Link>
                 </Button>
