@@ -31,7 +31,7 @@ const Locky = () => {
           <section className="py-16 md:py-24 bg-gradient-to-br from-primary via-primary-dark to-primary text-primary-foreground">
             <div className="container px-4 md:px-6">
               <div className="max-w-4xl mx-auto">
-                <Link to="/resultats" className="inline-flex items-center text-primary-foreground/80 hover:text-primary-foreground mb-6">
+                <Link to={`${langPrefix}/${routes.results}`} className="inline-flex items-center text-primary-foreground/80 hover:text-primary-foreground mb-6">
                   <ArrowRight className="mr-2 h-4 w-4 rotate-180" />
                   Retour aux résultats
                 </Link>

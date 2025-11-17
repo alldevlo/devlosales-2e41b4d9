@@ -7,7 +7,7 @@ import { ArrowRight, TrendingUp, Users, Target, Zap } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { useLanguage } from "@/contexts/LanguageContext";
 import { dictionaries } from "@/i18n/locales";
-import { languagePaths, routeTranslations } from "@/i18n/config";
+import { languagePaths, routeTranslations, caseStudySlugs } from "@/i18n/config";
 
 const Results = () => {
   const { language } = useLanguage();
@@ -18,6 +18,14 @@ const Results = () => {
   useEffect(() => {
     window.scrollTo(0, 0);
   }, []);
+  const getLocalizedCaseStudySlug = (slugFr: string) => {
+    for (const [id, slugs] of Object.entries(caseStudySlugs)) {
+      if (slugs.fr === slugFr || Object.values(slugs).includes(slugFr)) {
+        return (slugs as any)[language] ?? slugFr;
+      }
+    }
+    return slugFr;
+  };
   const caseStudies = [
     {
       slug: "careerlunch-dach-recrutement",
@@ -198,7 +206,7 @@ const Results = () => {
                 {caseStudies.map((study) => (
                   <Link
                     key={study.slug}
-                    to={`/resultats/${study.slug}`}
+                    to={`${langPrefix}/${routes.results}/${getLocalizedCaseStudySlug(study.slug)}`}}
                     className="group bg-card border border-border rounded-lg p-6 hover-lift hover:shadow-xl transition-all"
                   >
                     <div className="mb-4">
