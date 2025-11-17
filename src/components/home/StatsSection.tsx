@@ -1,48 +1,24 @@
 import { Users, Calendar, TrendingUp, Target } from "lucide-react";
-
-const stats = [
-  {
-    icon: Calendar,
-    value: "+7",
-    label: "Années d'expérience",
-    description: "Dans la prospection B2B"
-  },
-  {
-    icon: Users,
-    value: "+3k",
-    label: "Rendez-vous pris",
-    description: "Avec succès pour nos clients"
-  },
-  {
-    icon: TrendingUp,
-    value: "+12K",
-    label: "Prospects activés",
-    description: "Leads qualifiés générés"
-  },
-  {
-    icon: Target,
-    value: "+50K",
-    label: "Prospects contactés",
-    description: "Campagnes multicanales"
-  }
-];
+import { useLanguage } from "@/contexts/LanguageContext";
 
 const StatsSection = () => {
+  const { t } = useLanguage();
+  const stats = t('stats.items') as unknown as Array<{ value: string; label: string; description: string }>;
   return (
     <section className="py-16 bg-muted/50">
       <div className="container px-4 md:px-6">
         <div className="text-center mb-12">
           <h2 className="text-3xl md:text-4xl font-bold mb-4">
-            Nos Résultats en Chiffres
+            {t('stats.title')}
           </h2>
           <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
-            Des chiffres qui parlent d'eux-mêmes et témoignent de notre expertise en développement commercial B2B
+            {t('stats.subtitle')}
           </p>
         </div>
         
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
           {stats.map((stat, index) => {
-            const Icon = stat.icon;
+            const Icon = [Calendar, Users, TrendingUp, Target][index] || Users;
             return (
               <div 
                 key={index} 

@@ -1,6 +1,7 @@
 import { createContext, useContext, useState, useEffect, ReactNode } from 'react';
 import { LanguageCode, defaultLanguage, languagePaths } from '@/i18n/config';
 import { useLocation, useNavigate } from 'react-router-dom';
+import { dictionaries } from '@/i18n/locales';
 
 interface LanguageContextType {
   language: LanguageCode;
@@ -69,8 +70,19 @@ export const LanguageProvider = ({ children }: LanguageProviderProps) => {
     navigate(newPath);
   };
 
-  // Simple translation function (placeholder - will be replaced with actual translations)
+  // Simple translation function using dictionaries
   const t = (key: string): string => {
+    const dict = dictionaries[language] as any;
+    const parts = key.split('.');
+    let current: any = dict;
+    for (const p of parts) {
+      if (current && typeof current === 'object' && p in current) {
+        current = current[p];
+      } else {
+        return key; // fallback to key if missing
+      }
+    }
+    if (typeof current === 'string') return current;
     return key;
   };
 
