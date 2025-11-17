@@ -240,6 +240,23 @@ const Apidae = () => {
             </div>
           </section>
 
+          {/* Video Testimonial Section */}
+          <section className="py-16 md:py-20 bg-background">
+            <div className="container px-4 md:px-6">
+              <div className="max-w-4xl mx-auto">
+                <div className="bg-card border border-border rounded-lg p-8">
+                  <h3 className="text-xl font-bold mb-4">Présentation vidéo</h3>
+                  <div className="mb-4 rounded-lg overflow-hidden">
+                    <WistiaVideo mediaId="w9ews1v05q" className="w-full" />
+                  </div>
+                  <p className="text-muted-foreground italic">
+                    Découvrez la présentation vidéo d'APIDAE et les résultats obtenus avec devlo.
+                  </p>
+                </div>
+              </div>
+            </div>
+          </section>
+
           {/* Results Section */}
           <section className="py-16 md:py-20 bg-muted/30">
             <div className="container px-4 md:px-6">
