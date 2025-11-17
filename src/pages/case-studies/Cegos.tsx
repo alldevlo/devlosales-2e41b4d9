@@ -5,11 +5,18 @@ import Footer from "@/components/layout/Footer";
 import { Link } from "react-router-dom";
 import { ArrowRight, CheckCircle2 } from "lucide-react";
 import { Button } from "@/components/ui/button";
+import { useLanguage } from "@/contexts/LanguageContext";
+import { languagePaths, routeTranslations } from "@/i18n/config";
+import WistiaVideo from "@/components/WistiaVideo";
 
 const Cegos = () => {
   useEffect(() => {
     window.scrollTo(0, 0);
   }, []);
+
+  const { language } = useLanguage();
+  const langPrefix = languagePaths[language];
+  const routes = routeTranslations[language];
 
   return (
     <>
@@ -27,10 +34,9 @@ const Cegos = () => {
           <section className="py-16 md:py-24 bg-gradient-to-br from-primary via-primary-dark to-primary text-primary-foreground">
             <div className="container px-4 md:px-6">
               <div className="max-w-4xl mx-auto">
-                <Link to="/resultats" className="inline-flex items-center text-primary-foreground/80 hover:text-primary-foreground mb-6 transition-colors">
-                  <ArrowRight className="mr-2 h-4 w-4 rotate-180" />
-                  Retour aux résultats
-                </Link>
+                {/* Localized back link */}
+                {/* eslint-disable-next-line @typescript-eslint/no-use-before-define */}
+                <LocalizedBackToResults />
                 
                 <div className="mb-6">
                   <span className="inline-block px-4 py-2 text-sm font-semibold bg-secondary text-secondary-foreground rounded-full">
@@ -65,18 +71,12 @@ const Cegos = () => {
 
                 <div className="bg-card border border-border rounded-lg p-8 mt-8">
                   <h3 className="text-xl font-bold mb-4">Témoignage client vidéo</h3>
-                  <div className="aspect-video mb-4 bg-muted rounded-lg overflow-hidden">
-                    <iframe
-                      width="100%"
-                      height="100%"
-                      src="https://www.youtube.com/embed/VIDEO_ID_CEGOS"
-                      title="Témoignage Cegos"
-                      allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-                      allowFullScreen
-                      className="w-full h-full"
-                    ></iframe>
+                  <div className="mb-4 rounded-lg overflow-hidden">
+                    {/* Remplacez MEDIA_ID_CEGOS par l'identifiant Wistia réel */}
+                    <WistiaVideo mediaId="MEDIA_ID_CEGOS" className="w-full" />
                   </div>
-                  <p className="text-muted-foreground italic">
+                </div>
+                <p className="text-muted-foreground italic">
                     Découvrez le témoignage complet de Cegos sur les résultats exceptionnels obtenus avec devlo dans le secteur de la formation professionnelle.
                   </p>
                 </div>
@@ -281,3 +281,16 @@ const Cegos = () => {
 };
 
 export default Cegos;
+
+// Helper component for localized back link
+const LocalizedBackToResults = () => {
+  const { language } = useLanguage();
+  const langPrefix = languagePaths[language];
+  const routes = routeTranslations[language];
+  return (
+    <Link to={`${langPrefix}/${routes.results}`} className="inline-flex items-center text-primary-foreground/80 hover:text-primary-foreground mb-6 transition-colors">
+      <ArrowRight className="mr-2 h-4 w-4 rotate-180" />
+      Retour aux résultats
+    </Link>
+  );
+};
