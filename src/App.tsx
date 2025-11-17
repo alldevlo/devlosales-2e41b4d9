@@ -4,12 +4,24 @@ import { TooltipProvider } from "@/components/ui/tooltip";
 import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import { HelmetProvider } from "react-helmet-async";
-import { lazy } from "react";
 import Home from "./pages/Home";
 import Results from "./pages/Results";
 import Contact from "./pages/Contact";
-import CareerLunch from "./pages/case-studies/CareerLunch";
 import NotFound from "./pages/NotFound";
+
+// Case studies
+import CareerLunch from "./pages/case-studies/CareerLunch";
+import Cortexia from "./pages/case-studies/Cortexia";
+import Saporo from "./pages/case-studies/Saporo";
+import Apidae from "./pages/case-studies/Apidae";
+import Horus from "./pages/case-studies/Horus";
+import Abacus from "./pages/case-studies/Abacus";
+import Hiag from "./pages/case-studies/Hiag";
+import ManyWays from "./pages/case-studies/ManyWays";
+import Locky from "./pages/case-studies/Locky";
+import Lemanvisio from "./pages/case-studies/Lemanvisio";
+import Cegos from "./pages/case-studies/Cegos";
+import SquareCo from "./pages/case-studies/SquareCo";
 
 const queryClient = new QueryClient();
 
@@ -23,11 +35,19 @@ const App = () => (
           <Routes>
             <Route path="/" element={<Home />} />
             <Route path="/resultats" element={<Results />} />
-            <Route path="/resultats/careerlunch-dach-recrutement" element={<CareerLunch />} />
-            <Route path="/resultats/cortexia-tech-b2b-meetings" element={<lazy(() => import("@/pages/case-studies/Cortexia"))} />
-            <Route path="/resultats/saporo-cybersecurite-b2b" element={<lazy(() => import("@/pages/case-studies/Saporo"))} />
-            <Route path="/resultats/apidae-evenementiel-luxe" element={<lazy(() => import("@/pages/case-studies/Apidae"))} />
             <Route path="/contact" element={<Contact />} />
+            <Route path="/resultats/careerlunch-dach-recrutement" element={<CareerLunch />} />
+            <Route path="/resultats/cortexia-tech-b2b-meetings" element={<Cortexia />} />
+            <Route path="/resultats/saporo-cybersecurite-b2b" element={<Saporo />} />
+            <Route path="/resultats/apidae-evenementiel-luxe" element={<Apidae />} />
+            <Route path="/resultats/horus-belgique-200k" element={<Horus />} />
+            <Route path="/resultats/abacus-prospects-interesses" element={<Abacus />} />
+            <Route path="/resultats/hiag-immobilier-b2b" element={<Hiag />} />
+            <Route path="/resultats/manyways-consulting-70-reponses" element={<ManyWays />} />
+            <Route path="/resultats/locky-prospects-interesses" element={<Locky />} />
+            <Route path="/resultats/lemanvisio-rendez-vous-qualifies" element={<Lemanvisio />} />
+            <Route path="/resultats/cegos-formation-45-reponses" element={<Cegos />} />
+            <Route path="/resultats/squareco-identification-icp" element={<SquareCo />} />
             {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
             <Route path="*" element={<NotFound />} />
           </Routes>
