@@ -14,6 +14,10 @@ const Abacus = () => {
     window.scrollTo(0, 0);
   }, []);
 
+  const { language } = useLanguage();
+  const langPrefix = languagePaths[language];
+  const routes = routeTranslations[language];
+
   return (
     <>
       <Helmet>
@@ -211,7 +215,7 @@ const Abacus = () => {
                   Découvrez comment devlo peut vous aider à générer un flux constant de prospects qualifiés et intéressés.
                 </p>
                 <Button asChild size="lg" variant="secondary" className="text-lg px-8">
-                  <Link to="/contact">
+                  <Link to={`${langPrefix}/${routes.contact}`}>
                     Planifier ma consultation gratuite
                     <ArrowRight className="ml-2 h-5 w-5" />
                   </Link>
