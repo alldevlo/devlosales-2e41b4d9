@@ -1,6 +1,6 @@
-const base = {
+const de = {
   nav: { home: "Startseite", results: "Ergebnisse", contact: "Kontakt" },
-  cta: { schedule: { primary: "Beratung planen", short: "Planen" } },
+  cta: { schedule: { primary: "Beratung planen", short: "Planen", meeting: "Termin vereinbaren" } },
   hero: {
     title: "Steigern Sie Ihren Umsatz mit unserer",
     highlight: "B2B-Vertriebsakquise-Agentur",
@@ -26,12 +26,83 @@ const base = {
     apidae: { title: "Apidae", badge: "70 qualifizierte Termine", description: "70 qualifizierte Termine mit renommierten Marken." },
     abacus: { title: "Abacus", badge: "+30 Interessenten", description: "+30 interessierte Interessenten für ihre Lösung generiert." },
   },
-  contact: {
-    title: "Planen wir eine 100% personalisierte Akquise-Session für Ihr Unternehmen",
-    p1: "Maßgeschneiderte Akquise-Strategien basierend auf Ihrem ICP und Markt.",
-    p2: "7% interessierte Prospects im Durchschnitt dank unserer hochpersonalisierten Multikanal-Kampagnen.",
-    p3: "Füllen Sie das Formular aus: Wir melden uns schnell, um einen Termin zu vereinbaren.",
+  objective: {
+    title: "Unser Ziel: Ihr Wachstum",
+    text: "Akquise im Namen Ihres Unternehmens, um Ihnen zu helfen, mehr qualifizierte Leads zu treffen und neue Kunden abzuschließen. Wir lagern alle zeitaufwändigen Schritte der Vertriebsentwicklung aus, damit Sie sich auf das konzentrieren können, was Sie am besten können: Geschäfte abschließen.",
   },
-  results: { title: "Unsere Ergebnisse", discoverAll: "Alle Fallstudien ansehen" },
+  offer: {
+    title: "Unser Angebot: Vollständiges Vertriebs-Outsourcing",
+    items: [
+      { title: "Strategie & Telemarketing", text: "ICP-Definition, Erstellung hochpersonalisierter Nachrichten und Einrichtung einer an Ihre Branche angepassten Multikanal-Akquisestrategie." },
+      { title: "Lead-Generierung & Datenbank", text: "Identifizierung und Qualifizierung von hochzielgerichteten B2B-Interessenten mit vollständiger Kontaktdatenanreicherung und manueller Validierung." },
+      { title: "Outreach & Qualifizierung", text: "Multikanal-Akquisekampagnen (E-Mails, LinkedIn, Telefonanrufe) mit rigoroser Lead-Qualifizierung vor Übergabe." },
+      { title: "Terminvereinbarung", text: "Qualifizierte Termine direkt in Ihren Kalendern mit Entscheidungsträgern, die bereit sind, über Ihre Lösung zu sprechen. Sie müssen nur noch abschließen." },
+    ],
+  },
+  benefits: {
+    title: "Vorteile des Outsourcings",
+    items: [
+      { title: "Mehr abschließen, weniger Stress", text: "Konzentrieren Sie sich auf den Abschluss, während wir Ihre Pipeline kontinuierlich mit qualifizierten Interessenten füllen" },
+      { title: "Tun Sie, was Sie lieben", text: "Befreien Sie sich von zeitaufwändigen Akquiseaufgaben, um sich auf Ihr Kerngeschäft zu konzentrieren" },
+      { title: "Werden Sie noch besser", text: "Perfektionieren Sie Ihre Abschlussfähigkeiten mit einem stetigen Strom qualifizierter Termine" },
+      { title: "Kontrollieren Sie Ihre Kosten", text: "Vorhersehbare Fixkosten ohne die Gemeinkosten eines vollständigen internen Vertriebsteams" },
+      { title: "Erhöhen Sie Ihre Präsenz", text: "Dominieren Sie Ihre Schlüsselsektoren mit erhöhter Sichtbarkeit bei Entscheidungsträgern" },
+      { title: "Erkunden Sie neue Gebiete", text: "Testen Sie neue Märkte und Segmente ohne Risiko oder hohe Investitionen" },
+      { title: "Testen Sie vor der Skalierung", text: "Validieren Sie Ihre Vertriebshypothesen vor massiven Investitionen" },
+      { title: "Laden Sie Ihre Interessenten ein", text: "Füllen Sie Ihre Events, Webinare und Messen mit hochzielgerichteten Teilnehmern" },
+    ],
+  },
+  process: {
+    title: "Unser 6-Schritte-Prozess",
+    subtitle: "Eine bewährte Methodik zur Generierung qualifizierter Termine und Beschleunigung Ihres Wachstums",
+    items: [
+      { title: "Zieldefinition", text: "Präzise Identifizierung Ihres idealen Kundenprofils (ICP) und wichtiger Entscheidungsträger" },
+      { title: "Unternehmensprofil-Studie", text: "Tiefgehende Analyse Ihres Angebots, Positionierung und Wertversprechen" },
+      { title: "Ansatz-Setup", text: "Erstellung personalisierter Nachrichten und maßgeschneiderter Multikanal-Strategie" },
+      { title: "Recherche & Identifikation", text: "Generierung einer hochqualifizierten Datenbank relevanter Interessenten" },
+      { title: "Akquise-Start", text: "Multikanal-Kampagnen (E-Mails, LinkedIn, Anrufe) und rigorose Qualifizierung" },
+      { title: "Terminvereinbarung", text: "Qualifizierte Termine direkt in Ihrem Kalender, bereit zur Konversion" },
+    ],
+  },
+  testimonials: { title: "Was unsere Kunden sagen", subtitle: "Konkrete Ergebnisse, die für sich sprechen" },
+  caseStudies: {
+    title: "Entdecken Sie unsere Kundenfallstudien",
+    subtitle: "Konkrete Ergebnisse für unsere Kunden in verschiedenen Sektoren",
+    discover: "Alle Fallstudien ansehen",
+  },
+  why: {
+    title: "Warum mit devlo arbeiten?",
+    items: [
+      { title: "Anerkannte B2B-Expertise", text: "+7 Jahre Erfahrung in B2B-Vertriebsakquise mit messbaren Ergebnissen" },
+      { title: "Hochpersonalisierter Ansatz", text: "Jede Kampagne ist speziell für Ihren Markt, ICP und Ziele konzipiert" },
+      { title: "Garantierte Ergebnisse", text: "7% interessierte Interessenten im Durchschnitt, mit einer der höchsten Terminbuchungsraten auf dem Markt" },
+      { title: "Totale Transparenz", text: "Detailliertes Echtzeit-Reporting über alle Ihre Kampagnen und Leistungen" },
+    ],
+  },
+  faq: { title: "Häufig gestellte Fragen", subtitle: "Alles, was Sie über unseren B2B-Akquiseservice wissen müssen" },
+  contact: {
+    title: "Planen wir eine",
+    highlight: "100% personalisierte",
+    forYourBusiness: "Akquise-Session für Ihr Unternehmen",
+    p1: "Maßgeschneiderte Akquise-Strategien basierend auf Ihrem idealen Kundenprofil und Marktrealität.",
+    p2: "7% interessierte Prospects im Durchschnitt für unsere Kunden 2024 dank unserer hochpersonalisierten Multikanal-Kampagnen.",
+    p3: "Füllen Sie das Formular aus: Wir melden uns schnell, um einen Termin zu vereinbaren.",
+    badges: { free: "Kostenlos & unverbindlich", fast: "Schnelle Antwort", expert: "Expertenberatung" },
+  },
+  results: {
+    title: "Unsere Kundenergebnisse",
+    subtitle: "Entdecken Sie, wie wir unseren Kunden geholfen haben, qualifizierte Leads zu generieren und ihr Wachstum zu beschleunigen",
+    allCases: "Alle Fallstudien ansehen",
+    backToResults: "← Zurück zu den Fallstudien",
+  },
+  footer: {
+    mission: "Unsere Mission",
+    missionText: "Unsere Mission ist es, B2B-Unternehmen zu ermöglichen, ihre Interessenten durch hochzielgerichtete und personalisierte kommerzielle Akquisekampagnen und innovatives digitales Telemarketing-Outreach zu treffen.",
+    swissOffice: "Schweizer Büro",
+    usaOffice: "USA-Büro",
+    navigation: "Navigation",
+    rights: "Alle Rechte vorbehalten.",
+  },
+  notFound: { title: "Seite nicht gefunden", text: "Entschuldigung, wir können die von Ihnen gesuchte Seite nicht finden.", backHome: "Zurück zur Startseite" },
 };
-export default base;
+export default de;
