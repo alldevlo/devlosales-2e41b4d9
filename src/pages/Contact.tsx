@@ -3,8 +3,12 @@ import Header from "@/components/layout/Header";
 import Footer from "@/components/layout/Footer";
 import { CheckCircle, Clock, Target } from "lucide-react";
 import { useEffect } from "react";
+import { useLanguage } from "@/contexts/LanguageContext";
+import { dictionaries } from "@/i18n/locales";
 
 const Contact = () => {
+  const { language } = useLanguage();
+  const t = dictionaries[language];
   useEffect(() => {
     // Load HubSpot form script
     const script = document.createElement('script');
@@ -56,24 +60,24 @@ const Contact = () => {
             <div className="container px-4 md:px-6">
               <div className="max-w-4xl mx-auto text-center">
                 <h1 className="text-2xl md:text-3xl lg:text-4xl font-bold mb-6">
-                  Planifions une session de prospection{" "}
+                  {t.contact.title}{" "}
                   <span className="bg-gradient-to-r from-secondary to-secondary-light bg-clip-text text-transparent">
-                    100% personnalisée
+                    {t.contact.highlight}
                   </span>{" "}
-                  pour votre entreprise
+                  {t.contact.forYourBusiness}
                 </h1>
                 
                 <div className="text-lg md:text-xl text-primary-foreground/90 space-y-4 mb-8 leading-relaxed">
                   <p>
-                    <strong>Stratégies de prospection sur mesure</strong> basées sur votre profil de client idéal et la réalité de votre marché.
+                    <strong>{t.contact.p1}</strong>
                   </p>
                   
                   <p>
-                    <strong className="text-secondary">7% de prospects intéressés</strong> en moyenne pour nos clients en 2024 grâce à nos <strong>campagnes multicanales ultra-personnalisées</strong>.
+                    <strong className="text-secondary">{t.contact.p2}</strong>
                   </p>
                   
                   <p className="text-xl font-semibold">
-                    Remplissez le formulaire : nous revenons vers vous rapidement pour fixer une date.
+                    {t.contact.p3}
                   </p>
                 </div>
 
@@ -81,22 +85,22 @@ const Contact = () => {
                   onClick={scrollToForm}
                   className="inline-flex items-center justify-center px-8 py-4 text-lg font-semibold text-primary bg-secondary hover:bg-secondary-light rounded-lg transition-all hover-scale"
                 >
-                  Planifier mon rendez-vous
+                  {t.cta.schedule.meeting}
                 </button>
 
                 {/* Reassurance badges */}
                 <div className="flex flex-wrap justify-center gap-6 mt-8 text-primary-foreground/90">
                   <div className="flex items-center gap-2">
                     <CheckCircle className="h-5 w-5 text-secondary" />
-                    <span>Gratuit & sans engagement</span>
+                    <span>{t.contact.badges.free}</span>
                   </div>
                   <div className="flex items-center gap-2">
                     <Clock className="h-5 w-5 text-secondary" />
-                    <span>Durée : 30 minutes</span>
+                    <span>{t.contact.badges.fast}</span>
                   </div>
                   <div className="flex items-center gap-2">
                     <Target className="h-5 w-5 text-secondary" />
-                    <span>Idéal pour dirigeants et directeurs commerciaux B2B</span>
+                    <span>{t.contact.badges.expert}</span>
                   </div>
                 </div>
               </div>
