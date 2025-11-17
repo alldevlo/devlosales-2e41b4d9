@@ -40,7 +40,7 @@ export const LanguageProvider = ({ children }: LanguageProviderProps) => {
     return defaultLanguage;
   };
 
-  const [language, setLanguageState] = useState<LanguageCode>(detectLanguage);
+  const [language, setLanguageState] = useState<LanguageCode>(() => detectLanguage());
 
   // Update language when URL changes
   useEffect(() => {
@@ -48,7 +48,7 @@ export const LanguageProvider = ({ children }: LanguageProviderProps) => {
     if (newLang !== language) {
       setLanguageState(newLang);
     }
-  }, [location.pathname]);
+  }, [location.pathname, language]);
 
   const setLanguage = (lang: LanguageCode) => {
     setLanguageState(lang);
