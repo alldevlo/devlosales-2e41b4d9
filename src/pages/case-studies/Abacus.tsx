@@ -151,8 +151,7 @@ const Abacus = () => {
                 <div className="bg-card border border-border rounded-lg p-8">
                   <h3 className="text-xl font-bold mb-4">Témoignage client vidéo</h3>
                   <div className="mb-4 rounded-lg overflow-hidden">
-                    {/* Remplacez MEDIA_ID_ABACUS par l'identifiant Wistia réel */}
-                    <WistiaVideo mediaId="MEDIA_ID_ABACUS" className="w-full" />
+                    <WistiaVideo mediaId="cr7dgltkvu" className="w-full" />
                   </div>
                   <p className="text-muted-foreground italic">
                     Découvrez le témoignage complet d'Abacus sur les résultats obtenus avec devlo et l'impact sur leur croissance commerciale.
