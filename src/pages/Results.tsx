@@ -206,7 +206,7 @@ const Results = () => {
                 {caseStudies.map((study) => (
                   <Link
                     key={study.slug}
-                    to={`${langPrefix}/${routes.results}/${getLocalizedCaseStudySlug(study.slug)}`}}
+                    to={`${langPrefix}/${routes.results}/${getLocalizedCaseStudySlug(study.slug)}`}
                     className="group bg-card border border-border rounded-lg p-6 hover-lift hover:shadow-xl transition-all"
                   >
                     <div className="mb-4">
