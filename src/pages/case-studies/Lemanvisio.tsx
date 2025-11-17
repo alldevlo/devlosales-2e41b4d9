@@ -5,11 +5,17 @@ import Footer from "@/components/layout/Footer";
 import { Link } from "react-router-dom";
 import { ArrowRight, CheckCircle2 } from "lucide-react";
 import { Button } from "@/components/ui/button";
+import { useLanguage } from "@/contexts/LanguageContext";
+import { languagePaths, routeTranslations } from "@/i18n/config";
 
 const Lemanvisio = () => {
   useEffect(() => {
     window.scrollTo(0, 0);
   }, []);
+
+  const { language } = useLanguage();
+  const langPrefix = languagePaths[language];
+  const routes = routeTranslations[language];
 
   return (
     <>
@@ -52,7 +58,7 @@ const Lemanvisio = () => {
           <section className="py-16 bg-gradient-to-br from-primary via-primary-dark to-primary text-primary-foreground">
             <div className="container px-4 md:px-6 max-w-4xl mx-auto text-center">
               <h2 className="text-3xl font-bold mb-6">Obtenez des rendez-vous qualifiés</h2>
-              <Button asChild size="lg" variant="secondary"><Link to="/contact">Planifier ma consultation<ArrowRight className="ml-2 h-5 w-5" /></Link></Button>
+              <Button asChild size="lg" variant="secondary"><Link to={`${langPrefix}/${routes.contact}`}>Planifier ma consultation<ArrowRight className="ml-2 h-5 w-5" /></Link></Button>
             </div>
           </section>
         </main>

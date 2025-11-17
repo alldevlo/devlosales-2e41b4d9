@@ -75,8 +75,7 @@ const Cegos = () => {
                     {/* Remplacez MEDIA_ID_CEGOS par l'identifiant Wistia réel */}
                     <WistiaVideo mediaId="MEDIA_ID_CEGOS" className="w-full" />
                   </div>
-                </div>
-                <p className="text-muted-foreground italic">
+                  <p className="text-muted-foreground italic">
                     Découvrez le témoignage complet de Cegos sur les résultats exceptionnels obtenus avec devlo dans le secteur de la formation professionnelle.
                   </p>
                 </div>
@@ -264,7 +263,7 @@ const Cegos = () => {
                   Découvrez comment devlo peut vous aider à atteindre des taux de réponse exceptionnels avec des campagnes de prospection ultra-ciblées.
                 </p>
                 <Button asChild size="lg" variant="secondary" className="text-lg px-8">
-                  <Link to="/contact">
+                  <Link to={`${langPrefix}/${routes.contact}`}>
                     Planifier ma consultation gratuite
                     <ArrowRight className="ml-2 h-5 w-5" />
                   </Link>
