@@ -9,6 +9,7 @@ import { dictionaries } from "@/i18n/locales";
 const Contact = () => {
   const { language } = useLanguage();
   const t = dictionaries[language];
+  const tc = (dictionaries as any)[language].contact;
   useEffect(() => {
     // Load HubSpot form script
     const script = document.createElement('script');
@@ -114,7 +115,7 @@ const Contact = () => {
                 {/* Form */}
                 <div>
                   <div className="bg-card border border-border rounded-lg p-8 shadow-lg">
-                    <h2 className="text-2xl font-bold mb-6">Remplissez le formulaire</h2>
+                    <h2 className="text-2xl font-bold mb-6">{tc.formTitle}</h2>
                     <div id="hubspot-form-container" className="[&_.hs-form]:space-y-4"></div>
                   </div>
                 </div>

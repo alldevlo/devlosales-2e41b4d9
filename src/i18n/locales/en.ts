@@ -88,12 +88,27 @@ const en = {
     p2: "7% interested prospects on average for our clients in 2024 thanks to our ultra-personalized multichannel campaigns.",
     p3: "Fill out the form: we'll get back to you quickly to set a date.",
     badges: { free: "Free & no obligation", fast: "Quick response", expert: "Expert advice" },
+    formTitle: "Fill out the form",
+    why: {
+      title: "Why choose us?",
+      items: {
+        interested: "7% interested prospects on average in 2024",
+        meetings: "+3000 qualified meetings booked for our clients",
+        activated: "+12K prospects activated across all sectors",
+        ranked: "Ranked among the top agencies on Outbound-experts.com",
+        multichannel: "Ultra-personalized multichannel campaigns (email, LinkedIn, phone)",
+      }
+    },
+    trustedTitle: "Trusted by",
+    privacyTitle: "Privacy guarantee",
+    privacyText: "Your data is treated confidentially and will never be shared with third parties. We use your information only to contact you back and prepare your personalized consultation.",
   },
   results: {
     title: "Our Client Results",
     subtitle: "Discover how we helped our clients generate qualified leads and accelerate their growth",
     allCases: "See all our case studies",
     backToResults: "← Back to case studies",
+    viewCase: "View case study",
   },
   footer: {
     mission: "Our Mission",

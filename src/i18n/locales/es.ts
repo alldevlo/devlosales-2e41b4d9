@@ -88,12 +88,27 @@ const es = {
     p2: "7% de prospectos interesados en promedio para nuestros clientes en 2024 gracias a nuestras campañas multicanal ultrapersonalizadas.",
     p3: "Completa el formulario: te contactaremos rápidamente para fijar una fecha.",
     badges: { free: "Gratis y sin compromiso", fast: "Respuesta rápida", expert: "Asesoramiento experto" },
+    formTitle: "Completa el formulario",
+    why: {
+      title: "¿Por qué elegirnos?",
+      items: {
+        interested: "7% de prospectos interesados en promedio en 2024",
+        meetings: "+3000 reuniones calificadas agendadas para nuestros clientes",
+        activated: "+12K prospectos activados en todos los sectores",
+        ranked: "Clasificados entre las mejores agencias en Outbound-experts.com",
+        multichannel: "Campañas multicanal ultrapersonalizadas (correo, LinkedIn, teléfono)",
+      }
+    },
+    trustedTitle: "Ellos confían en nosotros",
+    privacyTitle: "Garantía de confidencialidad",
+    privacyText: "Tus datos se tratan de manera confidencial y nunca se compartirán con terceros. Usamos tu información solo para contactarte y preparar tu consulta personalizada.",
   },
   results: {
     title: "Nuestros resultados con clientes",
     subtitle: "Descubre cómo ayudamos a nuestros clientes a generar leads calificados y acelerar su crecimiento",
     allCases: "Ver todos nuestros casos de estudio",
     backToResults: "← Volver a casos de estudio",
+    viewCase: "Ver caso de estudio",
   },
   footer: {
     mission: "Nuestra misión",
