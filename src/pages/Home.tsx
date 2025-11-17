@@ -4,6 +4,7 @@ import Footer from "@/components/layout/Footer";
 import HeroSection from "@/components/home/HeroSection";
 import TrustedBySection from "@/components/home/TrustedBySection";
 import StatsSection from "@/components/home/StatsSection";
+import WistiaVideo from "@/components/WistiaVideo";
 import { Button } from "@/components/ui/button";
 import { Link } from "react-router-dom";
 import { 
@@ -13,6 +14,9 @@ import {
 } from "lucide-react";
 
 const Home = () => {
+  const handleCaseStudyClick = () => {
+    window.scrollTo({ top: 0, behavior: "smooth" });
+  };
   const processSteps = [
     { icon: Target, title: "Définition de votre cible", description: "Identification précise de votre profil de client idéal (ICP) et des décideurs clés" },
     { icon: User, title: "Étude du profil de votre entreprise", description: "Analyse approfondie de votre offre, positionnement et valeur ajoutée" },
@@ -115,6 +119,64 @@ const Home = () => {
         <main className="flex-1">
           <HeroSection />
           <TrustedBySection />
+
+          {/* Vidéos de témoignages clients */}
+          <section className="py-16 md:py-24 bg-muted/30">
+            <div className="container px-4 md:px-6">
+              <div className="text-center mb-12">
+                <h2 className="text-3xl md:text-4xl font-bold mb-4">
+                  Ils témoignent de leur expérience
+                </h2>
+                <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
+                  Découvrez comment nos clients ont transformé leur prospection B2B
+                </p>
+              </div>
+
+              <div className="grid md:grid-cols-3 gap-8 max-w-6xl mx-auto">
+                {/* Vidéo Cegos */}
+                <div className="bg-card border border-border rounded-lg p-6 hover-lift">
+                  <div className="aspect-video mb-4 rounded-lg overflow-hidden bg-muted">
+                    <WistiaVideo mediaId="knadmb8za5" className="w-full h-full" />
+                  </div>
+                  <h3 className="text-xl font-bold mb-2">Cegos</h3>
+                  <p className="text-muted-foreground mb-3">
+                    45% de taux de réponse grâce à notre approche multicanale personnalisée.
+                  </p>
+                  <div className="flex items-center gap-2 text-sm text-primary font-semibold">
+                    <span className="px-3 py-1 bg-primary/10 rounded-full">45% de réponses</span>
+                  </div>
+                </div>
+
+                {/* Vidéo Apidae */}
+                <div className="bg-card border border-border rounded-lg p-6 hover-lift">
+                  <div className="aspect-video mb-4 rounded-lg overflow-hidden bg-muted">
+                    <WistiaVideo mediaId="w9ews1v05q" className="w-full h-full" />
+                  </div>
+                  <h3 className="text-xl font-bold mb-2">Apidae</h3>
+                  <p className="text-muted-foreground mb-3">
+                    70 rendez-vous qualifiés avec des marques prestigieuses.
+                  </p>
+                  <div className="flex items-center gap-2 text-sm text-primary font-semibold">
+                    <span className="px-3 py-1 bg-primary/10 rounded-full">70 RDV qualifiés</span>
+                  </div>
+                </div>
+
+                {/* Vidéo Abacus */}
+                <div className="bg-card border border-border rounded-lg p-6 hover-lift">
+                  <div className="aspect-video mb-4 rounded-lg overflow-hidden bg-muted">
+                    <WistiaVideo mediaId="cr7dgltkvu" className="w-full h-full" />
+                  </div>
+                  <h3 className="text-xl font-bold mb-2">Abacus</h3>
+                  <p className="text-muted-foreground mb-3">
+                    Plus de 30 prospects intéressés générés pour leur solution.
+                  </p>
+                  <div className="flex items-center gap-2 text-sm text-primary font-semibold">
+                    <span className="px-3 py-1 bg-primary/10 rounded-full">+30 prospects</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </section>
 
           {/* Notre Objectif */}
           <section className="py-16 md:py-24">
@@ -270,63 +332,7 @@ const Home = () => {
             </div>
           </section>
 
-          {/* Vidéos de témoignages clients */}
-          <section className="py-16 md:py-24 bg-muted/30">
-            <div className="container px-4 md:px-6">
-              <div className="text-center mb-12">
-                <h2 className="text-3xl md:text-4xl font-bold mb-4">
-                  Ils témoignent de leur expérience
-                </h2>
-                <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
-                  Découvrez comment nos clients ont transformé leur prospection B2B
-                </p>
-              </div>
-
-              <div className="grid md:grid-cols-2 gap-8 max-w-5xl mx-auto">
-                {/* Vidéo Cegos */}
-                <div className="bg-card border border-border rounded-lg p-6 hover-lift">
-                  <div className="aspect-video mb-4 rounded-lg overflow-hidden bg-muted">
-                    <iframe
-                      className="w-full h-full"
-                      src="https://www.youtube.com/embed/YOUR_CEGOS_VIDEO_ID"
-                      title="Témoignage Cegos"
-                      frameBorder="0"
-                      allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-                      allowFullScreen
-                    />
-                  </div>
-                  <h3 className="text-xl font-bold mb-2">Cegos - Formation professionnelle</h3>
-                  <p className="text-muted-foreground mb-3">
-                    Découvrez comment Cegos a obtenu 45% de taux de réponse grâce à notre approche de prospection multicanale personnalisée.
-                  </p>
-                  <div className="flex items-center gap-2 text-sm text-primary font-semibold">
-                    <span className="px-3 py-1 bg-primary/10 rounded-full">45% de réponses</span>
-                  </div>
-                </div>
-
-                {/* Vidéo Abacus */}
-                <div className="bg-card border border-border rounded-lg p-6 hover-lift">
-                  <div className="aspect-video mb-4 rounded-lg overflow-hidden bg-muted">
-                    <iframe
-                      className="w-full h-full"
-                      src="https://www.youtube.com/embed/YOUR_ABACUS_VIDEO_ID"
-                      title="Témoignage Abacus"
-                      frameBorder="0"
-                      allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-                      allowFullScreen
-                    />
-                  </div>
-                  <h3 className="text-xl font-bold mb-2">Abacus - Solutions logicielles</h3>
-                  <p className="text-muted-foreground mb-3">
-                    Abacus partage son expérience avec devlo et comment nous avons généré plus de 30 prospects intéressés pour leur solution.
-                  </p>
-                  <div className="flex items-center gap-2 text-sm text-primary font-semibold">
-                    <span className="px-3 py-1 bg-primary/10 rounded-full">+30 prospects intéressés</span>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </section>
+          {/* Vidéos de témoignages clients - REMOVED (moved after TrustedBySection) */}
 
           {/* Études de cas (Teaser) */}
           <section className="py-16 md:py-24 bg-gradient-to-br from-primary via-primary-dark to-primary text-primary-foreground">
@@ -369,7 +375,7 @@ const Home = () => {
 
               <div className="text-center">
                 <Button asChild size="lg" variant="secondary">
-                  <Link to="/resultats">
+                  <Link to="/resultats" onClick={handleCaseStudyClick}>
                     Découvrir toutes nos études de cas
                     <ArrowRight className="ml-2 h-5 w-5" />
                   </Link>
