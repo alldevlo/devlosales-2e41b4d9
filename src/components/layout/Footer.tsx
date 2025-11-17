@@ -75,6 +75,7 @@ const Footer = () => {
               </div>
             </div>
 
+            <div>
               <h3 className="mb-4 text-xl font-bold">{t('footer.navigation')}</h3>
               <nav className="space-y-2 text-primary-foreground/90">
                 <Link to={`${prefix}/`} className="block hover:text-accent transition-colors">
