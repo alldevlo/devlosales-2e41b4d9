@@ -1,5 +1,5 @@
 import { createContext, useContext, useState, useEffect, ReactNode } from 'react';
-import { LanguageCode, defaultLanguage, languagePaths } from '@/i18n/config';
+import { LanguageCode, defaultLanguage, languagePaths, routeTranslations, caseStudySlugs } from '@/i18n/config';
 import { useLocation, useNavigate } from 'react-router-dom';
 import { dictionaries } from '@/i18n/locales';
 
@@ -52,24 +52,57 @@ export const LanguageProvider = ({ children }: LanguageProviderProps) => {
 
   const setLanguage = (lang: LanguageCode) => {
     setLanguageState(lang);
-    
-    // Navigate to the new language path
+
     const currentPath = location.pathname;
     const currentLangPrefix = languagePaths[language];
-    
-    // Remove current language prefix
+
+    // Strip current language prefix from path
     let pathWithoutLang = currentPath;
     if (currentLangPrefix && currentPath.startsWith(currentLangPrefix)) {
       pathWithoutLang = currentPath.substring(currentLangPrefix.length) || '/';
     }
-    
-    // Add new language prefix
+
+    // Build translated path segments
+    const segments = pathWithoutLang.split('/').filter(Boolean); // e.g. ['resultats', 'abacus-prospects-interesses']
+
+    const newSegments: string[] = [];
+
+    if (segments.length === 0) {
+      // Home
+      // no segments
+    } else {
+      // Translate top-level known routes
+      const currentRoutes = routeTranslations[language];
+      const targetRoutes = routeTranslations[lang];
+
+      if (segments[0] === currentRoutes.results) {
+        newSegments.push(targetRoutes.results);
+        // Translate case study slug if present
+        if (segments[1]) {
+          const currentSlug = segments[1];
+          // Reverse map to a case study key
+          const entry = Object.entries(caseStudySlugs).find(([_key, slugs]) => slugs[language] === currentSlug);
+          if (entry) {
+            const [key, slugs] = entry as [string, Record<LanguageCode, string>];
+            newSegments.push(slugs[lang]);
+          } else {
+            newSegments.push(currentSlug);
+          }
+        }
+      } else if (segments[0] === currentRoutes.contact) {
+        newSegments.push(targetRoutes.contact);
+      } else {
+        // Unknown top-level segment, keep as-is (e.g., other pages)
+        newSegments.push(...segments);
+      }
+    }
+
     const newLangPrefix = languagePaths[lang];
-    const newPath = newLangPrefix + pathWithoutLang;
-    
+    const pathRest = newSegments.length ? `/${newSegments.join('/')}` : '';
+    const newPath = `${newLangPrefix}${pathRest}` || '/';
+
     navigate(newPath);
   };
-
   // Simple translation function using dictionaries
   const t = (key: string): string => {
     const dict = dictionaries[language] as any;
