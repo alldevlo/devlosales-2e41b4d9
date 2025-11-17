@@ -1,9 +1,11 @@
 import { Users, Calendar, TrendingUp, Target } from "lucide-react";
 import { useLanguage } from "@/contexts/LanguageContext";
+import { dictionaries } from '@/i18n/locales';
 
 const StatsSection = () => {
-  const { t } = useLanguage();
-  const stats = t('stats.items') as unknown as Array<{ value: string; label: string; description: string }>;
+  const { t, language } = useLanguage();
+  const stats = dictionaries[language].stats.items;
+  
   return (
     <section className="py-16 bg-muted/50">
       <div className="container px-4 md:px-6">
@@ -17,7 +19,7 @@ const StatsSection = () => {
         </div>
         
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
-          {stats.map((stat, index) => {
+          {stats.map((stat: { value: string; label: string; description: string }, index: number) => {
             const Icon = [Calendar, Users, TrendingUp, Target][index] || Users;
             return (
               <div 
