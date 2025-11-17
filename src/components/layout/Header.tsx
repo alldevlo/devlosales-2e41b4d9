@@ -15,6 +15,11 @@ const Header = () => {
 
   const isActive = (path: string) => location.pathname === path;
 
+  const handleNavClick = () => {
+    window.scrollTo({ top: 0, behavior: "smooth" });
+    setIsMenuOpen(false);
+  };
+
   return (
     <header className="sticky top-0 z-50 w-full border-b border-border/40 bg-background/95 backdrop-blur supports-[backdrop-filter]:bg-background/60">
       <div className="container flex h-16 items-center justify-between px-4 md:px-6">
@@ -28,7 +33,8 @@ const Header = () => {
             <Link
               key={item.path}
               to={item.path}
-              className={`text-sm font-medium transition-colors hover:text-primary ${
+              onClick={handleNavClick}
+              className={`text-xl font-medium transition-colors hover:text-primary ${
                 isActive(item.path)
                   ? "text-primary"
                   : "text-foreground/70"
@@ -41,7 +47,7 @@ const Header = () => {
 
         <div className="hidden md:block">
           <Button asChild variant="default" size="sm">
-            <Link to="/contact">Planifier votre consultation</Link>
+            <Link to="/contact" onClick={handleNavClick}>Planifier votre consultation</Link>
           </Button>
         </div>
 
@@ -63,7 +69,7 @@ const Header = () => {
               <Link
                 key={item.path}
                 to={item.path}
-                onClick={() => setIsMenuOpen(false)}
+                onClick={handleNavClick}
                 className={`text-base font-medium transition-colors hover:text-primary ${
                   isActive(item.path)
                     ? "text-primary"
@@ -74,7 +80,7 @@ const Header = () => {
               </Link>
             ))}
             <Button asChild variant="default" size="sm" className="w-full">
-              <Link to="/contact" onClick={() => setIsMenuOpen(false)}>
+              <Link to="/contact" onClick={handleNavClick}>
                 Planifier votre consultation
               </Link>
             </Button>

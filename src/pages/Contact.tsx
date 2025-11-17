@@ -55,7 +55,7 @@ const Contact = () => {
           <section className="py-16 md:py-24 bg-gradient-to-br from-primary via-primary-dark to-primary text-primary-foreground">
             <div className="container px-4 md:px-6">
               <div className="max-w-4xl mx-auto text-center">
-                <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold mb-6">
+                <h1 className="text-2xl md:text-3xl lg:text-4xl font-bold mb-6">
                   Planifions une session de prospection{" "}
                   <span className="bg-gradient-to-r from-secondary to-secondary-light bg-clip-text text-transparent">
                     100% personnalisée
@@ -63,29 +63,17 @@ const Contact = () => {
                   pour votre entreprise
                 </h1>
                 
-                <div className="text-lg md:text-xl text-primary-foreground/90 space-y-6 mb-8 leading-relaxed">
+                <div className="text-lg md:text-xl text-primary-foreground/90 space-y-4 mb-8 leading-relaxed">
                   <p>
-                    Avant notre rendez-vous, notre équipe prépare plusieurs <strong>stratégies de prospection commerciale sur mesure</strong>, 
-                    basées sur votre profil de client idéal et la réalité de votre marché.
+                    <strong>Stratégies de prospection sur mesure</strong> basées sur votre profil de client idéal et la réalité de votre marché.
                   </p>
                   
                   <p>
-                    La force de devlo réside dans la <strong>génération de prospects ultra-ciblés</strong> et dans la création de 
-                    <strong> campagnes outbound ultra-personnalisées et multicanales</strong> (emails, messages LinkedIn et appels téléphoniques).
-                  </p>
-                  
-                  <p>
-                    C'est ce qui nous a valu d'être classés parmi les <strong>meilleures agences outbound sur Outbound-experts.com</strong> et 
-                    d'obtenir en moyenne <strong className="text-secondary">7% de prospects intéressés</strong> pour nos clients en 2024.
-                  </p>
-                  
-                  <p>
-                    Lors de notre rendez-vous, <strong>gratuit et sans engagement</strong>, nous passons en revue ces pistes concrètes, 
-                    répondons à vos questions et évaluons ensemble le potentiel de votre prospection B2B.
+                    <strong className="text-secondary">7% de prospects intéressés</strong> en moyenne pour nos clients en 2024 grâce à nos <strong>campagnes multicanales ultra-personnalisées</strong>.
                   </p>
                   
                   <p className="text-xl font-semibold">
-                    Remplissez le formulaire ci-dessous : nous revenons vers vous très rapidement pour fixer une date dans votre calendrier.
+                    Remplissez le formulaire : nous revenons vers vous rapidement pour fixer une date.
                   </p>
                 </div>
 

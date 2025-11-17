@@ -1,4 +1,5 @@
 import { Helmet } from "react-helmet-async";
+import { useEffect } from "react";
 import Header from "@/components/layout/Header";
 import Footer from "@/components/layout/Footer";
 import { Link } from "react-router-dom";
@@ -6,6 +7,9 @@ import { ArrowRight, TrendingUp, Users, Target, Zap } from "lucide-react";
 import { Button } from "@/components/ui/button";
 
 const Results = () => {
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, []);
   const caseStudies = [
     {
       slug: "careerlunch-dach-recrutement",
