@@ -7,6 +7,7 @@ import { ArrowRight, CheckCircle2, Leaf } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { useLanguage } from "@/contexts/LanguageContext";
 import { languagePaths, routeTranslations } from "@/i18n/config";
+import { dictionaries } from "@/i18n/locales";
 import WistiaVideo from "@/components/WistiaVideo";
 
 const Apidae = () => {
