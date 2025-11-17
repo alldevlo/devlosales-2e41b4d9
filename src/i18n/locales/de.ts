@@ -88,12 +88,27 @@ const de = {
     p2: "7% interessierte Prospects im Durchschnitt für unsere Kunden 2024 dank unserer hochpersonalisierten Multikanal-Kampagnen.",
     p3: "Füllen Sie das Formular aus: Wir melden uns schnell, um einen Termin zu vereinbaren.",
     badges: { free: "Kostenlos & unverbindlich", fast: "Schnelle Antwort", expert: "Expertenberatung" },
+    formTitle: "Füllen Sie das Formular aus",
+    why: {
+      title: "Warum uns wählen?",
+      items: {
+        interested: "7% interessierte Prospects im Durchschnitt in 2024",
+        meetings: "+3000 qualifizierte Termine für unsere Kunden gebucht",
+        activated: "+12K aktivierte Prospects in allen Branchen",
+        ranked: "Unter den Top-Agenturen auf Outbound-experts.com gelistet",
+        multichannel: "Hochpersonalisierte Multikanal-Kampagnen (E-Mail, LinkedIn, Telefon)",
+      }
+    },
+    trustedTitle: "Sie vertrauen uns",
+    privacyTitle: "Datenschutzgarantie",
+    privacyText: "Ihre Daten werden vertraulich behandelt und niemals an Dritte weitergegeben. Wir verwenden Ihre Informationen ausschließlich, um Sie zu kontaktieren und Ihre persönliche Beratung vorzubereiten.",
   },
   results: {
     title: "Unsere Kundenergebnisse",
     subtitle: "Entdecken Sie, wie wir unseren Kunden geholfen haben, qualifizierte Leads zu generieren und ihr Wachstum zu beschleunigen",
     allCases: "Alle Fallstudien ansehen",
     backToResults: "← Zurück zu den Fallstudien",
+    viewCase: "Fallstudie ansehen",
   },
   footer: {
     mission: "Unsere Mission",
