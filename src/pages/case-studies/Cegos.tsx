@@ -5,6 +5,7 @@ import Footer from "@/components/layout/Footer";
 import { Link } from "react-router-dom";
 import { ArrowRight, CheckCircle2 } from "lucide-react";
 import { Button } from "@/components/ui/button";
+import WistiaVideo from "@/components/WistiaVideo";
 
 const Cegos = () => {
   useEffect(() => {
@@ -65,17 +66,10 @@ const Cegos = () => {
 
                 <div className="bg-card border border-border rounded-lg p-8 mt-8">
                   <h3 className="text-xl font-bold mb-4">Témoignage client vidéo</h3>
-                  <div className="aspect-video mb-4 bg-muted rounded-lg overflow-hidden">
-                    <iframe
-                      width="100%"
-                      height="100%"
-                      src="https://www.youtube.com/embed/VIDEO_ID_CEGOS"
-                      title="Témoignage Cegos"
-                      allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-                      allowFullScreen
-                      className="w-full h-full"
-                    ></iframe>
-                  </div>
+                  <WistiaVideo 
+                    mediaId="knadmb8za5" 
+                    className="mb-4"
+                  />
                   <p className="text-muted-foreground italic">
                     Découvrez le témoignage complet de Cegos sur les résultats exceptionnels obtenus avec devlo dans le secteur de la formation professionnelle.
                   </p>

@@ -5,6 +5,7 @@ import Footer from "@/components/layout/Footer";
 import { Link } from "react-router-dom";
 import { ArrowRight, CheckCircle2, Leaf } from "lucide-react";
 import { Button } from "@/components/ui/button";
+import WistiaVideo from "@/components/WistiaVideo";
 
 const Apidae = () => {
   useEffect(() => {
@@ -257,10 +258,14 @@ const Apidae = () => {
                   </div>
 
                   <div className="bg-background/50 rounded-lg p-6">
-                    <h3 className="text-lg font-semibold mb-3 text-foreground">Témoignage client : Tanguy (APIDAE)</h3>
-                    <blockquote className="text-muted-foreground italic border-l-4 border-secondary pl-4">
-                      "L'approche de devlo nous a permis d'accéder à des entreprises que nous n'aurions jamais pu toucher par nous-mêmes. Leur capacité à personnaliser chaque message et à adapter le discours selon notre interlocuteur a fait toute la différence. Nous avons obtenu des rendez-vous avec UEFA, TAG Heuer, Rothschild et bien d'autres marques prestigieuses. C'est bien au-delà de nos attentes initiales."
-                    </blockquote>
+                    <h3 className="text-lg font-semibold mb-3 text-foreground">Témoignage client vidéo : Tanguy (APIDAE)</h3>
+                    <WistiaVideo 
+                      mediaId="w9ews1v05q" 
+                      className="mb-4"
+                    />
+                    <p className="text-muted-foreground italic">
+                      Découvrez le témoignage complet de Tanguy d'APIDAE sur les résultats obtenus avec devlo et l'impact sur leur développement.
+                    </p>
                   </div>
                 </div>
 
