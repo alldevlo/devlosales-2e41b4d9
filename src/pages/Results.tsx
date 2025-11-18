@@ -12,12 +12,14 @@ import { languagePaths, routeTranslations, caseStudySlugs } from "@/i18n/config"
 const Results = () => {
   const { language } = useLanguage();
   const t = dictionaries[language];
+  const tr = t.results;
   const langPrefix = languagePaths[language];
   const routes = routeTranslations[language];
 
   useEffect(() => {
     window.scrollTo(0, 0);
   }, []);
+
   const getLocalizedCaseStudySlug = (slugFr: string) => {
     for (const [id, slugs] of Object.entries(caseStudySlugs)) {
       if (slugs.fr === slugFr || Object.values(slugs).includes(slugFr)) {
@@ -26,34 +28,34 @@ const Results = () => {
     }
     return slugFr;
   };
+
   const cases = [
-    { id: 'careerlunch', slug: 'careerlunch-dach-recrutement' },
-    { id: 'cortexia', slug: 'cortexia-tech-b2b-meetings' },
-    { id: 'saporo', slug: 'saporo-cybersecurite-b2b' },
-    { id: 'apidae', slug: 'apidae-evenementiel-luxe' },
-    { id: 'horus', slug: 'horus-belgique-200k' },
-    { id: 'abacus', slug: 'abacus-prospects-interesses' },
-    { id: 'hiag', slug: 'hiag-immobilier-b2b' },
-    { id: 'manyways', slug: 'manyways-consulting-70-reponses' },
-    { id: 'locky', slug: 'locky-prospects-interesses' },
-    { id: 'lemanvisio', slug: 'lemanvisio-rendez-vous-qualifies' },
-    { id: 'cegos', slug: 'cegos-formation-45-reponses' },
-    { id: 'squareco', slug: 'squareco-identification-icp' },
+    { slug: "careerlunch-dach-recrutement", title: "CareerLunch: 54 qualified meetings", industry: "HR & Recruitment", kpi1: "54 qualified prospects", kpi2: "19% response rate", description: "How CareerLunch achieved 54 meetings in DACH region." },
+    { slug: "cortexia-tech-b2b-meetings", title: "Cortexia: 71 qualified meetings", industry: "B2B Tech", kpi1: "71 qualified meetings", kpi2: "CH, France, Belgium", description: "Multichannel prospecting strategy for B2B tech." },
+    { slug: "saporo-cybersecurite-b2b", title: "Saporo: 81% open rate", industry: "Cybersecurity", kpi1: "81% open rate", kpi2: "54% response, 16% meetings", description: "B2B cybersecurity campaign with exceptional engagement." },
+    { slug: "apidae-evenementiel-luxe", title: "APIDAE: 70 meetings with UEFA, TAG Heuer", industry: "Luxury Events", kpi1: "70 qualified meetings", kpi2: "Prestige brands", description: "Targeted prospecting in luxury events sector." },
+    { slug: "horus-belgique-200k", title: "Horus: €200,000 signed contracts", industry: "B2B Services", kpi1: "€200,000 contracts", kpi2: "Belgium expansion", description: "Successful Belgium market expansion." },
+    { slug: "abacus-prospects-interesses", title: "Abacus: +30 interested prospects", industry: "Software & Services", kpi1: "+30 qualified prospects", kpi2: "High conversion", description: "Generated 30+ qualified interested prospects." },
+    { slug: "hiag-immobilier-b2b", title: "HIAG: B2B real estate prospecting", industry: "Commercial Real Estate", kpi1: "Multichannel campaign", kpi2: "B2B real estate", description: "Innovative prospecting in B2B real estate." },
+    { slug: "manyways-consulting-70-reponses", title: "Many Ways: 70% responses", industry: "Consulting", kpi1: "70% response rate", kpi2: "8% meetings rate", description: "Ultra-personalized campaign for consulting firm." },
+    { slug: "locky-prospects-interesses", title: "Locky: +40 interested prospects", industry: "Technology", kpi1: "+40 interested prospects", kpi2: "High engagement", description: "Generated 40+ qualified interested prospects." },
+    { slug: "lemanvisio-rendez-vous-qualifies", title: "Lemanvisio: 16 qualified meetings", industry: "Professional Services", kpi1: "16 qualified meetings", kpi2: "Personalized approach", description: "Targeted B2B campaign generating 16 qualified meetings." },
+    { slug: "cegos-formation-45-reponses", title: "Cegos: 45% response rate", industry: "Professional Training", kpi1: "45% response rate", kpi2: "B2B training sector", description: "Prospecting campaign in professional training with exceptional response rate." },
+    { slug: "squareco-identification-icp", title: "SquareCo: ICP identification", industry: "Commodities Trading", kpi1: "ICP optimization", kpi2: "Refined strategy", description: "Identification and validation of ideal customer profiles." },
   ];
 
-
   const stats = [
-    { icon: TrendingUp, value: "+7", label: "Années d'expérience" },
-    { icon: Users, value: "+3k", label: "Rendez-vous pris" },
-    { icon: Target, value: "+12K", label: "Prospects activés" },
-    { icon: Zap, value: "+50K", label: "Prospects contactés" },
+    { icon: TrendingUp, value: "+7", label: (tr as any).stats?.experience || t.stats?.items?.[0]?.label || "Experience" },
+    { icon: Users, value: "+3k", label: (tr as any).stats?.meetings || t.stats?.items?.[1]?.label || "Meetings" },
+    { icon: Target, value: "+12K", label: (tr as any).stats?.activated || t.stats?.items?.[2]?.label || "Activated" },
+    { icon: Zap, value: "+50K", label: (tr as any).stats?.contacted || t.stats?.items?.[3]?.label || "Contacted" },
   ];
 
   return (
     <>
       <Helmet>
-        <title>{t.results.title} | devlo</title>
-        <meta name="description" content={t.results.subtitle} />
+        <title>{tr.title} | devlo</title>
+        <meta name="description" content={tr.subtitle} />
         <link rel="canonical" href={`https://devlo.ch/${language === 'fr' ? '' : `${language}/`}${routes.results}`} />
       </Helmet>
 
@@ -66,15 +68,15 @@ const Results = () => {
             <div className="container px-4 md:px-6">
               <div className="max-w-4xl mx-auto text-center">
                 <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold mb-6">
-                  {t.results.title}
+                  {tr.title}
                 </h1>
                 
                 <p className="text-lg md:text-xl text-primary-foreground/90 leading-relaxed mb-8">
-                  {t.results.subtitle}
+                  {tr.subtitle}
                 </p>
 
                 <p className="text-xl font-semibold">
-                  <span className="text-secondary">{t.contact.p2.split(' ')[0]} {t.contact.p2.split(' ')[1]} {t.contact.p2.split(' ')[2]} {t.contact.p2.split(' ')[3]}</span>
+                  <span className="text-secondary">{t.contact.p2.split(' ').slice(0, 4).join(' ')}</span>
                 </p>
               </div>
             </div>
@@ -120,7 +122,7 @@ const Results = () => {
           <section className="py-12 md:py-16">
             <div className="container px-4 md:px-6">
               <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
-                {caseStudies.map((study) => (
+                {cases.map((study: any) => (
                   <Link
                     key={study.slug}
                     to={`${langPrefix}/${routes.results}/${getLocalizedCaseStudySlug(study.slug)}`}

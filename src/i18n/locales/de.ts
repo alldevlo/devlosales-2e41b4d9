@@ -109,6 +109,18 @@ const de = {
     allCases: "Alle Fallstudien ansehen",
     backToResults: "← Zurück zu den Fallstudien",
     viewCase: "Fallstudie ansehen",
+    introTitle: "Konkrete, messbare und reproduzierbare Ergebnisse",
+    introText: "Jede Fallstudie beschreibt unsere Akquise-Methodik, die Herausforderungen, die umgesetzte Strategie und die erzielten quantifizierten Ergebnisse. Wir decken alle Sektoren ab: Technologie, Cybersicherheit, Personalwesen, Events, Immobilien, Consulting, Schulung und mehr.",
+    discoverCase: "Fallstudie entdecken",
+    ctaTitle: "Diese Ergebnisse für Ihr Unternehmen reproduzieren?",
+    ctaText: "Vereinbaren Sie eine kostenlose und unverbindliche Beratung. Wir analysieren Ihren Markt, identifizieren Ihre Chancen und schlagen eine maßgeschneiderte Akquise-Strategie vor.",
+    ctaButton: "Kostenlose Beratung planen",
+    stats: {
+      experience: "Jahre Erfahrung",
+      meetings: "Termine gebucht",
+      activated: "Interessenten aktiviert",
+      contacted: "Interessenten kontaktiert",
+    },
   },
   footer: {
     mission: "Unsere Mission",
