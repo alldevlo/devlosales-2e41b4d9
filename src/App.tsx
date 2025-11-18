@@ -5,6 +5,7 @@ import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import { HelmetProvider } from "react-helmet-async";
 import { LanguageProvider } from "@/contexts/LanguageContext";
+import { AixsterProvider } from '@aixyte/aixster';
 import Home from "./pages/Home";
 import Results from "./pages/Results";
 import Contact from "./pages/Contact";
@@ -27,14 +28,20 @@ import SquareCo from "./pages/case-studies/SquareCo";
 const queryClient = new QueryClient();
 
 const App = () => (
-  <HelmetProvider>
-    <QueryClientProvider client={queryClient}>
-      <TooltipProvider>
-        <Toaster />
-        <Sonner />
-        <BrowserRouter>
-          <LanguageProvider>
-            <Routes>
+  <AixsterProvider
+    apiKey="your_api_key"
+    defaultLocale="en"
+    locales={["de", "es", "fr", "it"]}
+    routing="auto"
+  >
+    <HelmetProvider>
+      <QueryClientProvider client={queryClient}>
+        <TooltipProvider>
+          <Toaster />
+          <Sonner />
+          <BrowserRouter>
+            <LanguageProvider>
+              <Routes>
             <Route path="/" element={<Home />} />
             <Route path="/resultats" element={<Results />} />
             <Route path="/contact" element={<Contact />} />
@@ -189,12 +196,13 @@ const App = () => (
 
             {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
             <Route path="*" element={<NotFound />} />
-            </Routes>
-          </LanguageProvider>
-        </BrowserRouter>
-      </TooltipProvider>
-    </QueryClientProvider>
-  </HelmetProvider>
+              </Routes>
+            </LanguageProvider>
+          </BrowserRouter>
+        </TooltipProvider>
+      </QueryClientProvider>
+    </HelmetProvider>
+  </AixsterProvider>
 );
 
 export default App;
