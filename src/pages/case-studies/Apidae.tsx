@@ -7,7 +7,6 @@ import { ArrowRight, CheckCircle2, Leaf } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { useLanguage } from "@/contexts/LanguageContext";
 import { languagePaths, routeTranslations } from "@/i18n/config";
-import { dictionaries } from "@/i18n/locales";
 import WistiaVideo from "@/components/WistiaVideo";
 
 const Apidae = () => {
@@ -455,7 +454,7 @@ const LocalizedBackToResults = () => {
   return (
     <Link to={`${langPrefix}/${routes.results}`} className="inline-flex items-center text-primary-foreground/80 hover:text-primary-foreground mb-6 transition-colors">
       <ArrowRight className="mr-2 h-4 w-4 rotate-180" />
-      {dictionaries[language].results.backToResults}
+      Retour aux résultats
     </Link>
   );
 };

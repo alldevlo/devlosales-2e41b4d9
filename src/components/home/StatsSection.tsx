@@ -1,28 +1,26 @@
 import { Users, Calendar, TrendingUp, Target } from "lucide-react";
+import { useLanguage } from "@/contexts/LanguageContext";
+import { dictionaries } from '@/i18n/locales';
 
 const StatsSection = () => {
-  const stats = [
-    { icon: Calendar, value: "+7", label: "Années d'expérience", description: "En prospection B2B" },
-    { icon: Users, value: "+3k", label: "Rendez-vous qualifiés", description: "Générés pour nos clients" },
-    { icon: TrendingUp, value: "+12K", label: "Prospects activés", description: "Dans notre réseau" },
-    { icon: Target, value: "81%", label: "Taux d'ouverture moyen", description: "Sur nos campagnes" },
-  ];
+  const { t, language } = useLanguage();
+  const stats = dictionaries[language].stats.items;
   
   return (
     <section className="py-16 bg-muted/50">
       <div className="container px-4 md:px-6">
         <div className="text-center mb-12">
           <h2 className="text-3xl md:text-4xl font-bold mb-4">
-            Nos résultats en chiffres
+            {t('stats.title')}
           </h2>
           <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
-            Des performances mesurables qui transforment votre prospection en succès commercial
+            {t('stats.subtitle')}
           </p>
         </div>
         
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
-          {stats.map((stat, index) => {
-            const Icon = stat.icon;
+          {stats.map((stat: { value: string; label: string; description: string }, index: number) => {
+            const Icon = [Calendar, Users, TrendingUp, Target][index] || Users;
             return (
               <div 
                 key={index} 

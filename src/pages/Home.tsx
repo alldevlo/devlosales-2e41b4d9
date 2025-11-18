@@ -12,16 +12,8 @@ import {
   Zap, Heart, TrendingUp, DollarSign, Globe, TestTube, 
   Users, MessageSquare, ArrowRight 
 } from "lucide-react";
-import { useLanguage } from "@/contexts/LanguageContext";
-import { dictionaries } from "@/i18n/locales";
-import { languagePaths, routeTranslations } from "@/i18n/config";
 
 const Home = () => {
-  const { language } = useLanguage();
-  const t = dictionaries[language];
-  const langPrefix = languagePaths[language];
-  const routes = routeTranslations[language];
-  
   const handleCaseStudyClick = () => {
     window.scrollTo({ top: 0, behavior: "smooth" });
   };
@@ -383,8 +375,8 @@ const Home = () => {
 
               <div className="text-center">
                 <Button asChild size="lg" variant="secondary">
-                  <Link to={`${langPrefix}/${routes.results}`} onClick={handleCaseStudyClick}>
-                    {t.caseStudies.discover}
+                  <Link to="/resultats" onClick={handleCaseStudyClick}>
+                    Découvrir toutes nos études de cas
                     <ArrowRight className="ml-2 h-5 w-5" />
                   </Link>
                 </Button>
@@ -428,8 +420,8 @@ const Home = () => {
                   <span className="text-secondary">Gratuit et sans engagement</span>
                 </p>
                 <Button asChild size="lg" className="text-lg px-8">
-                  <Link to={`${langPrefix}/${routes.contact}`}>
-                    {t.cta.schedule.primary}
+                  <Link to="/contact">
+                    Planifier votre consultation gratuite
                     <ArrowRight className="ml-2 h-5 w-5" />
                   </Link>
                 </Button>

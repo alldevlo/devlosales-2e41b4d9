@@ -3,13 +3,8 @@ import Header from "@/components/layout/Header";
 import Footer from "@/components/layout/Footer";
 import { CheckCircle, Clock, Target } from "lucide-react";
 import { useEffect } from "react";
-import { useLanguage } from "@/contexts/LanguageContext";
-import { dictionaries } from "@/i18n/locales";
 
 const Contact = () => {
-  const { language } = useLanguage();
-  const t = dictionaries[language];
-  const tc = (dictionaries as any)[language].contact;
   useEffect(() => {
     // Load HubSpot form script
     const script = document.createElement('script');
@@ -24,7 +19,7 @@ const Contact = () => {
         // @ts-ignore
         window.hbspt.forms.create({
           portalId: "8082524",
-          formId: "54090bd3-970d-4ad1-b3b3-1c81d54c291e",
+          formId: "af94dc91-a61a-4f0c-b328-39b1ade12da5",
           region: "na2",
           target: "#hubspot-form-container"
         });
@@ -61,24 +56,24 @@ const Contact = () => {
             <div className="container px-4 md:px-6">
               <div className="max-w-4xl mx-auto text-center">
                 <h1 className="text-2xl md:text-3xl lg:text-4xl font-bold mb-6">
-                  {t.contact.title}{" "}
+                  Planifions une session de prospection{" "}
                   <span className="bg-gradient-to-r from-secondary to-secondary-light bg-clip-text text-transparent">
-                    {t.contact.highlight}
+                    100% personnalisée
                   </span>{" "}
-                  {t.contact.forYourBusiness}
+                  pour votre entreprise
                 </h1>
                 
                 <div className="text-lg md:text-xl text-primary-foreground/90 space-y-4 mb-8 leading-relaxed">
                   <p>
-                    <strong>{t.contact.p1}</strong>
+                    <strong>Stratégies de prospection sur mesure</strong> basées sur votre profil de client idéal et la réalité de votre marché.
                   </p>
                   
                   <p>
-                    <strong className="text-secondary">{t.contact.p2}</strong>
+                    <strong className="text-secondary">7% de prospects intéressés</strong> en moyenne pour nos clients en 2024 grâce à nos <strong>campagnes multicanales ultra-personnalisées</strong>.
                   </p>
                   
                   <p className="text-xl font-semibold">
-                    {t.contact.p3}
+                    Remplissez le formulaire : nous revenons vers vous rapidement pour fixer une date.
                   </p>
                 </div>
 
@@ -86,22 +81,22 @@ const Contact = () => {
                   onClick={scrollToForm}
                   className="inline-flex items-center justify-center px-8 py-4 text-lg font-semibold text-primary bg-secondary hover:bg-secondary-light rounded-lg transition-all hover-scale"
                 >
-                  {t.cta.schedule.meeting}
+                  Planifier mon rendez-vous
                 </button>
 
                 {/* Reassurance badges */}
                 <div className="flex flex-wrap justify-center gap-6 mt-8 text-primary-foreground/90">
                   <div className="flex items-center gap-2">
                     <CheckCircle className="h-5 w-5 text-secondary" />
-                    <span>{t.contact.badges.free}</span>
+                    <span>Gratuit & sans engagement</span>
                   </div>
                   <div className="flex items-center gap-2">
                     <Clock className="h-5 w-5 text-secondary" />
-                    <span>{t.contact.badges.fast}</span>
+                    <span>Durée : 30 minutes</span>
                   </div>
                   <div className="flex items-center gap-2">
                     <Target className="h-5 w-5 text-secondary" />
-                    <span>{t.contact.badges.expert}</span>
+                    <span>Idéal pour dirigeants et directeurs commerciaux B2B</span>
                   </div>
                 </div>
               </div>
@@ -115,7 +110,7 @@ const Contact = () => {
                 {/* Form */}
                 <div>
                   <div className="bg-card border border-border rounded-lg p-8 shadow-lg">
-                    <h2 className="text-2xl font-bold mb-6">{tc.formTitle}</h2>
+                    <h2 className="text-2xl font-bold mb-6">Remplissez le formulaire</h2>
                     <div id="hubspot-form-container" className="[&_.hs-form]:space-y-4"></div>
                   </div>
                 </div>

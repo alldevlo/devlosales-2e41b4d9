@@ -7,7 +7,6 @@ import { ArrowRight, CheckCircle2, Building2 } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { useLanguage } from "@/contexts/LanguageContext";
 import { languagePaths, routeTranslations } from "@/i18n/config";
-import { dictionaries } from "@/i18n/locales";
 
 const Hiag = () => {
   useEffect(() => {
@@ -34,9 +33,9 @@ const Hiag = () => {
           <section className="py-16 md:py-24 bg-gradient-to-br from-primary via-primary-dark to-primary text-primary-foreground">
             <div className="container px-4 md:px-6">
               <div className="max-w-4xl mx-auto">
-                <Link to={`${langPrefix}/${routes.results}`} className="inline-flex items-center text-primary-foreground/80 hover:text-primary-foreground mb-6 transition-colors">
+                <Link to="/resultats" className="inline-flex items-center text-primary-foreground/80 hover:text-primary-foreground mb-6 transition-colors">
                   <ArrowRight className="mr-2 h-4 w-4 rotate-180" />
-                  {dictionaries[language].results.backToResults}
+                  Retour aux résultats
                 </Link>
                 
                 <div className="mb-6">

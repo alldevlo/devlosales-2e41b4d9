@@ -53,7 +53,7 @@ const CareerLunch = () => {
             <div className="container px-4 md:px-6">
               <div className="max-w-4xl mx-auto">
                 <div className="mb-6">
-                  <Link to={`${langPrefix}/${routes.results}`} className="inline-flex items-center text-primary-foreground/80 hover:text-primary-foreground transition-colors">
+                  <Link to="/resultats" className="inline-flex items-center text-primary-foreground/80 hover:text-primary-foreground transition-colors">
                     ← Retour aux études de cas
                   </Link>
                 </div>
