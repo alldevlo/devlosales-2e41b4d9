@@ -109,6 +109,18 @@ const en = {
     allCases: "See all our case studies",
     backToResults: "← Back to case studies",
     viewCase: "View case study",
+    introTitle: "Concrete, Measurable, and Reproducible Results",
+    introText: "Each case study details our prospecting methodology, the challenges encountered, the strategy implemented, and the quantified results achieved. We cover all sectors: technology, cybersecurity, human resources, events, real estate, consulting, training, and more.",
+    discoverCase: "Discover case study",
+    ctaTitle: "Reproduce these results for your business?",
+    ctaText: "Schedule a free, no-obligation consultation. We analyze your market, identify your opportunities, and propose a tailored prospecting strategy.",
+    ctaButton: "Schedule my free consultation",
+    stats: {
+      experience: "Years of experience",
+      meetings: "Meetings booked",
+      activated: "Prospects activated",
+      contacted: "Prospects contacted",
+    },
   },
   footer: {
     mission: "Our Mission",
