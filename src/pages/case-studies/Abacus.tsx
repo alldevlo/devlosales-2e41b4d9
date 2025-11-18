@@ -5,18 +5,11 @@ import Footer from "@/components/layout/Footer";
 import { Link } from "react-router-dom";
 import { ArrowRight, CheckCircle2 } from "lucide-react";
 import { Button } from "@/components/ui/button";
-import { useLanguage } from "@/contexts/LanguageContext";
-import { languagePaths, routeTranslations } from "@/i18n/config";
-import WistiaVideo from "@/components/WistiaVideo";
 
 const Abacus = () => {
   useEffect(() => {
     window.scrollTo(0, 0);
   }, []);
-
-  const { language } = useLanguage();
-  const langPrefix = languagePaths[language];
-  const routes = routeTranslations[language];
 
   return (
     <>
@@ -34,9 +27,10 @@ const Abacus = () => {
           <section className="py-16 md:py-24 bg-gradient-to-br from-primary via-primary-dark to-primary text-primary-foreground">
             <div className="container px-4 md:px-6">
               <div className="max-w-4xl mx-auto">
-                {/* Localized back link */}
-                {/* eslint-disable-next-line @typescript-eslint/no-use-before-define */}
-                <LocalizedBackToResults />
+                <Link to="/resultats" className="inline-flex items-center text-primary-foreground/80 hover:text-primary-foreground mb-6 transition-colors">
+                  <ArrowRight className="mr-2 h-4 w-4 rotate-180" />
+                  Retour aux résultats
+                </Link>
                 
                 <div className="mb-6">
                   <span className="inline-block px-4 py-2 text-sm font-semibold bg-secondary text-secondary-foreground rounded-full">
@@ -150,8 +144,16 @@ const Abacus = () => {
 
                 <div className="bg-card border border-border rounded-lg p-8">
                   <h3 className="text-xl font-bold mb-4">Témoignage client vidéo</h3>
-                  <div className="mb-4 rounded-lg overflow-hidden">
-                    <WistiaVideo mediaId="cr7dgltkvu" className="w-full" />
+                  <div className="aspect-video mb-4 bg-muted rounded-lg overflow-hidden">
+                    <iframe
+                      width="100%"
+                      height="100%"
+                      src="https://www.youtube.com/embed/VIDEO_ID_ABACUS"
+                      title="Témoignage Abacus"
+                      allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                      allowFullScreen
+                      className="w-full h-full"
+                    ></iframe>
                   </div>
                   <p className="text-muted-foreground italic">
                     Découvrez le témoignage complet d'Abacus sur les résultats obtenus avec devlo et l'impact sur leur croissance commerciale.
@@ -214,7 +216,7 @@ const Abacus = () => {
                   Découvrez comment devlo peut vous aider à générer un flux constant de prospects qualifiés et intéressés.
                 </p>
                 <Button asChild size="lg" variant="secondary" className="text-lg px-8">
-                  <Link to={`${langPrefix}/${routes.contact}`}>
+                  <Link to="/contact">
                     Planifier ma consultation gratuite
                     <ArrowRight className="ml-2 h-5 w-5" />
                   </Link>
@@ -231,16 +233,3 @@ const Abacus = () => {
 };
 
 export default Abacus;
-
-// Helper component for localized back link
-const LocalizedBackToResults = () => {
-  const { language } = useLanguage();
-  const langPrefix = languagePaths[language];
-  const routes = routeTranslations[language];
-  return (
-    <Link to={`${langPrefix}/${routes.results}`} className="inline-flex items-center text-primary-foreground/80 hover:text-primary-foreground mb-6 transition-colors">
-      <ArrowRight className="mr-2 h-4 w-4 rotate-180" />
-      Retour aux résultats
-    </Link>
-  );
-};

@@ -1,7 +1,4 @@
-import { useLanguage } from "@/contexts/LanguageContext";
-
 const TrustedBySection = () => {
-  const { t } = useLanguage();
   const ourClients = [
     "Abacus", "APIDAE", "Saporo", "Cortexia", "CareerLunch", 
     "Cegos", "Many Ways", "Locky", "Hiag", "Horus", 
@@ -20,9 +17,9 @@ const TrustedBySection = () => {
       <div className="container px-4 md:px-6">
         {/* Nos clients */}
         <div className="mb-12">
-        <h2 className="text-center text-sm font-semibold text-muted-foreground uppercase tracking-wide mb-8">
-          {t('trustedBy.clientsTitle')}
-        </h2>
+          <h2 className="text-center text-sm font-semibold text-muted-foreground uppercase tracking-wide mb-8">
+            Nos clients
+          </h2>
           
           <div className="relative overflow-hidden">
             <div className="flex flex-wrap justify-center gap-x-8 gap-y-6 items-center">
@@ -40,9 +37,9 @@ const TrustedBySection = () => {
 
         {/* Rendez-vous bookés avec */}
         <div>
-        <h2 className="text-center text-sm font-semibold text-muted-foreground uppercase tracking-wide mb-8">
-          {t('trustedBy.meetingsTitle')}
-        </h2>
+          <h2 className="text-center text-sm font-semibold text-muted-foreground uppercase tracking-wide mb-8">
+            Rendez-vous bookés avec
+          </h2>
           
           <div className="relative overflow-hidden">
             <div className="flex flex-wrap justify-center gap-x-8 gap-y-6 items-center">

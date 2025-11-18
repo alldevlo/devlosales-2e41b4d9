@@ -5,17 +5,11 @@ import Footer from "@/components/layout/Footer";
 import { Link } from "react-router-dom";
 import { ArrowRight, CheckCircle2, TrendingUp } from "lucide-react";
 import { Button } from "@/components/ui/button";
-import { useLanguage } from "@/contexts/LanguageContext";
-import { languagePaths, routeTranslations } from "@/i18n/config";
 
 const Cortexia = () => {
   useEffect(() => {
     window.scrollTo(0, 0);
   }, []);
-
-  const { language } = useLanguage();
-  const langPrefix = languagePaths[language];
-  const routes = routeTranslations[language];
 
   return (
     <>
@@ -388,7 +382,7 @@ const Cortexia = () => {
                   Planifiez une consultation gratuite et découvrez comment devlo peut vous aider à générer des rendez-vous qualifiés avec vos prospects idéaux grâce à nos campagnes de prospection B2B multicanales ultra-personnalisées.
                 </p>
                 <Button asChild size="lg" variant="secondary" className="text-lg px-8">
-                  <Link to={`${langPrefix}/${routes.contact}`}>
+                  <Link to="/contact">
                     Planifier ma consultation gratuite
                     <ArrowRight className="ml-2 h-5 w-5" />
                   </Link>

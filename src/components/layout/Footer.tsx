@@ -1,25 +1,24 @@
 import { Mail, Phone, MapPin } from "lucide-react";
 import { Link } from "react-router-dom";
-import { useLanguage } from "@/contexts/LanguageContext";
-import { languagePaths, routeTranslations } from "@/i18n/config";
 
 const Footer = () => {
-  const { language, t } = useLanguage();
-  const prefix = languagePaths[language];
-  const routes = routeTranslations[language];
-
   return (
     <footer className="bg-primary text-primary-foreground">
       <div className="container px-4 py-12 md:px-6 md:py-16">
         <div className="grid gap-8 md:grid-cols-2 lg:grid-cols-3">
+          {/* Mission */}
           <div className="lg:col-span-2">
-            <h3 className="mb-4 text-xl font-bold">{t('footer.mission')}</h3>
+            <h3 className="mb-4 text-xl font-bold">Notre Mission</h3>
             <p className="text-primary-foreground/90 leading-relaxed">
-              {t('footer.missionText')}
+              Notre mission est de permettre aux entreprises B2B de rencontrer leurs prospects au
+              travers de campagnes de prospection commerciale ultra-ciblées et personnalisées, et
+              d'un démarchage télémarketing innovant et digital.
             </p>
           </div>
+
+          {/* Switzerland Office */}
           <div>
-            <h3 className="mb-4 text-xl font-bold">{t('footer.swissOffice')}</h3>
+            <h3 className="mb-4 text-xl font-bold">Bureau Suisse</h3>
             <div className="space-y-3 text-primary-foreground/90">
               <div className="flex items-start gap-2">
                 <MapPin className="mt-1 h-5 w-5 flex-shrink-0" />
@@ -49,7 +48,7 @@ const Footer = () => {
         <div className="mt-8 pt-8 border-t border-primary-foreground/20">
           <div className="grid gap-6 md:grid-cols-2">
             <div>
-              <h3 className="mb-4 text-xl font-bold">{t('footer.usaOffice')}</h3>
+              <h3 className="mb-4 text-xl font-bold">Bureau USA</h3>
               <div className="space-y-3 text-primary-foreground/90">
                 <div className="flex items-start gap-2">
                   <MapPin className="mt-1 h-5 w-5 flex-shrink-0" />
@@ -75,25 +74,27 @@ const Footer = () => {
               </div>
             </div>
 
+            {/* Quick Links */}
             <div>
-              <h3 className="mb-4 text-xl font-bold">{t('footer.navigation')}</h3>
+              <h3 className="mb-4 text-xl font-bold">Navigation</h3>
               <nav className="space-y-2 text-primary-foreground/90">
-                <Link to={`${prefix}/`} className="block hover:text-accent transition-colors">
-                  {t('nav.home')}
+                <Link to="/" className="block hover:text-accent transition-colors">
+                  Accueil
                 </Link>
-                <Link to={`${prefix}/${routes.results}`} className="block hover:text-accent transition-colors">
-                  {t('nav.results')}
+                <Link to="/resultats" className="block hover:text-accent transition-colors">
+                  Résultats
                 </Link>
-                <Link to={`${prefix}/${routes.contact}`} className="block hover:text-accent transition-colors">
-                  {t('nav.contact')}
+                <Link to="/contact" className="block hover:text-accent transition-colors">
+                  Contact
                 </Link>
               </nav>
             </div>
           </div>
         </div>
 
+        {/* Copyright */}
         <div className="mt-8 pt-8 border-t border-primary-foreground/20 text-center text-sm text-primary-foreground/70">
-          <p>© {new Date().getFullYear()} devlo. {t('footer.rights')}</p>
+          <p>© {new Date().getFullYear()} devlo. Tous droits réservés.</p>
         </div>
       </div>
     </footer>

@@ -5,17 +5,11 @@ import Footer from "@/components/layout/Footer";
 import { Link } from "react-router-dom";
 import { ArrowRight, CheckCircle2, TrendingUp } from "lucide-react";
 import { Button } from "@/components/ui/button";
-import { useLanguage } from "@/contexts/LanguageContext";
-import { languagePaths, routeTranslations } from "@/i18n/config";
 
 const Horus = () => {
   useEffect(() => {
     window.scrollTo(0, 0);
   }, []);
-
-  const { language } = useLanguage();
-  const langPrefix = languagePaths[language];
-  const routes = routeTranslations[language];
 
   return (
     <>
@@ -380,7 +374,7 @@ const Horus = () => {
                   Découvrez comment devlo peut vous aider à réussir votre expansion internationale avec des campagnes de prospection B2B ciblées et efficaces.
                 </p>
                 <Button asChild size="lg" variant="secondary" className="text-lg px-8">
-                  <Link to={`${langPrefix}/${routes.contact}`}>
+                  <Link to="/contact">
                     Planifier ma consultation gratuite
                     <ArrowRight className="ml-2 h-5 w-5" />
                   </Link>

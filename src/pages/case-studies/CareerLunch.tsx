@@ -5,17 +5,11 @@ import Footer from "@/components/layout/Footer";
 import { Button } from "@/components/ui/button";
 import { Link } from "react-router-dom";
 import { ArrowRight, Target, TrendingUp, Users, CheckCircle } from "lucide-react";
-import { useLanguage } from "@/contexts/LanguageContext";
-import { languagePaths, routeTranslations } from "@/i18n/config";
 
 const CareerLunch = () => {
   useEffect(() => {
     window.scrollTo(0, 0);
   }, []);
-
-  const { language } = useLanguage();
-  const langPrefix = languagePaths[language];
-  const routes = routeTranslations[language];
   const faqs = [
     {
       question: "Qu'est-ce que la méthode 'Existing clients/disqualified leads exclusion' ?",
@@ -384,7 +378,7 @@ const CareerLunch = () => {
                   identifions vos opportunités et vous proposons une stratégie sur mesure.
                 </p>
                 <Button asChild size="lg" variant="secondary" className="text-lg px-8 hover-scale">
-                  <Link to={`${langPrefix}/${routes.contact}`}>
+                  <Link to="/contact">
                     Planifier votre consultation gratuite
                     <ArrowRight className="ml-2 h-5 w-5" />
                   </Link>

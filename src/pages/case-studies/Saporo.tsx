@@ -5,17 +5,11 @@ import Footer from "@/components/layout/Footer";
 import { Link } from "react-router-dom";
 import { ArrowRight, CheckCircle2, Shield } from "lucide-react";
 import { Button } from "@/components/ui/button";
-import { useLanguage } from "@/contexts/LanguageContext";
-import { languagePaths, routeTranslations } from "@/i18n/config";
 
 const Saporo = () => {
   useEffect(() => {
     window.scrollTo(0, 0);
   }, []);
-
-  const { language } = useLanguage();
-  const langPrefix = languagePaths[language];
-  const routes = routeTranslations[language];
 
   return (
     <>
@@ -418,7 +412,7 @@ const Saporo = () => {
                   Découvrez comment devlo peut vous aider à atteindre vos décideurs clés avec des campagnes de prospection B2B ultra-personnalisées qui génèrent des taux d'engagement exceptionnels.
                 </p>
                 <Button asChild size="lg" variant="secondary" className="text-lg px-8">
-                  <Link to={`${langPrefix}/${routes.contact}`}>
+                  <Link to="/contact">
                     Planifier ma consultation gratuite
                     <ArrowRight className="ml-2 h-5 w-5" />
                   </Link>

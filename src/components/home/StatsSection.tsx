@@ -1,26 +1,48 @@
 import { Users, Calendar, TrendingUp, Target } from "lucide-react";
-import { useLanguage } from "@/contexts/LanguageContext";
-import { dictionaries } from '@/i18n/locales';
+
+const stats = [
+  {
+    icon: Calendar,
+    value: "+7",
+    label: "Années d'expérience",
+    description: "Dans la prospection B2B"
+  },
+  {
+    icon: Users,
+    value: "+3k",
+    label: "Rendez-vous pris",
+    description: "Avec succès pour nos clients"
+  },
+  {
+    icon: TrendingUp,
+    value: "+12K",
+    label: "Prospects activés",
+    description: "Leads qualifiés générés"
+  },
+  {
+    icon: Target,
+    value: "+50K",
+    label: "Prospects contactés",
+    description: "Campagnes multicanales"
+  }
+];
 
 const StatsSection = () => {
-  const { t, language } = useLanguage();
-  const stats = dictionaries[language].stats.items;
-  
   return (
     <section className="py-16 bg-muted/50">
       <div className="container px-4 md:px-6">
         <div className="text-center mb-12">
           <h2 className="text-3xl md:text-4xl font-bold mb-4">
-            {t('stats.title')}
+            Nos Résultats en Chiffres
           </h2>
           <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
-            {t('stats.subtitle')}
+            Des chiffres qui parlent d'eux-mêmes et témoignent de notre expertise en développement commercial B2B
           </p>
         </div>
         
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
-          {stats.map((stat: { value: string; label: string; description: string }, index: number) => {
-            const Icon = [Calendar, Users, TrendingUp, Target][index] || Users;
+          {stats.map((stat, index) => {
+            const Icon = stat.icon;
             return (
               <div 
                 key={index} 

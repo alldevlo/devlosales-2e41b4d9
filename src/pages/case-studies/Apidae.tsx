@@ -5,18 +5,11 @@ import Footer from "@/components/layout/Footer";
 import { Link } from "react-router-dom";
 import { ArrowRight, CheckCircle2, Leaf } from "lucide-react";
 import { Button } from "@/components/ui/button";
-import { useLanguage } from "@/contexts/LanguageContext";
-import { languagePaths, routeTranslations } from "@/i18n/config";
-import WistiaVideo from "@/components/WistiaVideo";
 
 const Apidae = () => {
   useEffect(() => {
     window.scrollTo(0, 0);
   }, []);
-
-  const { language } = useLanguage();
-  const langPrefix = languagePaths[language];
-  const routes = routeTranslations[language];
 
   return (
     <>
@@ -35,9 +28,10 @@ const Apidae = () => {
           <section className="py-16 md:py-24 bg-gradient-to-br from-primary via-primary-dark to-primary text-primary-foreground">
             <div className="container px-4 md:px-6">
               <div className="max-w-4xl mx-auto">
-                {/* Localized back link */}
-                {/* eslint-disable-next-line @typescript-eslint/no-use-before-define */}
-                <LocalizedBackToResults />
+                <Link to="/resultats" className="inline-flex items-center text-primary-foreground/80 hover:text-primary-foreground mb-6 transition-colors">
+                  <ArrowRight className="mr-2 h-4 w-4 rotate-180" />
+                  Retour aux résultats
+                </Link>
                 
                 <div className="mb-6">
                   <span className="inline-block px-4 py-2 text-sm font-semibold bg-secondary text-secondary-foreground rounded-full">
@@ -240,23 +234,6 @@ const Apidae = () => {
             </div>
           </section>
 
-          {/* Video Testimonial Section */}
-          <section className="py-16 md:py-20 bg-background">
-            <div className="container px-4 md:px-6">
-              <div className="max-w-4xl mx-auto">
-                <div className="bg-card border border-border rounded-lg p-8">
-                  <h3 className="text-xl font-bold mb-4">Présentation vidéo</h3>
-                  <div className="mb-4 rounded-lg overflow-hidden">
-                    <WistiaVideo mediaId="w9ews1v05q" className="w-full" />
-                  </div>
-                  <p className="text-muted-foreground italic">
-                    Découvrez la présentation vidéo d'APIDAE et les résultats obtenus avec devlo.
-                  </p>
-                </div>
-              </div>
-            </div>
-          </section>
-
           {/* Results Section */}
           <section className="py-16 md:py-20 bg-muted/30">
             <div className="container px-4 md:px-6">
@@ -428,7 +405,7 @@ const Apidae = () => {
                   Découvrez comment devlo peut vous aider à générer des dizaines de rendez-vous qualifiés avec vos prospects idéaux grâce à des campagnes ultra-personnalisées.
                 </p>
                 <Button asChild size="lg" variant="secondary" className="text-lg px-8">
-                  <Link to={`${langPrefix}/${routes.contact}`}>
+                  <Link to="/contact">
                     Planifier ma consultation gratuite
                     <ArrowRight className="ml-2 h-5 w-5" />
                   </Link>
@@ -445,16 +422,3 @@ const Apidae = () => {
 };
 
 export default Apidae;
-
-// Helper component for localized back link
-const LocalizedBackToResults = () => {
-  const { language } = useLanguage();
-  const langPrefix = languagePaths[language];
-  const routes = routeTranslations[language];
-  return (
-    <Link to={`${langPrefix}/${routes.results}`} className="inline-flex items-center text-primary-foreground/80 hover:text-primary-foreground mb-6 transition-colors">
-      <ArrowRight className="mr-2 h-4 w-4 rotate-180" />
-      Retour aux résultats
-    </Link>
-  );
-};
