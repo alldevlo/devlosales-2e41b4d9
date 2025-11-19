@@ -6,42 +6,6 @@ import { BrowserRouter, Routes, Route, Navigate } from "react-router-dom";
 import { HelmetProvider } from "react-helmet-async";
 import Home from "./pages/Home";
 import Results from "./pages/Results";
-cat > ~/Downloads/migrate-clean.sh << 'ENDOFSCRIPT'
-#!/bin/bash
-set -e
-echo "=========================================="
-echo "🧹 NETTOYAGE + MIGRATION MULTILINGUE"
-echo "=========================================="
-echo ""
-GREEN='\033[0;32m'
-BLUE='\033[0;34m'
-YELLOW='\033[1;33m'
-RED='\033[0;31m'
-NC='\033[0m'
-WORK_DIR="$HOME/devlosales-migration"
-echo -e "${BLUE}📁 Retour dans le répertoire...${NC}"
-cd "$WORK_DIR"
-echo -e "${BLUE}🔄 Pull...${NC}"
-git pull origin main
-echo -e "${RED}🧹 SUPPRESSION AIXSTER${NC}"
-echo ""
-echo -e "${BLUE}📦 Suppression du package...${NC}"
-npm uninstall @aixyte/aixster 2>/dev/null || echo -e "${YELLOW}Package déjà absent${NC}"
-echo -e "${BLUE}🔍 Nettoyage des imports...${NC}"
-find src -type f \( -name "*.ts" -o -name "*.tsx" \) -exec sed -i '' '/aixster/d' {} \; 2>/dev/null || true
-find src -type f \( -name "*.ts" -o -name "*.tsx" \) -exec sed -i '' '/AixsterProvider/d' {} \; 2>/dev/null || true
-echo -e "${GREEN}✅ Nettoyage terminé${NC}"
-echo ""
-echo -e "${BLUE}🚀 MIGRATION MULTILINGUE${NC}"
-cat > src/App.tsx << 'EOF'
-import { Toaster } from "@/components/ui/toaster";
-import { Toaster as Sonner } from "@/components/ui/sonner";
-import { TooltipProvider } from "@/components/ui/tooltip";
-import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
-import { BrowserRouter, Routes, Route, Navigate } from "react-router-dom";
-import { HelmetProvider } from "react-helmet-async";
-import Home from "./pages/Home";
-import Results from "./pages/Results";
 import Contact from "./pages/Contact";
 import NotFound from "./pages/NotFound";
 import CareerLunch from "./pages/case-studies/CareerLunch";
