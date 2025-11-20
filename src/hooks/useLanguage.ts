@@ -12,7 +12,7 @@ export const useLanguage = () => {
     if (firstPart === 'en' || firstPart === 'fr') {
       return firstPart as Language;
     }
-    return 'fr';
+    return 'en';
   };
 
   const lang = getCurrentLanguage();
