@@ -1,397 +1,271 @@
-import { Helmet } from "react-helmet-async";
-import { useEffect } from "react";
-import Header from "@/components/layout/Header";
-import Footer from "@/components/layout/Footer";
-import { Button } from "@/components/ui/button";
-import { Link } from "react-router-dom";
-import { ArrowRight, Target, TrendingUp, Users, CheckCircle } from "lucide-react";
+import React from 'react';
+import { Helmet } from 'react-helmet-async';
+import { ArrowLeft, Users, Target, TrendingUp, MessageSquare } from 'lucide-react';
+import { Link } from 'react-router-dom';
+import Header from '../../components/Header';
+import Footer from '../../components/Footer';
 
-const CareerLunch = () => {
-  useEffect(() => {
-    window.scrollTo(0, 0);
-  }, []);
-  const faqs = [
-    {
-      question: "Qu'est-ce que la méthode 'Existing clients/disqualified leads exclusion' ?",
-      answer: "Cette méthode unique développée par devlo permet d'identifier tous les prospects correspondant à l'ICP, puis d'exclure les clients existants et les prospects disqualifiés pour révéler un gisement de prospects inexploités. Cela maximise l'efficacité en évitant les doublons et en ciblant uniquement des opportunités fraîches."
-    },
-    {
-      question: "Pourquoi contacter les prospects dans leur langue préférée ?",
-      answer: "Contacter les prospects dans leur langue maternelle (allemand pour la région DACH dans ce cas) augmente significativement les taux d'ouverture, de clic, de réponse et d'intérêt. C'est un facteur différenciant majeur qui montre le respect et la personnalisation de l'approche."
-    },
-    {
-      question: "Comment obtenir un taux d'intérêt de 10% ?",
-      answer: "Un taux d'intérêt de 10% s'obtient grâce à une combinaison de facteurs : qualification manuelle approfondie des prospects, messages ultra-personnalisés, communication dans la langue préférée, séquence multicanale optimisée et suivi rigoureux."
-    },
-    {
-      question: "Cette approche fonctionne-t-elle dans d'autres secteurs que les RH ?",
-      answer: "Absolument. La méthodologie 'Existing clients/disqualified leads exclusion' et l'approche multicanale personnalisée fonctionnent dans tous les secteurs B2B : tech, cybersécurité, consulting, immobilier, etc."
-    }
-  ];
-
+export default function CareerLunch() {
   return (
     <>
       <Helmet>
-        <title>Cas Client CareerLunch : 54 rendez-vous qualifiés en région DACH | devlo</title>
-        <meta name="description" content="Comment CareerLunch a obtenu 54 rendez-vous qualifiés (10% de taux d'intérêt) dans la région DACH grâce à la stratégie unique de génération de prospects B2B de devlo. Taux de réponse : 19%." />
-        <meta name="keywords" content="cas client prospection DACH, génération leads RH, recrutement B2B, prospection Allemagne Autriche Suisse, CareerLunch case study" />
-        <link rel="canonical" href="https://devlo.ch/resultats/careerlunch-dach-recrutement" />
+        <title>CareerLunch Case Study - B2B Lead Generation in DACH | devlo</title>
+        <meta name="description" content="How devlo helped CareerLunch book 54 sales meetings in a saturated DACH market through personalized multi-channel B2B prospecting with 10% interest rate." />
       </Helmet>
 
-      <div className="flex min-h-screen flex-col">
+      <div className="min-h-screen bg-gradient-to-b from-slate-50 to-white">
         <Header />
         
-        <main className="flex-1">
-          {/* Hero Section */}
-          <section className="py-16 md:py-24 bg-gradient-to-br from-primary via-primary-dark to-primary text-primary-foreground">
-            <div className="container px-4 md:px-6">
-              <div className="max-w-4xl mx-auto">
-                <div className="mb-6">
-                  <Link to="/resultats" className="inline-flex items-center text-primary-foreground/80 hover:text-primary-foreground transition-colors">
-                    ← Retour aux études de cas
-                  </Link>
-                </div>
-                
-                <span className="inline-block px-4 py-2 text-sm font-semibold bg-secondary text-secondary-foreground rounded-full mb-6">
-                  Ressources Humaines & Recrutement
-                </span>
+        {/* Hero Section */}
+        <section className="pt-32 pb-16 px-4">
+          <div className="max-w-4xl mx-auto">
+            <Link 
+              to="/en/case-studies" 
+              className="inline-flex items-center text-blue-600 hover:text-blue-700 mb-8 group"
+            >
+              <ArrowLeft className="w-4 h-4 mr-2 group-hover:-translate-x-1 transition-transform" />
+              Back to Case Studies
+            </Link>
+            
+            <img 
+              src="/CS_devlo/Logo/Asset 11.webp" 
+              alt="CareerLunch Logo" 
+              className="h-16 mb-6" 
+            />
+            
+            <h1 className="text-4xl md:text-5xl font-bold text-slate-900 mb-6">
+              Unique B2B Lead Generation Strategy: how a B2B sales prospecting agency helped CareerLunch book 54 sales meetings in a saturated DACH market
+            </h1>
+            
+            <p className="text-xl text-slate-600 leading-relaxed">
+              Our B2B sales prospecting agency identified and prospected 516 new, ultra-targeted B2B leads in the DACH region. This personalized multi-channel outbound campaign turned a seemingly saturated market into a goldmine of qualified leads, generating a 10% interest rate and 54 sales meetings for CareerLunch.
+            </p>
+          </div>
+        </section>
 
-                <h1 className="text-3xl md:text-4xl lg:text-5xl font-bold mb-6 leading-tight">
-                  Stratégie unique de génération de prospects B2B : Comment CareerLunch a obtenu 54 rendez-vous dans la région DACH
-                </h1>
-
-                <p className="text-lg md:text-xl text-primary-foreground/90 leading-relaxed mb-8">
-                  devlo a identifié et prospecté 516 nouveaux prospects : une mine d'or jusqu'alors inconnue. 
-                  Cette campagne de prospection commerciale a obtenu plus de <strong>10% de rendez-vous</strong> (taux d'intérêt), 
-                  avec 54 prospects intéressés.
-                </p>
-
-                <div className="grid md:grid-cols-2 gap-6">
-                  <div className="bg-primary-foreground/10 backdrop-blur border border-primary-foreground/20 rounded-lg p-6">
-                    <div className="flex items-center gap-3 mb-2">
-                      <Target className="h-6 w-6 text-secondary" />
-                      <span className="text-sm font-semibold text-primary-foreground/70">KPI #1</span>
-                    </div>
-                    <p className="text-2xl font-bold">54 prospects qualifiés (10%)</p>
-                    <p className="text-sm text-primary-foreground/70">en 5 semaines</p>
-                  </div>
-                  <div className="bg-primary-foreground/10 backdrop-blur border border-primary-foreground/20 rounded-lg p-6">
-                    <div className="flex items-center gap-3 mb-2">
-                      <TrendingUp className="h-6 w-6 text-secondary" />
-                      <span className="text-sm font-semibold text-primary-foreground/70">KPI #2</span>
-                    </div>
-                    <p className="text-2xl font-bold">Taux de réponse : 19%</p>
-                    <p className="text-sm text-primary-foreground/70">71% ouverture, 29% clics</p>
-                  </div>
-                </div>
+        {/* Stats */}
+        <section className="py-12 px-4 bg-blue-50">
+          <div className="max-w-4xl mx-auto">
+            <div className="grid grid-cols-2 md:grid-cols-4 gap-8">
+              <div className="text-center">
+                <div className="text-3xl md:text-4xl font-bold text-blue-600 mb-2">516</div>
+                <div className="text-slate-600">New Leads</div>
+              </div>
+              <div className="text-center">
+                <div className="text-3xl md:text-4xl font-bold text-blue-600 mb-2">71%</div>
+                <div className="text-slate-600">Open Rate</div>
+              </div>
+              <div className="text-center">
+                <div className="text-3xl md:text-4xl font-bold text-blue-600 mb-2">19%</div>
+                <div className="text-slate-600">Reply Rate</div>
+              </div>
+              <div className="text-center">
+                <div className="text-3xl md:text-4xl font-bold text-blue-600 mb-2">54</div>
+                <div className="text-slate-600">Meetings Booked</div>
               </div>
             </div>
-          </section>
+          </div>
+        </section>
 
-          {/* About CareerLunch */}
-          <section className="py-12 md:py-16">
-            <div className="container px-4 md:px-6">
-              <div className="max-w-4xl mx-auto">
-                <h2 className="text-3xl font-bold mb-6">À propos de CareerLunch</h2>
-                <p className="text-lg text-muted-foreground leading-relaxed">
-                  CareerLunch est une plateforme tech pour les ressources humaines qui met en relation des candidats potentiels 
-                  avec des employés par le biais d'un échange informel au cours d'un déjeuner. Cette approche innovante transforme 
-                  le recrutement traditionnel en créant des connexions authentiques entre talents et entreprises.
-                </p>
-                
-                <div className="mt-8 bg-muted/50 border border-border rounded-lg p-6">
-                  <h3 className="text-xl font-bold mb-4">Profil de Client Idéal (ICP)</h3>
-                  <div className="flex flex-wrap gap-3">
-                    <span className="px-4 py-2 bg-primary/10 text-primary rounded-full text-sm font-semibold">Ressources humaines</span>
-                    <span className="px-4 py-2 bg-primary/10 text-primary rounded-full text-sm font-semibold">Recrutement</span>
-                    <span className="px-4 py-2 bg-primary/10 text-primary rounded-full text-sm font-semibold">Acquisition de talents</span>
-                    <span className="px-4 py-2 bg-primary/10 text-primary rounded-full text-sm font-semibold">Marque employeur</span>
-                  </div>
-                </div>
-              </div>
+        {/* About */}
+        <section className="py-16 px-4">
+          <div className="max-w-4xl mx-auto">
+            <div className="flex items-center mb-6">
+              <Users className="w-8 h-8 text-blue-600 mr-3" />
+              <h2 className="text-3xl font-bold text-slate-900">About CareerLunch</h2>
             </div>
-          </section>
+            <div className="prose prose-lg max-w-none">
+              <p className="text-slate-600 leading-relaxed mb-4">
+                CareerLunch is an HR-tech platform that connects potential hires with employees through informal lunch meetings. Their business model depends on a continuous sales outreach engine that can generate B2B sales opportunities with HR leaders and employer branding teams across Europe.
+              </p>
+              <p className="text-slate-600 leading-relaxed">
+                Ideal Customer Profiles (ICP) include HR, Recruiting, Talent Acquisition and Employer Branding decision-makers in medium and large B2B organizations who want to attract and retain top talent.
+              </p>
+            </div>
+          </div>
+        </section>
 
-          {/* Challenge */}
-          <section className="py-12 md:py-16 bg-muted/30">
-            <div className="container px-4 md:px-6">
-              <div className="max-w-4xl mx-auto">
-                <h2 className="text-3xl font-bold mb-6">Défis du Client</h2>
-                <div className="prose prose-lg max-w-none">
-                  <p className="text-lg text-muted-foreground leading-relaxed mb-4">
-                    L'équipe de développement commercial de CareerLunch recherchait de nouveaux clients dans la région DACH 
-                    (Allemagne, Autriche et Suisse). Le défi était de taille :
+        {/* Challenge */}
+        <section className="py-16 px-4 bg-slate-50">
+          <div className="max-w-4xl mx-auto">
+            <div className="flex items-center mb-6">
+              <Target className="w-8 h-8 text-blue-600 mr-3" />
+              <h2 className="text-3xl font-bold text-slate-900">
+                The Challenge: winning new B2B clients where "everyone has already been contacted"
+              </h2>
+            </div>
+            <div className="prose prose-lg max-w-none">
+              <p className="text-slate-600 leading-relaxed mb-4">
+                CareerLunch's internal business development team was focusing on new client acquisition in the DACH region (Germany, Austria, Switzerland). The problem:
+              </p>
+              <ul className="text-slate-600 space-y-2 mb-4">
+                <li>The region had already been heavily prospected with cold outreach, cold email and cold calls.</li>
+                <li>Most obvious accounts had already been contacted several times.</li>
+                <li>The team did not have enough time to create a clean database, generate fresh B2B leads, run systematic outbound acquisition and qualify every prospect.</li>
+              </ul>
+              <p className="text-slate-600 leading-relaxed">
+                To accelerate their B2B client acquisition, CareerLunch decided to outsource their sales prospecting to devlo, a specialized B2B sales development and lead generation agency.
+              </p>
+            </div>
+          </div>
+        </section>
+
+        {/* Strategy */}
+        <section className="py-16 px-4">
+          <div className="max-w-4xl mx-auto">
+            <div className="flex items-center mb-6">
+              <TrendingUp className="w-8 h-8 text-blue-600 mr-3" />
+              <h2 className="text-3xl font-bold text-slate-900">
+                The Strategy: "Existing clients / disqualified leads exclusion"
+              </h2>
+            </div>
+            <div className="prose prose-lg max-w-none">
+              <p className="text-slate-600 leading-relaxed mb-6">
+                Our B2B lead generation approach combined ICP clarity, database creation and a systematic cold outreach strategy.
+              </p>
+              
+              <div className="space-y-6">
+                <div>
+                  <h3 className="text-xl font-semibold text-slate-900 mb-3">1. Build a precise B2B lead universe</h3>
+                  <p className="text-slate-600 leading-relaxed">
+                    We started by identifying every organization that matched CareerLunch's Ideal Customer Profiles. For each company, we mapped the most relevant decision-makers for recruitment, talent acquisition and employer branding.
                   </p>
-                  <ul className="space-y-3">
-                    <li className="flex items-start gap-3 text-muted-foreground">
-                      <span className="text-destructive font-bold mt-1">•</span>
-                      <span>Ils connaissaient déjà très bien cette région où ils avaient déjà effectué beaucoup de prospection à froid</span>
-                    </li>
-                    <li className="flex items-start gap-3 text-muted-foreground">
-                      <span className="text-destructive font-bold mt-1">•</span>
-                      <span>La plupart des entreprises cibles avaient déjà été contactées</span>
-                    </li>
-                    <li className="flex items-start gap-3 text-muted-foreground">
-                      <span className="text-destructive font-bold mt-1">•</span>
-                      <span>L'équipe n'avait pas le temps de générer des leads, de les contacter et de les qualifier</span>
-                    </li>
-                    <li className="flex items-start gap-3 text-muted-foreground">
-                      <span className="text-destructive font-bold mt-1">•</span>
-                      <span>Nécessité de trouver un gisement inexploité de prospects qualifiés</span>
-                    </li>
-                  </ul>
-                  <p className="text-lg text-muted-foreground leading-relaxed mt-6">
-                    Face à ces défis, CareerLunch s'est tourné vers devlo pour déléguer l'intégralité de ces tâches 
-                    et découvrir de nouvelles opportunités commerciales.
+                </div>
+                
+                <div>
+                  <h3 className="text-xl font-semibold text-slate-900 mb-3">2. Exclude existing customers and disqualified leads</h3>
+                  <p className="text-slate-600 leading-relaxed">
+                    We then listed all existing clients and previously disqualified leads. This allowed us to exclude non-relevant accounts from future outbound campaigns and focus the prospecting budget on untapped B2B opportunities.
+                  </p>
+                </div>
+                
+                <div>
+                  <h3 className="text-xl font-semibold text-slate-900 mb-3">3. Reveal untapped accounts and new leads</h3>
+                  <p className="text-slate-600 leading-relaxed">
+                    By subtracting these accounts from the full ICP universe, we uncovered 516 new, high-potential B2B leads that had never been contacted before. These became the core of our cold outreach strategy.
+                  </p>
+                </div>
+                
+                <div>
+                  <h3 className="text-xl font-semibold text-slate-900 mb-3">4. In-depth lead research and qualification</h3>
+                  <p className="text-slate-600 leading-relaxed">
+                    Each prospect was manually researched and qualified. We enriched the database with job titles, responsibilities and publicly available information to enable ultra-targeted B2B outreach and improve conversion rates.
+                  </p>
+                </div>
+                
+                <div>
+                  <h3 className="text-xl font-semibold text-slate-900 mb-3">5. Native-language cold outreach and multi-channel prospecting</h3>
+                  <p className="text-slate-600 leading-relaxed">
+                    Instead of relying only on English, we contacted leads primarily in German, their preferred language. This multi-channel prospecting approach combined cold email and LinkedIn outreach, which significantly improved open rates, reply rates and interest rates compared to generic English-only campaigns.
                   </p>
                 </div>
               </div>
             </div>
-          </section>
+          </div>
+        </section>
 
-          {/* Solution */}
-          <section className="py-12 md:py-16">
-            <div className="container px-4 md:px-6">
-              <div className="max-w-4xl mx-auto">
-                <h2 className="text-3xl font-bold mb-8">Les Solutions Mises en Place</h2>
-                
-                <div className="space-y-8">
-                  <div className="bg-card border border-border rounded-lg p-6">
-                    <h3 className="text-2xl font-bold mb-4 text-primary">
-                      1. La méthode "Existing clients/disqualified leads exclusion"
-                    </h3>
-                    <p className="text-muted-foreground mb-6 leading-relaxed">
-                      devlo a développé une méthode unique et puissante de génération de leads appelée 
-                      "Existing clients/disqualified leads exclusion". Cette stratégie comporte trois étapes :
-                    </p>
-                    <div className="space-y-4">
-                      <div className="flex items-start gap-4">
-                        <div className="flex-shrink-0 w-8 h-8 rounded-full bg-primary/10 flex items-center justify-center">
-                          <span className="text-primary font-bold">1</span>
-                        </div>
-                        <p className="text-muted-foreground">
-                          <strong>Identification complète :</strong> Identifier toutes les organisations qui correspondent 
-                          à l'Ideal Customer Profile (ICP) de notre client, puis identifier les décideurs les plus pertinents 
-                          au sein de chacune des organisations retenues.
-                        </p>
-                      </div>
-                      <div className="flex items-start gap-4">
-                        <div className="flex-shrink-0 w-8 h-8 rounded-full bg-primary/10 flex items-center justify-center">
-                          <span className="text-primary font-bold">2</span>
-                        </div>
-                        <p className="text-muted-foreground">
-                          <strong>Exclusion stratégique :</strong> Faire le compte des clients existants de notre client 
-                          ainsi que les prospects qui ont été disqualifiés. L'idée est d'identifier les entreprises et 
-                          prospects qui ne doivent plus être contactés.
-                        </p>
-                      </div>
-                      <div className="flex items-start gap-4">
-                        <div className="flex-shrink-0 w-8 h-8 rounded-full bg-primary/10 flex items-center justify-center">
-                          <span className="text-primary font-bold">3</span>
-                        </div>
-                        <p className="text-muted-foreground">
-                          <strong>Révélation des opportunités :</strong> Exclure les clients existants et les prospects 
-                          disqualifiés de toutes les organisations identifiées. Cela révèle un gisement inexploité de 
-                          nouveaux leads à contacter.
-                        </p>
-                      </div>
-                    </div>
-                  </div>
-
-                  <div className="bg-card border border-border rounded-lg p-6">
-                    <h3 className="text-2xl font-bold mb-4 text-primary">
-                      2. Recherche approfondie et qualification manuelle
-                    </h3>
-                    <p className="text-muted-foreground leading-relaxed">
-                      Nous avons mené une phase de qualification initiale approfondie : recherche et validation manuelle 
-                      de chaque prospect sélectionné. Cette approche rigoureuse a conduit à une augmentation significative 
-                      des taux de conversion et garantit que seuls les prospects les plus pertinents sont contactés.
-                    </p>
-                  </div>
-
-                  <div className="bg-card border border-border rounded-lg p-6">
-                    <h3 className="text-2xl font-bold mb-4 text-primary">
-                      3. Communication dans la langue préférée
-                    </h3>
-                    <p className="text-muted-foreground leading-relaxed">
-                      Nous avons contacté les prospects dans leur langue préférée, principalement en <strong>allemand</strong> 
-                      pour la région DACH. Cette personnalisation linguistique a généré des taux de clics, de réponse et 
-                      d'intérêt nettement plus élevés que si nous les avions contactés en anglais par simplicité.
-                    </p>
-                  </div>
-                </div>
-              </div>
+        {/* Results */}
+        <section className="py-16 px-4 bg-blue-50">
+          <div className="max-w-4xl mx-auto">
+            <h2 className="text-3xl font-bold text-slate-900 mb-6">
+              Results: 54 meetings and double-digit interest rate
+            </h2>
+            <div className="prose prose-lg max-w-none">
+              <p className="text-slate-600 leading-relaxed mb-4">
+                From the 516 new B2B leads contacted, the outsourced sales prospecting campaign delivered:
+              </p>
+              <ul className="text-slate-600 space-y-2 mb-6">
+                <li>71% open rate</li>
+                <li>29% click-through rate</li>
+                <li>19% reply rate</li>
+                <li>10% interest rate (54 qualified meetings booked)</li>
+              </ul>
+              <p className="text-slate-600 leading-relaxed">
+                These results show how a B2B sales prospecting agency can still generate B2B new client acquisition in markets that look "saturated" when the right ICP filters, database creation and cold outreach strategy are applied.
+              </p>
             </div>
-          </section>
+          </div>
+        </section>
 
-          {/* Results */}
-          <section className="py-12 md:py-16 bg-gradient-to-br from-secondary/10 via-secondary/5 to-transparent">
-            <div className="container px-4 md:px-6">
-              <div className="max-w-4xl mx-auto">
-                <h2 className="text-3xl font-bold mb-8">Nos Résultats</h2>
-                
-                <p className="text-lg text-muted-foreground mb-8 leading-relaxed">
-                  Sur les <strong>516 nouveaux prospects</strong> identifiés et contactés, notre client a reçu 
-                  <strong className="text-primary"> 54 réponses positives</strong> pour un rendez-vous grâce à notre 
-                  séquence de prospection multicanale.
+        {/* Key Takeaways */}
+        <section className="py-16 px-4">
+          <div className="max-w-4xl mx-auto">
+            <h2 className="text-3xl font-bold text-slate-900 mb-8">
+              Key takeaways for your B2B sales development
+            </h2>
+            <div className="grid gap-6">
+              <div className="bg-white p-6 rounded-lg shadow-sm border border-slate-200">
+                <h3 className="text-xl font-semibold text-slate-900 mb-3">
+                  Transparent collaboration drives performance
+                </h3>
+                <p className="text-slate-600 leading-relaxed">
+                  A clear prospecting plan, regular feedback loops and constant communication between the client and the outsourced team are essential to keep campaigns aligned and to improve conversion rates over time.
                 </p>
-
-                <div className="grid md:grid-cols-2 gap-6 mb-8">
-                  <div className="bg-card border border-border rounded-lg p-6">
-                    <Users className="h-10 w-10 text-primary mb-4" />
-                    <p className="text-4xl font-bold text-primary mb-2">54</p>
-                    <p className="text-muted-foreground">Rendez-vous qualifiés</p>
-                    <p className="text-sm text-secondary font-semibold mt-1">10% de taux d'intérêt</p>
-                  </div>
-                  <div className="bg-card border border-border rounded-lg p-6">
-                    <TrendingUp className="h-10 w-10 text-primary mb-4" />
-                    <p className="text-4xl font-bold text-primary mb-2">19%</p>
-                    <p className="text-muted-foreground">Taux de réponse moyen</p>
-                    <p className="text-sm text-muted-foreground mt-1">Largement au-dessus des standards</p>
-                  </div>
-                </div>
-
-                <div className="bg-card border border-border rounded-lg p-6">
-                  <h3 className="text-xl font-bold mb-4">Indicateurs de Performance Détaillés</h3>
-                  <div className="grid md:grid-cols-2 gap-4">
-                    <div className="flex items-center gap-3">
-                      <CheckCircle className="h-5 w-5 text-secondary flex-shrink-0" />
-                      <span><strong className="text-primary">71%</strong> de taux d'ouverture</span>
-                    </div>
-                    <div className="flex items-center gap-3">
-                      <CheckCircle className="h-5 w-5 text-secondary flex-shrink-0" />
-                      <span><strong className="text-primary">29%</strong> de taux de clic</span>
-                    </div>
-                    <div className="flex items-center gap-3">
-                      <CheckCircle className="h-5 w-5 text-secondary flex-shrink-0" />
-                      <span><strong className="text-primary">19%</strong> de taux de réponse</span>
-                    </div>
-                    <div className="flex items-center gap-3">
-                      <CheckCircle className="h-5 w-5 text-secondary flex-shrink-0" />
-                      <span><strong className="text-primary">10%</strong> de taux d'intérêt</span>
-                    </div>
-                  </div>
-                </div>
               </div>
-            </div>
-          </section>
-
-          {/* Key Learnings */}
-          <section className="py-12 md:py-16">
-            <div className="container px-4 md:px-6">
-              <div className="max-w-4xl mx-auto">
-                <h2 className="text-3xl font-bold mb-8">Résultats Clés & Enseignements</h2>
-                
-                <div className="space-y-6">
-                  <div className="bg-card border-l-4 border-l-primary p-6 rounded-r-lg">
-                    <h3 className="text-lg font-bold mb-2">1. Communication transparente</h3>
-                    <p className="text-muted-foreground">
-                      Un plan d'action bien structuré + équipe qui communique = succès de votre campagne. 
-                      Le contact régulier avec l'équipe pour résoudre immédiatement les problèmes et faire 
-                      remonter les informations précieuses est crucial.
-                    </p>
-                  </div>
-
-                  <div className="bg-card border-l-4 border-l-primary p-6 rounded-r-lg">
-                    <h3 className="text-lg font-bold mb-2">2. Langue préférée du prospect</h3>
-                    <p className="text-muted-foreground">
-                      Si vous offrez des produits à des personnes de différents pays, l'idéal est qu'elles reçoivent 
-                      des messages dans leur langue maternelle ou préférée. Cela augmente drastiquement l'engagement.
-                    </p>
-                  </div>
-
-                  <div className="bg-card border-l-4 border-l-primary p-6 rounded-r-lg">
-                    <h3 className="text-lg font-bold mb-2">3. Adaptation du message par profil</h3>
-                    <p className="text-muted-foreground">
-                      Des personnes différentes s'intéressent à des choses différentes. Les experts IT aiment la technologie, 
-                      les dirigeants veulent économiser de l'argent. Adaptez votre message en fonction de chaque interlocuteur.
-                    </p>
-                  </div>
-
-                  <div className="bg-card border-l-4 border-l-primary p-6 rounded-r-lg">
-                    <h3 className="text-lg font-bold mb-2">4. Approche systématique</h3>
-                    <p className="text-muted-foreground">
-                      Il est essentiel d'avoir une vue d'ensemble du nombre et des types d'entreprises contactables 
-                      et de celles déjà contactées pour planifier la meilleure approche dans le temps.
-                    </p>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </section>
-
-          {/* Testimonial */}
-          <section className="py-12 md:py-16 bg-muted/30">
-            <div className="container px-4 md:px-6">
-              <div className="max-w-4xl mx-auto">
-                <h2 className="text-3xl font-bold mb-8 text-center">Témoignage Client</h2>
-                
-                <div className="bg-card border border-border rounded-lg p-8 md:p-12 relative">
-                  <div className="text-6xl text-primary/20 absolute top-4 left-4">"</div>
-                  <div className="relative z-10">
-                    <p className="text-lg md:text-xl text-muted-foreground italic leading-relaxed mb-8">
-                      Charles est l'un des experts en vente les plus créatifs et les plus enthousiastes que je connaisse. 
-                      J'ai travaillé avec lui sur plusieurs campagnes. Il nous a aidés à mettre en place des campagnes de 
-                      vente hyperpersonnalisées, à atteindre des centaines de prospects et, finalement, à obtenir des 
-                      rendez-vous commerciaux qualifiés. En outre, il nous a également conseillés afin d'affiner notre 
-                      processus de vente, ce qui a été très utile pour l'ensemble du département des ventes. Je recommande 
-                      vivement ses compétences et ses services à toutes les start-up et PMEs qui souhaitent passer rapidement 
-                      à la vitesse supérieure.
-                    </p>
-                    <div className="border-t border-border pt-6">
-                      <p className="font-bold text-lg">Raphael Haut</p>
-                      <p className="text-muted-foreground">Head of Business Development & Marketing</p>
-                      <p className="text-primary font-semibold">CareerLunch</p>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </section>
-
-          {/* FAQ */}
-          <section className="py-12 md:py-16">
-            <div className="container px-4 md:px-6">
-              <div className="max-w-4xl mx-auto">
-                <h2 className="text-3xl font-bold mb-8">Questions Fréquentes</h2>
-                <div className="space-y-6">
-                  {faqs.map((faq, index) => (
-                    <div key={index} className="bg-card border border-border rounded-lg p-6">
-                      <h3 className="text-lg font-bold mb-3 text-primary">{faq.question}</h3>
-                      <p className="text-muted-foreground leading-relaxed">{faq.answer}</p>
-                    </div>
-                  ))}
-                </div>
-              </div>
-            </div>
-          </section>
-
-          {/* CTA */}
-          <section className="py-16 md:py-24 bg-gradient-to-br from-primary via-primary-dark to-primary text-primary-foreground">
-            <div className="container px-4 md:px-6">
-              <div className="max-w-4xl mx-auto text-center">
-                <h2 className="text-3xl md:text-4xl font-bold mb-6">
-                  Prêt à reproduire ces résultats pour votre entreprise ?
-                </h2>
-                <p className="text-lg md:text-xl text-primary-foreground/90 mb-8 leading-relaxed">
-                  Obtenez une consultation gratuite et sans engagement. Nous analysons votre marché, 
-                  identifions vos opportunités et vous proposons une stratégie sur mesure.
+              
+              <div className="bg-white p-6 rounded-lg shadow-sm border border-slate-200">
+                <h3 className="text-xl font-semibold text-slate-900 mb-3">
+                  Use the language your prospects actually prefer
+                </h3>
+                <p className="text-slate-600 leading-relaxed">
+                  Contacting German-speaking decision-makers in German, rather than in English for convenience, boosted engagement, reply rates and meetings.
                 </p>
-                <Button asChild size="lg" variant="secondary" className="text-lg px-8 hover-scale">
-                  <Link to="/contact">
-                    Planifier votre consultation gratuite
-                    <ArrowRight className="ml-2 h-5 w-5" />
-                  </Link>
-                </Button>
+              </div>
+              
+              <div className="bg-white p-6 rounded-lg shadow-sm border border-slate-200">
+                <h3 className="text-xl font-semibold text-slate-900 mb-3">
+                  Adapt the message to each decision-maker
+                </h3>
+                <p className="text-slate-600 leading-relaxed">
+                  HR leaders, IT experts and executives do not react to the same arguments. Tailoring the cold outreach message to the role (savings, efficiency, employer brand, etc.) is critical to increase the size of your pipeline and decrease the sales cycle duration.
+                </p>
+              </div>
+              
+              <div className="bg-white p-6 rounded-lg shadow-sm border border-slate-200">
+                <h3 className="text-xl font-semibold text-slate-900 mb-3">
+                  Systematic ICP and exclusion logic is a growth lever
+                </h3>
+                <p className="text-slate-600 leading-relaxed">
+                  Having a clear overview of your total addressable market, and excluding existing or unqualified accounts from your next campaigns, helps you focus your outbound acquisition on prospects that can actually become new B2B clients.
+                </p>
               </div>
             </div>
-          </section>
-        </main>
+          </div>
+        </section>
+
+        {/* Testimonial */}
+        <section className="py-16 px-4 bg-slate-50">
+          <div className="max-w-4xl mx-auto">
+            <div className="flex items-center mb-6">
+              <MessageSquare className="w-8 h-8 text-blue-600 mr-3" />
+              <h2 className="text-3xl font-bold text-slate-900">Client testimonial</h2>
+            </div>
+            <blockquote className="text-xl text-slate-700 italic leading-relaxed border-l-4 border-blue-600 pl-6">
+              "Charles is among the most creative and enthusiastic sales experts I know. He helped us set up hyper-personalized sales prospecting campaigns, reach hundreds of prospects and ultimately get qualified sales appointments. His advice to refine our sales process was also extremely valuable for the whole team. I highly recommend his services to startups and SMEs that want to scale their B2B sales quickly."
+            </blockquote>
+          </div>
+        </section>
+
+        {/* CTA */}
+        <section className="py-16 px-4">
+          <div className="max-w-4xl mx-auto text-center">
+            <h2 className="text-3xl font-bold text-slate-900 mb-4">
+              Want similar results for your B2B lead generation?
+            </h2>
+            <p className="text-xl text-slate-600 mb-8">
+              If you want to sign new clients, close more deals and systematically generate qualified B2B leads, you can Book a Discovery Call with our B2B sales prospecting agency and see how a personalized, multi-channel outbound campaign could work for your ICPs.
+            </p>
+            <Link
+              to="/en/contact"
+              className="inline-block bg-blue-600 text-white px-8 py-4 rounded-lg font-semibold hover:bg-blue-700 transition-colors"
+            >
+              Book a Discovery Call
+            </Link>
+          </div>
+        </section>
 
         <Footer />
       </div>
     </>
   );
-};
-
-export default CareerLunch;
+}
