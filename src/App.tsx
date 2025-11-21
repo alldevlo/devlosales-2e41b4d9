@@ -46,20 +46,19 @@ const App = () => (
             <Route path="/fr/resultats/cegos-formation-45-reponses" element={<Cegos />} />
             <Route path="/fr/resultats/squareco-identification-icp" element={<SquareCo />} />
             <Route path="/en" element={<Home />} />
-            <Route path="/en/results" element={<Results />} />
-            <Route path="/en/contact" element={<Contact />} />
-            <Route path="/en/results/careerlunch-dach-recruitment" element={<CareerLunch />} />
-            <Route path="/en/results/cortexia-tech-b2b-meetings" element={<Cortexia />} />
-            <Route path="/en/results/saporo-cybersecurity-b2b" element={<Saporo />} />
-            <Route path="/en/results/apidae-luxury-events" element={<Apidae />} />
-            <Route path="/en/results/horus-belgium-200k" element={<Horus />} />
-            <Route path="/en/results/abacus-interested-prospects" element={<Abacus />} />
-            <Route path="/en/results/hiag-real-estate-b2b" element={<Hiag />} />
-            <Route path="/en/results/manyways-consulting-70-responses" element={<ManyWays />} />
-            <Route path="/en/results/locky-interested-prospects" element={<Locky />} />
-            <Route path="/en/results/lemanvisio-qualified-meetings" element={<Lemanvisio />} />
-            <Route path="/en/results/cegos-training-45-responses" element={<Cegos />} />
-            <Route path="/en/results/squareco-icp-identification" element={<SquareCo />} />
+<Route path="/en/case-studies" element={<Results />} />
+<Route path="/en/contact" element={<Contact />} />
+<Route path="/en/case-studies/CareerLunch" element={<CareerLunch />} />
+<Route path="/en/case-studies/Cortexia" element={<Cortexia />} />
+<Route path="/en/case-studies/Saporo" element={<Saporo />} />
+<Route path="/en/case-studies/Apidae" element={<Apidae />} />
+<Route path="/en/case-studies/Horus" element={<Horus />} />
+<Route path="/en/case-studies/Hiag" element={<Hiag />} />
+<Route path="/en/case-studies/ManyWays" element={<ManyWays />} />
+<Route path="/en/case-studies/Locky" element={<Locky />} />
+<Route path="/en/case-studies/Lemanvisio" element={<Lemanvisio />} />
+<Route path="/en/case-studies/Cegos" element={<Cegos />} />
+<Route path="/en/case-studies/SquareCo" element={<SquareCo />} />
             <Route path="*" element={<NotFound />} />
           </Routes>
         </BrowserRouter>
