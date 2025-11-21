@@ -28,7 +28,7 @@ export default function Horus() {
             </Link>
             
             <img 
-              src="/CS_devlo/Logo/Asset 121.webp" 
+              src="/CS_devlo/Logo/Asset 21.webp" 
               alt="Horus Logo" 
               className="h-16 mb-6" 
             />

@@ -28,7 +28,7 @@ export default function Lemanvisio() {
             </Link>
             
             <img 
-              src="/CS_devlo/Logo/Asset 51.webp" 
+              src="/CS_devlo/Logo/Asset 15.webp" 
               alt="Lemanvisio Logo" 
               className="h-16 mb-6" 
             />

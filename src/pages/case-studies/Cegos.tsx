@@ -28,7 +28,7 @@ export default function Cegos() {
             </Link>
             
             <img 
-              src="/CS_devlo/Logo/Asset 41.webp" 
+              src="/CS_devlo/Logo/Asset 14.webp" 
               alt="Cegos Logo" 
               className="h-16 mb-6" 
             />

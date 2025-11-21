@@ -28,7 +28,7 @@ export default function Saporo() {
             </Link>
             
             <img 
-              src="/CS_devlo/Logo/Asset 61.webp" 
+              src="/CS_devlo/Logo/Asset 16.webp" 
               alt="Saporo Logo" 
               className="h-16 mb-6" 
             />

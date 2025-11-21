@@ -28,7 +28,7 @@ export default function Apidae() {
             </Link>
             
             <img 
-              src="/CS_devlo/Logo/Asset 81.webp" 
+              src="/CS_devlo/Logo/Asset 18.webp" 
               alt="Apidae Logo" 
               className="h-16 mb-6" 
             />

@@ -28,7 +28,7 @@ export default function Hiag() {
             </Link>
             
             <img 
-              src="/CS_devlo/Logo/Asset 101.webp" 
+              src="/CS_devlo/Logo/Asset 20.webp" 
               alt="Hiag Logo" 
               className="h-16 mb-6" 
             />

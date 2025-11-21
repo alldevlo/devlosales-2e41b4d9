@@ -28,7 +28,7 @@ export default function Locky() {
             </Link>
             
             <img 
-              src="/CS_devlo/Logo/Asset 91.webp" 
+              src="/CS_devlo/Logo/Asset 19.webp" 
               alt="Locky Logo" 
               className="h-16 mb-6" 
             />

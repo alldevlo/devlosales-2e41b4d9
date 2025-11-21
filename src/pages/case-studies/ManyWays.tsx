@@ -28,7 +28,7 @@ export default function ManyWays() {
             </Link>
             
             <img 
-              src="/CS_devlo/Logo/Asset 71.webp" 
+              src="/CS_devlo/Logo/Asset 17.webp" 
               alt="ManyWays Logo" 
               className="h-16 mb-6" 
             />
