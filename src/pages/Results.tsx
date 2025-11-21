@@ -10,119 +10,112 @@ const Results = () => {
   useEffect(() => {
     window.scrollTo(0, 0);
   }, []);
+  
   const caseStudies = [
     {
-      slug: "careerlunch-dach-recrutement",
-      title: "CareerLunch : 54 rendez-vous qualifiés en région DACH",
-      industry: "Ressources Humaines & Recrutement",
-      kpi1: "54 prospects qualifiés (10%)",
-      kpi2: "Taux de réponse moyen : 19%",
-      description: "Comment CareerLunch a obtenu 54 rendez-vous dans la région DACH grâce à une stratégie unique de génération de prospects B2B ciblant des entreprises jusqu'alors inconnues.",
+      component: "CareerLunch",
+      title: "CareerLunch: 54 qualified meetings in DACH region",
+      industry: "Human Resources & Recruitment",
+      kpi1: "54 qualified prospects (10%)",
+      kpi2: "Average response rate: 19%",
+      description: "How CareerLunch obtained 54 meetings in the DACH region through a unique B2B lead generation strategy targeting previously unknown companies.",
     },
     {
-      slug: "cortexia-tech-b2b-meetings",
-      title: "Cortexia : 71 rendez-vous qualifiés en CH/FR/BE",
-      industry: "Technologie B2B",
-      kpi1: "71 rendez-vous qualifiés",
-      kpi2: "Campagnes CH, France, Belgique",
-      description: "Stratégie de prospection multicanale pour une entreprise tech B2B, avec des rendez-vous qualifiés dans les grandes villes de Suisse, France et Belgique.",
+      component: "Cortexia",
+      title: "Cortexia: 71 qualified meetings in CH/FR/BE",
+      industry: "B2B Technology",
+      kpi1: "71 qualified meetings",
+      kpi2: "Campaigns CH, France, Belgium",
+      description: "Multi-channel prospecting strategy for a B2B tech company, with qualified meetings in major cities across Switzerland, France and Belgium.",
     },
     {
-      slug: "saporo-cybersecurite-b2b",
-      title: "Saporo : Cybersécurité B2B avec 81% d'open rate",
-      industry: "Cybersécurité",
-      kpi1: "81% taux d'ouverture",
-      kpi2: "54% taux de réponse, 16% meetings",
-      description: "Campagne de prospection B2B dans le secteur de la cybersécurité avec des taux d'engagement exceptionnels grâce à une approche ultra-personnalisée.",
+      component: "Saporo",
+      title: "Saporo: B2B Cybersecurity with 81% open rate",
+      industry: "Cybersecurity",
+      kpi1: "81% open rate",
+      kpi2: "54% response rate, 16% meetings",
+      description: "B2B prospecting campaign in the cybersecurity sector with exceptional engagement rates through an ultra-personalized approach.",
     },
     {
-      slug: "apidae-evenementiel-luxe",
-      title: "APIDAE : 70 rendez-vous avec UEFA, TAG Heuer, Rothschild",
-      industry: "Événementiel de Luxe",
-      kpi1: "70 rendez-vous qualifiés",
-      kpi2: "Marques prestigieuses",
-      description: "Prospection ciblée dans le secteur événementiel de luxe, générant 70 rendez-vous qualifiés avec des marques prestigieuses internationales.",
+      component: "Apidae",
+      title: "APIDAE: 70 meetings with UEFA, TAG Heuer, Rothschild",
+      industry: "Luxury Events",
+      kpi1: "70 qualified meetings",
+      kpi2: "Prestigious brands",
+      description: "Targeted prospecting in the luxury event sector, generating 70 qualified meetings with prestigious international brands.",
     },
     {
-      slug: "horus-belgique-200k",
-      title: "Horus : 200'000€ de contrats signés en Belgique",
-      industry: "Services B2B",
-      kpi1: "200'000€ de contrats",
-      kpi2: "Expansion Belgique",
-      description: "Expansion réussie sur le marché belge avec 200'000€ de contrats signés grâce à une stratégie de prospection commerciale ciblée.",
+      component: "Horus",
+      title: "Horus: €200,000 in signed contracts in Belgium",
+      industry: "B2B Services",
+      kpi1: "€200,000 in contracts",
+      kpi2: "Belgium expansion",
+      description: "Successful expansion into the Belgian market with €200,000 in signed contracts through targeted sales prospecting strategy.",
     },
     {
-      slug: "abacus-prospects-interesses",
-      title: "Abacus : +30 prospects intéressés",
-      industry: "Logiciels & Services",
-      kpi1: "+30 prospects qualifiés",
-      kpi2: "Forte conversion",
-      description: "Génération de plus de 30 prospects qualifiés et intéressés pour Abacus grâce à des campagnes de prospection multicanales personnalisées.",
+      component: "Hiag",
+      title: "HIAG: B2B real estate prospecting",
+      industry: "Commercial Real Estate",
+      kpi1: "Multi-channel campaign",
+      kpi2: "B2B real estate sector",
+      description: "Innovative prospecting strategy in the B2B real estate sector, targeting key decision-makers in commercial real estate.",
     },
     {
-      slug: "hiag-immobilier-b2b",
-      title: "HIAG : Prospection immobilière B2B",
-      industry: "Immobilier Commercial",
-      kpi1: "Campagne multicanale",
-      kpi2: "Secteur immobilier B2B",
-      description: "Stratégie de prospection innovante dans le secteur immobilier B2B, ciblant des décideurs clés dans l'immobilier commercial.",
-    },
-    {
-      slug: "manyways-consulting-70-reponses",
-      title: "Many Ways : 70% de réponses, 8% de meetings",
+      component: "ManyWays",
+      title: "Many Ways: 70% response rate, 8% meetings",
       industry: "Consulting",
-      kpi1: "70% taux de réponse",
-      kpi2: "8% taux de meetings",
-      description: "Campagne ultra-personnalisée pour un cabinet de conseil, atteignant un taux de réponse exceptionnel de 70% et 8% de meetings qualifiés.",
+      kpi1: "70% response rate",
+      kpi2: "8% meeting rate",
+      description: "Ultra-personalized campaign for a consulting firm, achieving an exceptional 70% response rate and 8% qualified meetings.",
     },
     {
-      slug: "locky-prospects-interesses",
-      title: "Locky : +40 prospects intéressés",
-      industry: "Technologie",
-      kpi1: "+40 prospects intéressés",
-      kpi2: "Fort taux d'engagement",
-      description: "Génération de plus de 40 prospects qualifiés et intéressés pour Locky grâce à une approche multicanale ciblée.",
+      component: "Locky",
+      title: "Locky: 40+ interested prospects",
+      industry: "Technology",
+      kpi1: "40+ interested prospects",
+      kpi2: "High engagement rate",
+      description: "Generation of more than 40 qualified and interested prospects for Locky through a targeted multi-channel approach.",
     },
     {
-      slug: "lemanvisio-rendez-vous-qualifies",
-      title: "Lemanvisio : 16 rendez-vous qualifiés",
-      industry: "Services Professionnels",
-      kpi1: "16 rendez-vous qualifiés",
-      kpi2: "Approche personnalisée",
-      description: "Campagne de prospection B2B ciblée générant 16 rendez-vous qualifiés avec des décideurs clés.",
+      component: "Lemanvisio",
+      title: "Lemanvisio: 16 qualified meetings",
+      industry: "Professional Services",
+      kpi1: "16 qualified meetings",
+      kpi2: "Personalized approach",
+      description: "Targeted B2B prospecting campaign generating 16 qualified meetings with key decision-makers.",
     },
     {
-      slug: "cegos-formation-45-reponses",
-      title: "Cegos : 45% de taux de réponse",
-      industry: "Formation Professionnelle",
-      kpi1: "45% taux de réponse",
-      kpi2: "Secteur formation B2B",
-      description: "Campagne de prospection dans le secteur de la formation professionnelle avec un taux de réponse exceptionnel de 45%.",
+      component: "Cegos",
+      title: "Cegos: 45% response rate",
+      industry: "Professional Training",
+      kpi1: "45% response rate",
+      kpi2: "B2B training sector",
+      description: "Prospecting campaign in the professional training sector with an exceptional 45% response rate.",
     },
     {
-      slug: "squareco-identification-icp",
-      title: "SquareCo : Identification des meilleurs ICP",
+      component: "SquareCo",
+      title: "SquareCo: Identification of best ICPs",
       industry: "Commodities Trading",
-      kpi1: "Optimisation ICP",
-      kpi2: "Stratégie affinée",
-      description: "Identification et validation des profils de clients idéaux pour SquareCo, permettant d'affiner la stratégie commerciale.",
+      kpi1: "ICP optimization",
+      kpi2: "Refined strategy",
+      description: "Identification and validation of ideal customer profiles for SquareCo, enabling refinement of commercial strategy.",
     },
   ];
 
   const stats = [
-    { icon: TrendingUp, value: "+7", label: "Années d'expérience" },
-    { icon: Users, value: "+3k", label: "Rendez-vous pris" },
-    { icon: Target, value: "+12K", label: "Prospects activés" },
-    { icon: Zap, value: "+50K", label: "Prospects contactés" },
+    { icon: TrendingUp, value: "+7", label: "Years of experience" },
+    { icon: Users, value: "+3k", label: "Meetings booked" },
+    { icon: Target, value: "+12K", label: "Prospects activated" },
+    { icon: Zap, value: "+50K", label: "Prospects contacted" },
   ];
 
   return (
     <>
       <Helmet>
-        <title>Études de Cas | Résultats de nos campagnes de prospection B2B | devlo</title>
-        <meta name="description" content="Découvrez nos études de cas de prospection commerciale B2B : +3000 rendez-vous qualifiés, 7% de prospects intéressés en moyenne, campagnes multicanales ultra-personnalisées dans tous les secteurs." />
-        <meta name="keywords" content="études de cas prospection B2B, résultats prospection commerciale, cas clients devlo, génération leads B2B, rendez-vous qualifiés, campagnes outbound" />
-        <link rel="canonical" href="https://devlo.ch/resultats" />
+        <title>Case Studies | Results of our B2B prospecting campaigns | devlo</title>
+        <meta name="description" content="Discover our B2B sales prospecting case studies: +3000 qualified meetings, 7% interested prospects on average, ultra-personalized multi-channel campaigns across all sectors." />
+        <meta name="keywords" content="B2B prospecting case studies, sales prospecting results, devlo client cases, B2B lead generation, qualified meetings, outbound campaigns" />
+        <link rel="canonical" href="https://devlo.ch/en/case-studies" />
       </Helmet>
 
       <div className="flex min-h-screen flex-col">
@@ -134,20 +127,20 @@ const Results = () => {
             <div className="container px-4 md:px-6">
               <div className="max-w-4xl mx-auto text-center">
                 <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold mb-6">
-                  Nos Résultats :{" "}
+                  Our Results:{" "}
                   <span className="bg-gradient-to-r from-secondary to-secondary-light bg-clip-text text-transparent">
-                    Études de Cas Réelles
+                    Real Case Studies
                   </span>
                 </h1>
                 
                 <p className="text-lg md:text-xl text-primary-foreground/90 leading-relaxed mb-8">
-                  Découvrez comment nous avons aidé des entreprises B2B de tous secteurs à générer des milliers de rendez-vous qualifiés 
-                  grâce à nos campagnes de prospection commerciale multicanales ultra-personnalisées.
+                  Discover how we've helped B2B companies across all sectors generate thousands of qualified meetings 
+                  through our ultra-personalized multi-channel sales prospecting campaigns.
                 </p>
 
                 <p className="text-xl font-semibold">
-                  <span className="text-secondary">7% de prospects intéressés</span> en moyenne en 2024 • 
-                  Classés parmi les meilleures agences outbound
+                  <span className="text-secondary">7% interested prospects</span> on average in 2024 • 
+                  Ranked among the best outbound agencies
                 </p>
               </div>
             </div>
@@ -178,12 +171,12 @@ const Results = () => {
             <div className="container px-4 md:px-6">
               <div className="max-w-4xl mx-auto text-center">
                 <h2 className="text-2xl md:text-3xl font-bold mb-6">
-                  Des Résultats Concrets, Mesurables et Reproductibles
+                  Concrete, Measurable and Reproducible Results
                 </h2>
                 <p className="text-lg text-muted-foreground leading-relaxed">
-                  Chaque étude de cas détaille notre méthodologie de prospection, les défis rencontrés, 
-                  la stratégie mise en place et les résultats chiffrés obtenus. Nous couvrons tous les secteurs : 
-                  <strong> technologie, cybersécurité, ressources humaines, événementiel, immobilier, consulting, formation</strong> et bien plus.
+                  Each case study details our prospecting methodology, challenges encountered, 
+                  strategy implemented and quantified results achieved. We cover all sectors: 
+                  <strong> technology, cybersecurity, human resources, events, real estate, consulting, training</strong> and more.
                 </p>
               </div>
             </div>
@@ -195,8 +188,8 @@ const Results = () => {
               <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
                 {caseStudies.map((study) => (
                   <Link
-                    key={study.slug}
-                    to={`/resultats/${study.slug}`}
+                    key={study.component}
+                    to={`/en/case-studies/${study.component}`}
                     className="group bg-card border border-border rounded-lg p-6 hover-lift hover:shadow-xl transition-all"
                   >
                     <div className="mb-4">
@@ -225,7 +218,7 @@ const Results = () => {
                     </p>
                     
                     <div className="flex items-center text-primary font-semibold text-sm group-hover:gap-2 transition-all">
-                      Découvrir l'étude de cas
+                      View case study
                       <ArrowRight className="ml-1 h-4 w-4 group-hover:translate-x-1 transition-transform" />
                     </div>
                   </Link>
@@ -239,15 +232,15 @@ const Results = () => {
             <div className="container px-4 md:px-6">
               <div className="max-w-4xl mx-auto text-center">
                 <h2 className="text-3xl md:text-4xl font-bold mb-6">
-                  Reproduire ces résultats pour votre entreprise ?
+                  Replicate these results for your company?
                 </h2>
                 <p className="text-lg md:text-xl text-primary-foreground/90 mb-8 leading-relaxed">
-                  Planifiez une consultation gratuite et sans engagement. Nous analysons votre marché, 
-                  identifions vos opportunités et vous proposons une stratégie de prospection sur mesure.
+                  Schedule a free, no-obligation consultation. We analyze your market, 
+                  identify your opportunities and propose a customized prospecting strategy.
                 </p>
                 <Button asChild size="lg" variant="secondary" className="text-lg px-8 hover-scale">
                   <Link to="/contact">
-                    Planifier votre consultation gratuite
+                    Schedule your free consultation
                     <ArrowRight className="ml-2 h-5 w-5" />
                   </Link>
                 </Button>
