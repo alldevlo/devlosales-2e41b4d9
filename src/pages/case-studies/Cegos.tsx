@@ -1,277 +1,191 @@
-import { Helmet } from "react-helmet-async";
-import { useEffect } from "react";
-import Header from "@/components/layout/Header";
-import Footer from "@/components/layout/Footer";
-import { Link } from "react-router-dom";
-import { ArrowRight, CheckCircle2 } from "lucide-react";
-import { Button } from "@/components/ui/button";
-import WistiaVideo from "@/components/WistiaVideo";
+import React from 'react';
+import { Helmet } from 'react-helmet-async';
+import { ArrowLeft, Users, Target, TrendingUp, MessageSquare } from 'lucide-react';
+import { Link } from 'react-router-dom';
+import Header from '@/components/layout/Header';
+import Footer from '@/components/layout/Footer';
 
-const Cegos = () => {
-  useEffect(() => {
-    window.scrollTo(0, 0);
-  }, []);
-
+export default function Cegos() {
   return (
     <>
       <Helmet>
-        <title>Cegos : 45% de taux de réponse en formation professionnelle | Étude de cas devlo</title>
-        <meta name="description" content="Découvrez comment Cegos a atteint un taux de réponse exceptionnel de 45% dans le secteur de la formation professionnelle B2B grâce à une campagne de prospection ultra-ciblée." />
-        <meta name="keywords" content="cegos, formation professionnelle, prospection B2B, taux réponse, génération leads formation" />
-        <link rel="canonical" href="https://devlo.ch/resultats/cegos-formation-45-reponses" />
+        <title>Learning & Development (L&D) Appointment Setting - Case Study | devlo</title>
+        <meta name="description" content="Cegos delivers professional training and learning & development (L&D) programs in Switzerland and worldwide. Many of their clients roll out ambitious, multi-country L&D initiatives, and require a reli" />
       </Helmet>
 
-      <div className="flex min-h-screen flex-col">
+      <div className="min-h-screen bg-gradient-to-b from-slate-50 to-white">
         <Header />
         
-        <main className="flex-1">
-          <section className="py-16 md:py-24 bg-gradient-to-br from-primary via-primary-dark to-primary text-primary-foreground">
-            <div className="container px-4 md:px-6">
-              <div className="max-w-4xl mx-auto">
-                <Link to="/resultats" className="inline-flex items-center text-primary-foreground/80 hover:text-primary-foreground mb-6 transition-colors">
-                  <ArrowRight className="mr-2 h-4 w-4 rotate-180" />
-                  Retour aux résultats
-                </Link>
-                
-                <div className="mb-6">
-                  <span className="inline-block px-4 py-2 text-sm font-semibold bg-secondary text-secondary-foreground rounded-full">
-                    Formation Professionnelle B2B
-                  </span>
-                </div>
-                
-                <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold mb-6">
-                  Cegos : Comment atteindre 45% de taux de réponse dans le secteur de la formation professionnelle B2B
-                </h1>
-                
-                <p className="text-xl md:text-2xl text-primary-foreground/90 mb-8">
-                  Campagne de prospection exceptionnelle dans le secteur de la formation professionnelle avec un taux de réponse de 45%, bien au-dessus des standards du marché grâce à une approche ultra-ciblée.
-                </p>
+        {/* Hero Section */}
+        <section className="pt-32 pb-16 px-4">
+          <div className="max-w-4xl mx-auto">
+            <Link 
+              to="/en/case-studies" 
+              className="inline-flex items-center text-blue-600 hover:text-blue-700 mb-8 group"
+            >
+              <ArrowLeft className="w-4 h-4 mr-2 group-hover:-translate-x-1 transition-transform" />
+              Back to Case Studies
+            </Link>
+            
+            <img 
+              src="/CS_devlo/Logo/Asset 41.webp" 
+              alt="Cegos Logo" 
+              className="h-16 mb-6" 
+            />
+            
+            <h1 className="text-4xl md:text-5xl font-bold text-slate-900 mb-6">
+              Learning & Development (L&D) Appointment Setting
+            </h1>
+            
+            <p className="text-xl text-slate-600 leading-relaxed">
+              Cegos delivers professional training and learning & development (L&D) programs in Switzerland and worldwide. Many of their clients roll out ambitious, multi-country L&D initiatives, and require a reli
+            </p>
+          </div>
+        </section>
 
-                <div className="bg-primary-foreground/10 backdrop-blur-sm rounded-lg p-6">
-                  <div className="text-5xl font-bold text-secondary mb-2">45%</div>
-                  <div className="text-primary-foreground/90">Taux de réponse exceptionnel</div>
-                </div>
+        {/* Stats */}
+        <section className="py-12 px-4 bg-blue-50">
+          <div className="max-w-4xl mx-auto">
+            <div className="grid grid-cols-2 md:grid-cols-4 gap-8">
+              <div className="text-center">
+                <div className="text-3xl md:text-4xl font-bold text-blue-600 mb-2">73%</div>
+                <div className="text-slate-600">Open Rate</div>
+              </div>
+              <div className="text-center">
+                <div className="text-3xl md:text-4xl font-bold text-blue-600 mb-2">45%</div>
+                <div className="text-slate-600">Reply Rate</div>
+              </div>
+              <div className="text-center">
+                <div className="text-3xl md:text-4xl font-bold text-blue-600 mb-2">22%</div>
+                <div className="text-slate-600">Click Rate</div>
+              </div>
+              <div className="text-center">
+                <div className="text-3xl md:text-4xl font-bold text-blue-600 mb-2">14</div>
+                <div className="text-slate-600">Meetings Booked</div>
               </div>
             </div>
-          </section>
+          </div>
+        </section>
 
-          <section className="py-16 md:py-20 bg-background">
-            <div className="container px-4 md:px-6">
-              <div className="max-w-4xl mx-auto">
-                <h2 className="text-3xl md:text-4xl font-bold mb-8">Contexte & Profil de l'entreprise</h2>
-                
-                <p className="text-lg text-muted-foreground leading-relaxed mb-6">
-                  Cegos est un acteur majeur de la formation professionnelle en Europe. Dans un marché où les entreprises reçoivent constamment des sollicitations de la part d'organismes de formation, Cegos cherchait à se démarquer et à générer un engagement significatif auprès des décideurs RH et formation.
-                </p>
-
-                <div className="bg-card border border-border rounded-lg p-8 mt-8">
-                  <h3 className="text-xl font-bold mb-4">Témoignage client vidéo</h3>
-                  <WistiaVideo 
-                    mediaId="knadmb8za5" 
-                    className="mb-4"
-                  />
-                  <p className="text-muted-foreground italic">
-                    Découvrez le témoignage complet de Cegos sur les résultats exceptionnels obtenus avec devlo dans le secteur de la formation professionnelle.
-                  </p>
-                </div>
-              </div>
+        {/* Content Sections */}
+        
+        {/* About Section */}
+        <section className="py-16 px-4 ">
+          <div className="max-w-4xl mx-auto">
+            <div className="flex items-center mb-6">
+              <Users className="w-8 h-8 text-blue-600 mr-3" />
+              <h2 className="text-3xl font-bold text-slate-900">About</h2>
             </div>
-          </section>
-
-          <section className="py-16 md:py-20 bg-muted/30">
-            <div className="container px-4 md:px-6">
-              <div className="max-w-4xl mx-auto">
-                <h2 className="text-3xl md:text-4xl font-bold mb-8">Problématique (avant devlo)</h2>
-                
-                <div className="bg-card border border-border rounded-lg p-8">
-                  <div className="space-y-6">
-                    <div>
-                      <h3 className="text-xl font-semibold mb-3 text-foreground">1. Marché saturé de sollicitations</h3>
-                      <p className="text-muted-foreground">
-                        Les DRH et responsables formation reçoivent quotidiennement des dizaines d'emails d'organismes de formation, créant une forte lassitude et méfiance envers les approches commerciales.
-                      </p>
-                    </div>
-
-                    <div>
-                      <h3 className="text-xl font-semibold mb-3 text-foreground">2. Difficulté à se différencier</h3>
-                      <p className="text-muted-foreground">
-                        Dans un marché avec de nombreux acteurs proposant des offres similaires, il était crucial de trouver un angle de différenciation fort pour capter l'attention.
-                      </p>
-                    </div>
-
-                    <div>
-                      <h3 className="text-xl font-semibold mb-3 text-foreground">3. Cycles de décision longs</h3>
-                      <p className="text-muted-foreground">
-                        Les décisions en matière de formation professionnelle impliquent souvent plusieurs parties prenantes et des budgets annuels déjà planifiés, rallongeant les cycles de vente.
-                      </p>
-                    </div>
-                  </div>
-                </div>
-              </div>
+            <div className="prose prose-lg max-w-none">
+              <p className="text-slate-600 leading-relaxed mb-4">
+                Cegos delivers professional training and learning & development (L&D) programs in Switzerland and worldwide. Many of their clients roll out ambitious, multi-country L&D initiatives, and require a reliable B2B client acquisition engine.
+              </p>
             </div>
-          </section>
-
-          <section className="py-16 md:py-20 bg-background">
-            <div className="container px-4 md:px-6">
-              <div className="max-w-4xl mx-auto">
-                <h2 className="text-3xl md:text-4xl font-bold mb-8">Stratégie mise en place</h2>
-
-                <div className="bg-gradient-to-br from-primary/5 to-secondary/5 rounded-lg p-8 border border-border">
-                  <h3 className="text-2xl font-bold mb-6 text-foreground">
-                    Approche ultra-ciblée et valeur immédiate
-                  </h3>
-                  
-                  <div className="space-y-4">
-                    <div className="flex items-start gap-4">
-                      <div className="flex items-center justify-center w-10 h-10 rounded-full bg-primary text-primary-foreground font-bold shrink-0">1</div>
-                      <div>
-                        <h4 className="font-semibold mb-2 text-foreground">Ciblage ultra-précis</h4>
-                        <p className="text-muted-foreground">
-                          Segmentation fine des prospects selon le secteur d'activité, la taille de l'entreprise, les besoins de formation identifiés et le timing budgétaire.
-                        </p>
-                      </div>
-                    </div>
-
-                    <div className="flex items-start gap-4">
-                      <div className="flex items-center justify-center w-10 h-10 rounded-full bg-primary text-primary-foreground font-bold shrink-0">2</div>
-                      <div>
-                        <h4 className="font-semibold mb-2 text-foreground">Messages axés sur la valeur immédiate</h4>
-                        <p className="text-muted-foreground">
-                          Plutôt que de présenter un catalogue de formations, les messages offraient des insights sur les tendances RH, les défis de formation spécifiques au secteur du prospect et des solutions concrètes.
-                        </p>
-                      </div>
-                    </div>
-
-                    <div className="flex items-start gap-4">
-                      <div className="flex items-center justify-center w-10 h-10 rounded-full bg-primary text-primary-foreground font-bold shrink-0">3</div>
-                      <div>
-                        <h4 className="font-semibold mb-2 text-foreground">Personnalisation extrême</h4>
-                        <p className="text-muted-foreground">
-                          Chaque message mentionnait des éléments spécifiques : initiatives RH récentes de l'entreprise, challenges du secteur, évolutions réglementaires impactant la formation.
-                        </p>
-                      </div>
-                    </div>
-
-                    <div className="flex items-start gap-4">
-                      <div className="flex items-center justify-center w-10 h-10 rounded-full bg-primary text-primary-foreground font-bold shrink-0">4</div>
-                      <div>
-                        <h4 className="font-semibold mb-2 text-foreground">Approche consultative</h4>
-                        <p className="text-muted-foreground">
-                          Positionnement comme partenaire conseil plutôt que comme simple fournisseur, en proposant un échange sur les enjeux de formation avant de parler de solutions.
-                        </p>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              </div>
+          </div>
+        </section>
+        
+        {/* Challenge Section */}
+        <section className="py-16 px-4 bg-slate-50">
+          <div className="max-w-4xl mx-auto">
+            <div className="flex items-center mb-6">
+              <Target className="w-8 h-8 text-blue-600 mr-3" />
+              <h2 className="text-3xl font-bold text-slate-900">Cegos was already well known in French-speaking Switzerland, thanks to the French origins of the Cegos Group. Their goal was to:</h2>
             </div>
-          </section>
-
-          <section className="py-16 md:py-20 bg-muted/30">
-            <div className="container px-4 md:px-6">
-              <div className="max-w-4xl mx-auto">
-                <h2 className="text-3xl md:text-4xl font-bold mb-8">Résultats exceptionnels</h2>
-                
-                <div className="bg-gradient-to-br from-secondary/10 to-primary/10 rounded-lg p-8 border border-secondary/20 mb-8">
-                  <p className="text-xl font-semibold mb-6 text-foreground">
-                    Un taux de réponse exceptionnel de 45% dans le secteur de la formation professionnelle B2B.
-                  </p>
-                  
-                  <div className="text-center mb-6">
-                    <div className="text-6xl font-bold text-secondary mb-2">45%</div>
-                    <div className="text-muted-foreground font-semibold text-lg">Taux de réponse</div>
-                    <div className="text-sm text-muted-foreground mt-2">(vs 5-10% standard dans le secteur)</div>
-                  </div>
-                </div>
-
-                <div className="bg-card border border-border rounded-lg p-8">
-                  <h3 className="text-2xl font-bold mb-4">Impact Business</h3>
-                  <ul className="space-y-3">
-                    <li className="flex items-start gap-3">
-                      <CheckCircle2 className="h-6 w-6 text-secondary shrink-0 mt-1" />
-                      <span className="text-muted-foreground">
-                        <strong className="text-foreground">Engagement exceptionnel</strong> avec 45% des prospects contactés répondant positivement
-                      </span>
-                    </li>
-                    <li className="flex items-start gap-3">
-                      <CheckCircle2 className="h-6 w-6 text-secondary shrink-0 mt-1" />
-                      <span className="text-muted-foreground">
-                        <strong className="text-foreground">Pipeline qualifié rempli</strong> avec des opportunités à forte valeur ajoutée
-                      </span>
-                    </li>
-                    <li className="flex items-start gap-3">
-                      <CheckCircle2 className="h-6 w-6 text-secondary shrink-0 mt-1" />
-                      <span className="text-muted-foreground">
-                        <strong className="text-foreground">Positionnement différenciant</strong> comme partenaire conseil plutôt que simple fournisseur
-                      </span>
-                    </li>
-                  </ul>
-                </div>
-              </div>
+            <div className="prose prose-lg max-w-none">
+              <ul className="text-slate-600 space-y-2 mb-4">
+                <li>Expand into German-speaking Switzerland</li>
+                <li>Book B2B meetings with L&D decision-makers in a limited number of highly qualified companies</li>
+                <li>Outsource part of their sales prospecting and B2B lead generation to a specialized agency</li>
+              </ul>
+              <p className="text-slate-600 leading-relaxed mb-4">
+                The target market was small, so every qualified prospect mattered. The outreach had to be ultra-targeted and carefully personalized to ensure a high reply rate and strong lead qualification.
+              </p>
             </div>
-          </section>
-
-          <section className="py-16 md:py-20 bg-background">
-            <div className="container px-4 md:px-6">
-              <div className="max-w-4xl mx-auto">
-                <h2 className="text-3xl md:text-4xl font-bold mb-8">Principaux enseignements</h2>
-                
-                <div className="space-y-6">
-                  <div className="bg-card border-l-4 border-secondary p-6 rounded-r-lg">
-                    <h3 className="text-xl font-semibold mb-3 text-foreground">
-                      1. La valeur avant la vente dans un marché saturé
-                    </h3>
-                    <p className="text-muted-foreground">
-                      Dans un secteur où les prospects sont sur-sollicités, offrir de la valeur immédiate (insights, analyses, conseils) avant de parler de produits est le meilleur moyen de capter l'attention et de susciter l'engagement.
-                    </p>
-                  </div>
-
-                  <div className="bg-card border-l-4 border-secondary p-6 rounded-r-lg">
-                    <h3 className="text-xl font-semibold mb-3 text-foreground">
-                      2. La personnalisation est le prix d'entrée
-                    </h3>
-                    <p className="text-muted-foreground">
-                      Avec un taux de réponse de 45%, la personnalisation extrême de chaque message (initiatives RH de l'entreprise, challenges sectoriels, contexte spécifique) s'est avérée être un facteur clé de succès incontournable.
-                    </p>
-                  </div>
-
-                  <div className="bg-card border-l-4 border-secondary p-6 rounded-r-lg">
-                    <h3 className="text-xl font-semibold mb-3 text-foreground">
-                      3. Le positionnement consultatif crée la confiance
-                    </h3>
-                    <p className="text-muted-foreground">
-                      Se positionner comme un partenaire conseil qui comprend les enjeux RH plutôt que comme un simple vendeur de formations a considérablement augmenté le niveau de confiance et d'ouverture des prospects.
-                    </p>
-                  </div>
-                </div>
-              </div>
+          </div>
+        </section>
+        
+        {/* Strategy Section */}
+        <section className="py-16 px-4 ">
+          <div className="max-w-4xl mx-auto">
+            <div className="flex items-center mb-6">
+              <TrendingUp className="w-8 h-8 text-blue-600 mr-3" />
+              <h2 className="text-3xl font-bold text-slate-900">The Strategy</h2>
             </div>
-          </section>
-
-          <section className="py-16 md:py-24 bg-gradient-to-br from-primary via-primary-dark to-primary text-primary-foreground">
-            <div className="container px-4 md:px-6">
-              <div className="max-w-4xl mx-auto text-center">
-                <h2 className="text-3xl md:text-4xl font-bold mb-6">
-                  Prêt à transformer vos taux d'engagement ?
-                </h2>
-                <p className="text-lg md:text-xl text-primary-foreground/90 mb-8">
-                  Découvrez comment devlo peut vous aider à atteindre des taux de réponse exceptionnels avec des campagnes de prospection ultra-ciblées.
-                </p>
-                <Button asChild size="lg" variant="secondary" className="text-lg px-8">
-                  <Link to="/contact">
-                    Planifier ma consultation gratuite
-                    <ArrowRight className="ml-2 h-5 w-5" />
-                  </Link>
-                </Button>
-              </div>
+            <div className="prose prose-lg max-w-none">
+              <p className="text-slate-600 leading-relaxed mb-4">
+                If you sell training for B2B sales reps, SDRs, BDRs or other corporate learners, you likely face similar challenges: narrow ICPs, long sales cycles and a limited number of high-value accounts.
+              </p>
+              <p className="text-slate-600 leading-relaxed mb-4">
+                A structured B2B sales development program, driven by a B2B sales prospecting agency, can help you:
+              </p>
+              <ul className="text-slate-600 space-y-2 mb-4">
+                <li>Clarify your ICPs</li>
+                <li>Build the right database</li>
+                <li>Design a cold outreach strategy that speaks your prospects’ language</li>
+                <li>Turn a small market into a predictable engine of B2B new clients acquisition</li>
+              </ul>
             </div>
-          </section>
-        </main>
+          </div>
+        </section>
+        
+        {/* Results Section */}
+        <section className="py-16 px-4 bg-slate-50">
+          <div className="max-w-4xl mx-auto">
+            <div className="flex items-center mb-6">
+              <TrendingUp className="w-8 h-8 text-blue-600 mr-3" />
+              <h2 className="text-3xl font-bold text-slate-900">The Cegos campaign delivered:</h2>
+            </div>
+            <div className="prose prose-lg max-w-none">
+              <ul className="text-slate-600 space-y-2 mb-4">
+                <li>73% open rate</li>
+                <li>22% click rate</li>
+                <li>45% reply rate</li>
+                <li>5% meeting rate (14 qualified demos booked in just a few weeks)</li>
+              </ul>
+              <p className="text-slate-600 leading-relaxed mb-4">
+                For such a narrow B2B target, this performance confirmed that a personalized multi-channel outbound campaign is one of the best ways to increase the size of your pipeline with a limited list of accounts.
+              </p>
+              <p className="text-slate-600 leading-relaxed mb-4">
+                Client testimonial
+              </p>
+              <p className="text-slate-600 leading-relaxed mb-4">
+                “devlo was clearly prepared. The process with the series of emails, the series of calls and the personalization at each step was extremely well done. Their transparent approach convinced me. I’m very happy with the results: we have already signed a few contracts. I wasn’t expecting immediate results, but the quality of contacts, the conversations and the deals closed so far are very good results for me.”
+              </p>
+            </div>
+          </div>
+        </section>
+        
+        {/* Key Takeaways */}
+        <section className="py-16 px-4 bg-slate-50">
+          <div className="max-w-4xl mx-auto">
+            <h2 className="text-3xl font-bold text-slate-900 mb-8">
+              Key Takeaways
+            </h2>
+            <div className="grid gap-6">
+            </div>
+          </div>
+        </section>
+        
+        {/* CTA */}
+        <section className="py-16 px-4 bg-slate-50">
+          <div className="max-w-4xl mx-auto text-center">
+            <h2 className="text-3xl font-bold text-slate-900 mb-4">
+              Ready to achieve similar results?
+            </h2>
+            <p className="text-xl text-slate-600 mb-8">
+              Book a discovery call with our B2B sales prospecting agency to see how we can help you generate qualified leads and close more deals.
+            </p>
+            <Link
+              to="/en/contact"
+              className="inline-block bg-blue-600 text-white px-8 py-4 rounded-lg font-semibold hover:bg-blue-700 transition-colors"
+            >
+              Book a Discovery Call
+            </Link>
+          </div>
+        </section>
 
         <Footer />
       </div>
     </>
   );
-};
-
-export default Cegos;
+}

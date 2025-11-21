@@ -1,184 +1,225 @@
-import { Helmet } from "react-helmet-async";
-import { useEffect } from "react";
-import Header from "@/components/layout/Header";
-import Footer from "@/components/layout/Footer";
-import { Link } from "react-router-dom";
-import { ArrowRight, CheckCircle2, Building2 } from "lucide-react";
-import { Button } from "@/components/ui/button";
+import React from 'react';
+import { Helmet } from 'react-helmet-async';
+import { ArrowLeft, Users, Target, TrendingUp, MessageSquare } from 'lucide-react';
+import { Link } from 'react-router-dom';
+import Header from '@/components/layout/Header';
+import Footer from '@/components/layout/Footer';
 
-const Hiag = () => {
-  useEffect(() => {
-    window.scrollTo(0, 0);
-  }, []);
-
+export default function Hiag() {
   return (
     <>
       <Helmet>
-        <title>HIAG : Prospection immobilière B2B multicanale | Étude de cas devlo</title>
-        <meta name="description" content="Découvrez comment HIAG a réussi sa campagne de prospection B2B dans le secteur immobilier commercial grâce à une stratégie multicanale innovante mise en place par devlo." />
-        <meta name="keywords" content="hiag, immobilier commercial, prospection B2B immobilier, génération leads immobilier" />
-        <link rel="canonical" href="https://devlo.ch/resultats/hiag-immobilier-b2b" />
+        <title>Filling a Commercial Building with Qualified Tenants - Case Study | devlo</title>
+        <meta name="description" content="HIAG is a leading real estate company that develops and operates complex sites and commercial properties across Switzerland. Fahrwerk Winterthur is one of its flagship projects: a modern commercial bu" />
       </Helmet>
 
-      <div className="flex min-h-screen flex-col">
+      <div className="min-h-screen bg-gradient-to-b from-slate-50 to-white">
         <Header />
         
-        <main className="flex-1">
-          <section className="py-16 md:py-24 bg-gradient-to-br from-primary via-primary-dark to-primary text-primary-foreground">
-            <div className="container px-4 md:px-6">
-              <div className="max-w-4xl mx-auto">
-                <Link to="/resultats" className="inline-flex items-center text-primary-foreground/80 hover:text-primary-foreground mb-6 transition-colors">
-                  <ArrowRight className="mr-2 h-4 w-4 rotate-180" />
-                  Retour aux résultats
-                </Link>
-                
-                <div className="mb-6">
-                  <span className="inline-block px-4 py-2 text-sm font-semibold bg-secondary text-secondary-foreground rounded-full">
-                    Immobilier Commercial B2B
-                  </span>
-                </div>
-                
-                <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold mb-6">
-                  HIAG : Stratégie de prospection innovante dans l'immobilier commercial B2B
-                </h1>
-                
-                <p className="text-xl md:text-2xl text-primary-foreground/90 mb-8">
-                  Campagne de prospection multicanale dans le secteur de l'immobilier commercial B2B, ciblant des décideurs clés pour des projets immobiliers à forte valeur ajoutée.
+        {/* Hero Section */}
+        <section className="pt-32 pb-16 px-4">
+          <div className="max-w-4xl mx-auto">
+            <Link 
+              to="/en/case-studies" 
+              className="inline-flex items-center text-blue-600 hover:text-blue-700 mb-8 group"
+            >
+              <ArrowLeft className="w-4 h-4 mr-2 group-hover:-translate-x-1 transition-transform" />
+              Back to Case Studies
+            </Link>
+            
+            <img 
+              src="/CS_devlo/Logo/Asset 101.webp" 
+              alt="Hiag Logo" 
+              className="h-16 mb-6" 
+            />
+            
+            <h1 className="text-4xl md:text-5xl font-bold text-slate-900 mb-6">
+              Filling a Commercial Building with Qualified Tenants
+            </h1>
+            
+            <p className="text-xl text-slate-600 leading-relaxed">
+              HIAG is a leading real estate company that develops and operates complex sites and commercial properties across Switzerland. Fahrwerk Winterthur is one of its flagship projects: a modern commercial bu
+            </p>
+          </div>
+        </section>
+
+        {/* Stats */}
+        <section className="py-12 px-4 bg-blue-50">
+          <div className="max-w-4xl mx-auto">
+            <div className="grid grid-cols-2 md:grid-cols-4 gap-8">
+              <div className="text-center">
+                <div className="text-3xl md:text-4xl font-bold text-blue-600 mb-2">622</div>
+                <div className="text-slate-600">Leads Contacted</div>
+              </div>
+              <div className="text-center">
+                <div className="text-3xl md:text-4xl font-bold text-blue-600 mb-2">87%</div>
+                <div className="text-slate-600">Open Rate</div>
+              </div>
+              <div className="text-center">
+                <div className="text-3xl md:text-4xl font-bold text-blue-600 mb-2">73%</div>
+                <div className="text-slate-600">Reply Rate</div>
+              </div>
+              <div className="text-center">
+                <div className="text-3xl md:text-4xl font-bold text-blue-600 mb-2">11</div>
+                <div className="text-slate-600">Qualified Tenants</div>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        {/* Content Sections */}
+        
+        {/* About Section */}
+        <section className="py-16 px-4 ">
+          <div className="max-w-4xl mx-auto">
+            <div className="flex items-center mb-6">
+              <Users className="w-8 h-8 text-blue-600 mr-3" />
+              <h2 className="text-3xl font-bold text-slate-900">About</h2>
+            </div>
+            <div className="prose prose-lg max-w-none">
+              <p className="text-slate-600 leading-relaxed mb-4">
+                HIAG is a leading real estate company that develops and operates complex sites and commercial properties across Switzerland. Fahrwerk Winterthur is one of its flagship projects: a modern commercial building located in Winterthur and designed for companies needing office or warehouse space.
+              </p>
+              <p className="text-slate-600 leading-relaxed mb-4">
+                To accelerate **tenant acquisition**, HIAG decided to **outsource its business development** to devlo, a **B2B sales prospecting agency** specialised in **outbound acquisition**, **lead qualification** and **appointment setting**.
+              </p>
+            </div>
+          </div>
+        </section>
+        
+        {/* Challenge Section */}
+        <section className="py-16 px-4 bg-slate-50">
+          <div className="max-w-4xl mx-auto">
+            <div className="flex items-center mb-6">
+              <Target className="w-8 h-8 text-blue-600 mr-3" />
+              <h2 className="text-3xl font-bold text-slate-900">The Challenge</h2>
+            </div>
+            <div className="prose prose-lg max-w-none">
+              <ul className="text-slate-600 space-y-2 mb-4">
+                <li>Operate mainly in German‑speaking Switzerland</li>
+                <li>Have a realistic need to relocate or open a new office or warehouse near Winterthur</li>
+                <li>Are large enough to rent substantial space and commit to a long‑term contract</li>
+              </ul>
+              <p className="text-slate-600 leading-relaxed mb-4">
+                Reaching the right facility managers, CEOs and expansion managers required more than simple list building. It required precise **prospecting** and contextual qualification.
+              </p>
+            </div>
+          </div>
+        </section>
+        
+        {/* Strategy Section */}
+        <section className="py-16 px-4 ">
+          <div className="max-w-4xl mx-auto">
+            <div className="flex items-center mb-6">
+              <TrendingUp className="w-8 h-8 text-blue-600 mr-3" />
+              <h2 className="text-3xl font-bold text-slate-900">The Strategy</h2>
+            </div>
+            <div className="prose prose-lg max-w-none">
+              <div className="mb-6">
+                <h3 className="text-xl font-semibold text-slate-900 mb-3">1. Identify the correct ICP and build the database</h3>
+                <p className="text-slate-600 leading-relaxed"></p>
+              </div>
+              <p className="text-slate-600 leading-relaxed mb-4">
+                We defined the ICP as companies:
+              </p>
+              <ul className="text-slate-600 space-y-2 mb-4">
+                <li>With activities compatible with the building (logistics, light industry, offices)</li>
+                <li>Located in German‑speaking Switzerland and/or already present near Winterthur</li>
+                <li>With possible expansion needs</li>
+              </ul>
+              <p className="text-slate-600 leading-relaxed mb-4">
+                Our **database creation** team identified 605 leads from various sectors that matched these criteria. For each company, we researched the most relevant decision‑makers: real estate managers, operations directors, CEOs and expansion leaders.
+              </p>
+              <div className="mb-6">
+                <h3 className="text-xl font-semibold text-slate-900 mb-3">2. Qualify potential interest and import into the CRM</h3>
+                <p className="text-slate-600 leading-relaxed"></p>
+              </div>
+              <p className="text-slate-600 leading-relaxed mb-4">
+                We collected and verified information about each lead, such as locations, expansion projects and approximate size. All validated leads were imported into the CRM with clear tags and a tailored **cold outreach** sequence adapted to HIAG’s messaging.
+              </p>
+              <div className="mb-6">
+                <h3 className="text-xl font-semibold text-slate-900 mb-3">3. Launch a structured cold outreach campaign</h3>
+                <p className="text-slate-600 leading-relaxed"></p>
+              </div>
+              <p className="text-slate-600 leading-relaxed mb-4">
+                We then launched a **multi‑channel prospecting** campaign focused on:
+              </p>
+              <ul className="text-slate-600 space-y-2 mb-4">
+                <li>**Cold emails** explaining the benefits of Fahrwerk Winterthur (location, flexibility, infrastructure)</li>
+                <li>Follow‑up messages to answer objections and clarify next steps</li>
+                <li>Occasional **cold calls** to the warmest leads to accelerate decision‑making</li>
+              </ul>
+              <p className="text-slate-600 leading-relaxed mb-4">
+                Every outreach touchpoint was designed to quickly qualify whether the company had any interest in relocating or opening a new site in the region.
+              </p>
+            </div>
+          </div>
+        </section>
+        
+        {/* Results Section */}
+        <section className="py-16 px-4 bg-slate-50">
+          <div className="max-w-4xl mx-auto">
+            <div className="flex items-center mb-6">
+              <TrendingUp className="w-8 h-8 text-blue-600 mr-3" />
+              <h2 className="text-3xl font-bold text-slate-900">Out of the 622 leads contacted, the campaign delivered:</h2>
+            </div>
+            <div className="prose prose-lg max-w-none">
+              <ul className="text-slate-600 space-y-2 mb-4">
+                <li>**87% open rate**</li>
+                <li>**26% click rate**</li>
+                <li>**73% reply rate**</li>
+                <li>**11 qualified tenants** who explicitly expressed interest and booked a meeting</li>
+              </ul>
+              <p className="text-slate-600 leading-relaxed mb-4">
+                Although the percentage of interested companies may appear low, the **quality** of these leads is extremely high: each represents a potential multi‑year rental contract and significant revenue for HIAG.
+              </p>
+            </div>
+          </div>
+        </section>
+        
+        {/* Key Takeaways */}
+        <section className="py-16 px-4 bg-slate-50">
+          <div className="max-w-4xl mx-auto">
+            <h2 className="text-3xl font-bold text-slate-900 mb-8">
+              Key Takeaways
+            </h2>
+            <div className="grid gap-6">
+              <div className="bg-white p-6 rounded-lg shadow-sm border border-slate-200">
+                <p className="text-slate-600 leading-relaxed">
+                  - **Identifying the right ICP is critical**: contacting companies with no relocation plans would have wasted time and damaged deliverability. Rigorous ICP work helped focus the campaign on realistic opportunities.
+- High engagement is not enough; qualification is essential to ensure that your **B2B sales pipeline** contains real potential deals.
+- A **B2B sales prospecting agency** can help real estate developers **generate B2B sales** opportunities with the right companies and **decrease the sales cycle duration** by pre‑qualifying leads before site visits.
+                </p>
+              </div>
+              <div className="bg-white p-6 rounded-lg shadow-sm border border-slate-200">
+                <p className="text-slate-600 leading-relaxed">
+                  If you are developing a commercial building or business park and need a predictable flow of potential tenants, a structured **cold outreach strategy** and **multi‑channel prospecting** can help you **sign new clients** faster and secure long‑term occupancy.
                 </p>
               </div>
             </div>
-          </section>
-
-          <section className="py-16 md:py-20 bg-background">
-            <div className="container px-4 md:px-6">
-              <div className="max-w-4xl mx-auto">
-                <h2 className="text-3xl md:text-4xl font-bold mb-8">Contexte & Profil de l'entreprise</h2>
-                
-                <p className="text-lg text-muted-foreground leading-relaxed mb-6">
-                  HIAG est un acteur majeur de l'immobilier commercial en Suisse, spécialisé dans le développement et la commercialisation d'espaces commerciaux et industriels. Dans un marché où les cycles de décision sont longs et les montants d'investissement élevés, HIAG cherchait à identifier et à engager des prospects qualifiés pour ses projets immobiliers.
-                </p>
-
-                <h3 className="text-2xl font-bold mt-8 mb-4">Profils de Clients Idéaux</h3>
-                <ul className="space-y-3">
-                  <li className="flex items-start gap-3">
-                    <Building2 className="h-6 w-6 text-secondary shrink-0 mt-1" />
-                    <span className="text-muted-foreground">Directeurs immobiliers d'entreprises en expansion</span>
-                  </li>
-                  <li className="flex items-start gap-3">
-                    <Building2 className="h-6 w-6 text-secondary shrink-0 mt-1" />
-                    <span className="text-muted-foreground">Investisseurs immobiliers commerciaux</span>
-                  </li>
-                  <li className="flex items-start gap-3">
-                    <Building2 className="h-6 w-6 text-secondary shrink-0 mt-1" />
-                    <span className="text-muted-foreground">Responsables de développement immobilier</span>
-                  </li>
-                </ul>
-              </div>
-            </div>
-          </section>
-
-          <section className="py-16 md:py-20 bg-muted/30">
-            <div className="container px-4 md:px-6">
-              <div className="max-w-4xl mx-auto">
-                <h2 className="text-3xl md:text-4xl font-bold mb-8">Stratégie mise en place</h2>
-
-                <div className="bg-gradient-to-br from-primary/5 to-secondary/5 rounded-lg p-8 border border-border">
-                  <h3 className="text-2xl font-bold mb-6 text-foreground">
-                    Campagne multicanale ciblée
-                  </h3>
-                  
-                  <div className="space-y-4">
-                    <div className="flex items-start gap-4">
-                      <div className="flex items-center justify-center w-10 h-10 rounded-full bg-primary text-primary-foreground font-bold shrink-0">1</div>
-                      <div>
-                        <h4 className="font-semibold mb-2 text-foreground">Identification des décideurs immobiliers</h4>
-                        <p className="text-muted-foreground">
-                          Cartographie des décideurs clés dans les entreprises en expansion, les sociétés d'investissement immobilier et les groupes industriels à la recherche de nouveaux espaces.
-                        </p>
-                      </div>
-                    </div>
-
-                    <div className="flex items-start gap-4">
-                      <div className="flex items-center justify-center w-10 h-10 rounded-full bg-primary text-primary-foreground font-bold shrink-0">2</div>
-                      <div>
-                        <h4 className="font-semibold mb-2 text-foreground">Approche multicanale coordonnée</h4>
-                        <p className="text-muted-foreground">
-                          Combinaison d'emails personnalisés, d'appels de prospection ciblés et de messages LinkedIn pour créer une présence cohérente auprès des prospects.
-                        </p>
-                      </div>
-                    </div>
-
-                    <div className="flex items-start gap-4">
-                      <div className="flex items-center justify-center w-10 h-10 rounded-full bg-primary text-primary-foreground font-bold shrink-0">3</div>
-                      <div>
-                        <h4 className="font-semibold mb-2 text-foreground">Messages axés sur les besoins immobiliers</h4>
-                        <p className="text-muted-foreground">
-                          Focus sur les enjeux spécifiques : expansion, optimisation des coûts immobiliers, localisation stratégique, infrastructures modernes.
-                        </p>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </section>
-
-          <section className="py-16 md:py-20 bg-background">
-            <div className="container px-4 md:px-6">
-              <div className="max-w-4xl mx-auto">
-                <h2 className="text-3xl md:text-4xl font-bold mb-8">Impact & Résultats</h2>
-                
-                <div className="bg-card border border-border rounded-lg p-8">
-                  <h3 className="text-2xl font-bold mb-4">Réussites clés</h3>
-                  <ul className="space-y-3">
-                    <li className="flex items-start gap-3">
-                      <CheckCircle2 className="h-6 w-6 text-secondary shrink-0 mt-1" />
-                      <span className="text-muted-foreground">
-                        <strong className="text-foreground">Pipeline de prospects qualifiés</strong> dans l'immobilier commercial B2B
-                      </span>
-                    </li>
-                    <li className="flex items-start gap-3">
-                      <CheckCircle2 className="h-6 w-6 text-secondary shrink-0 mt-1" />
-                      <span className="text-muted-foreground">
-                        <strong className="text-foreground">Approche multicanale validée</strong> pour un secteur avec des cycles de vente longs
-                      </span>
-                    </li>
-                    <li className="flex items-start gap-3">
-                      <CheckCircle2 className="h-6 w-6 text-secondary shrink-0 mt-1" />
-                      <span className="text-muted-foreground">
-                        <strong className="text-foreground">Engagement des décideurs</strong> immobiliers de grandes entreprises
-                      </span>
-                    </li>
-                  </ul>
-                </div>
-              </div>
-            </div>
-          </section>
-
-          <section className="py-16 md:py-24 bg-gradient-to-br from-primary via-primary-dark to-primary text-primary-foreground">
-            <div className="container px-4 md:px-6">
-              <div className="max-w-4xl mx-auto text-center">
-                <h2 className="text-3xl md:text-4xl font-bold mb-6">
-                  Vous développez des projets immobiliers B2B ?
-                </h2>
-                <p className="text-lg md:text-xl text-primary-foreground/90 mb-8">
-                  Découvrez comment devlo peut vous aider à identifier et engager les bons décideurs pour vos projets immobiliers.
-                </p>
-                <Button asChild size="lg" variant="secondary" className="text-lg px-8">
-                  <Link to="/contact">
-                    Planifier ma consultation gratuite
-                    <ArrowRight className="ml-2 h-5 w-5" />
-                  </Link>
-                </Button>
-              </div>
-            </div>
-          </section>
-        </main>
+          </div>
+        </section>
+        
+        {/* CTA */}
+        <section className="py-16 px-4 bg-slate-50">
+          <div className="max-w-4xl mx-auto text-center">
+            <h2 className="text-3xl font-bold text-slate-900 mb-4">
+              Ready to achieve similar results?
+            </h2>
+            <p className="text-xl text-slate-600 mb-8">
+              Book a discovery call with our B2B sales prospecting agency to see how we can help you generate qualified leads and close more deals.
+            </p>
+            <Link
+              to="/en/contact"
+              className="inline-block bg-blue-600 text-white px-8 py-4 rounded-lg font-semibold hover:bg-blue-700 transition-colors"
+            >
+              Book a Discovery Call
+            </Link>
+          </div>
+        </section>
 
         <Footer />
       </div>
     </>
   );
-};
-
-export default Hiag;
+}

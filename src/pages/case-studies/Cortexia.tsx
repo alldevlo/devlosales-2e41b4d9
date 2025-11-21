@@ -1,401 +1,260 @@
-import { Helmet } from "react-helmet-async";
-import { useEffect } from "react";
-import Header from "@/components/layout/Header";
-import Footer from "@/components/layout/Footer";
-import { Link } from "react-router-dom";
-import { ArrowRight, CheckCircle2, TrendingUp } from "lucide-react";
-import { Button } from "@/components/ui/button";
+import React from 'react';
+import { Helmet } from 'react-helmet-async';
+import { ArrowLeft, Users, Target, TrendingUp, MessageSquare } from 'lucide-react';
+import { Link } from 'react-router-dom';
+import Header from '@/components/layout/Header';
+import Footer from '@/components/layout/Footer';
 
-const Cortexia = () => {
-  useEffect(() => {
-    window.scrollTo(0, 0);
-  }, []);
-
+export default function Cortexia() {
   return (
     <>
       <Helmet>
-        <title>Cortexia : 71 rendez-vous qualifiés en CH/FR/BE | Étude de cas devlo</title>
-        <meta name="description" content="Découvrez comment Cortexia a obtenu 71 rendez-vous qualifiés avec des décideurs clés dans les plus grandes villes de Suisse, France et Belgique grâce à une stratégie de prospection Account-Based Sales." />
-        <meta name="keywords" content="cortexia, prospection B2B, account-based sales, rendez-vous qualifiés, génération leads B2B, campagne multicanale, suisse france belgique" />
-        <link rel="canonical" href="https://devlo.ch/resultats/cortexia-tech-b2b-meetings" />
+        <title>Cortexia Case Study - B2B Lead Generation for Smart City | devlo</title>
+        <meta name="description" content="How devlo helped an AI-powered cleaning management company book 71 meetings with city decision-makers through multi-channel B2B sales prospecting with 78% open rate." />
       </Helmet>
 
-      <div className="flex min-h-screen flex-col">
+      <div className="min-h-screen bg-gradient-to-b from-slate-50 to-white">
         <Header />
         
-        <main className="flex-1">
-          {/* Hero Section */}
-          <section className="py-16 md:py-24 bg-gradient-to-br from-primary via-primary-dark to-primary text-primary-foreground">
-            <div className="container px-4 md:px-6">
-              <div className="max-w-4xl mx-auto">
-                <Link to="/resultats" className="inline-flex items-center text-primary-foreground/80 hover:text-primary-foreground mb-6 transition-colors">
-                  <ArrowRight className="mr-2 h-4 w-4 rotate-180" />
-                  Retour aux résultats
-                </Link>
-                
-                <div className="mb-6">
-                  <span className="inline-block px-4 py-2 text-sm font-semibold bg-secondary text-secondary-foreground rounded-full">
-                    Technologie B2B
-                  </span>
+        {/* Hero Section */}
+        <section className="pt-32 pb-16 px-4">
+          <div className="max-w-4xl mx-auto">
+            <Link 
+              to="/en/case-studies" 
+              className="inline-flex items-center text-blue-600 hover:text-blue-700 mb-8 group"
+            >
+              <ArrowLeft className="w-4 h-4 mr-2 group-hover:-translate-x-1 transition-transform" />
+              Back to Case Studies
+            </Link>
+            
+            <img 
+              src="/CS_devlo/Logo/Asset 21.webp" 
+              alt="Cortexia Logo" 
+              className="h-16 mb-6" 
+            />
+            
+            <h1 className="text-4xl md:text-5xl font-bold text-slate-900 mb-6">
+              How an AI-powered cleaning management company booked 71 meetings with top city decision-makers using multi-channel B2B sales prospecting
+            </h1>
+            
+            <p className="text-xl text-slate-600 leading-relaxed">
+              From more than 250 cities across Switzerland, France and Belgium, our B2B sales prospecting agency identified over 500 qualified B2B leads (politicians and heads of urban cleanliness). The result: 71 meetings booked, a 78% open rate and outstanding B2G lead generation performance.
+            </p>
+          </div>
+        </section>
+
+        {/* Stats */}
+        <section className="py-12 px-4 bg-blue-50">
+          <div className="max-w-4xl mx-auto">
+            <div className="grid grid-cols-2 md:grid-cols-4 gap-8">
+              <div className="text-center">
+                <div className="text-3xl md:text-4xl font-bold text-blue-600 mb-2">500+</div>
+                <div className="text-slate-600">Qualified Leads</div>
+              </div>
+              <div className="text-center">
+                <div className="text-3xl md:text-4xl font-bold text-blue-600 mb-2">78%</div>
+                <div className="text-slate-600">Open Rate</div>
+              </div>
+              <div className="text-center">
+                <div className="text-3xl md:text-4xl font-bold text-blue-600 mb-2">36%</div>
+                <div className="text-slate-600">Reply Rate</div>
+              </div>
+              <div className="text-center">
+                <div className="text-3xl md:text-4xl font-bold text-blue-600 mb-2">71</div>
+                <div className="text-slate-600">Meetings Booked</div>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        {/* About */}
+        <section className="py-16 px-4">
+          <div className="max-w-4xl mx-auto">
+            <div className="flex items-center mb-6">
+              <Users className="w-8 h-8 text-blue-600 mr-3" />
+              <h2 className="text-3xl font-bold text-slate-900">About the client</h2>
+            </div>
+            <div className="prose prose-lg max-w-none">
+              <p className="text-slate-600 leading-relaxed mb-4">
+                Our client is a technology company using artificial intelligence to help cities measure urban cleanliness in real time and allocate resources more efficiently.
+              </p>
+              <p className="text-slate-600 leading-relaxed">
+                <strong>Services:</strong> Urban cleanliness, waste management, AI-powered monitoring.<br/>
+                <strong>ICP:</strong> Political decision-makers and Heads of Services / Technical Services responsible for urban cleaning in mid-to-large municipalities.
+              </p>
+            </div>
+          </div>
+        </section>
+
+        {/* Challenge */}
+        <section className="py-16 px-4 bg-slate-50">
+          <div className="max-w-4xl mx-auto">
+            <div className="flex items-center mb-6">
+              <Target className="w-8 h-8 text-blue-600 mr-3" />
+              <h2 className="text-3xl font-bold text-slate-900">
+                The Challenge: complex B2G sales and limited time
+              </h2>
+            </div>
+            <div className="prose prose-lg max-w-none">
+              <p className="text-slate-600 leading-relaxed mb-4">
+                The client needed to:
+              </p>
+              <ul className="text-slate-600 space-y-2 mb-4">
+                <li>Identify cities matching strict qualification criteria.</li>
+                <li>Find the most relevant political and technical decision-makers within each city and gather their contact details.</li>
+                <li>Run cold outreach and cold calling campaigns to generate B2B (B2G) sales meetings with extremely busy stakeholders.</li>
+              </ul>
+              <p className="text-slate-600 leading-relaxed">
+                They lacked internal capacity for data-driven database creation, B2B sales development and follow-up, so they decided to outsource their business development to our B2B lead generation agency.
+              </p>
+            </div>
+          </div>
+        </section>
+
+        {/* Strategy */}
+        <section className="py-16 px-4">
+          <div className="max-w-4xl mx-auto">
+            <div className="flex items-center mb-6">
+              <TrendingUp className="w-8 h-8 text-blue-600 mr-3" />
+              <h2 className="text-3xl font-bold text-slate-900">
+                The Strategy: Account-Based Sales and multi-channel prospecting
+              </h2>
+            </div>
+            <div className="prose prose-lg max-w-none">
+              <p className="text-slate-600 leading-relaxed mb-6">
+                Our approach mixed Account-Based Sales, multi-channel prospecting and deep qualification.
+              </p>
+              
+              <div className="space-y-6">
+                <div>
+                  <h3 className="text-xl font-semibold text-slate-900 mb-3">1. Account-Based Sales on cities as "key accounts"</h3>
+                  <p className="text-slate-600 leading-relaxed">
+                    Each city was treated like a strategic B2B account. We mapped its internal structure, identified the key decision-makers and tailored our outreach sequence accordingly.
+                  </p>
                 </div>
                 
-                <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold mb-6">
-                  Comment Cortexia a obtenu 71 rendez-vous qualifiés avec des décideurs clés en Suisse, France et Belgique
-                </h1>
+                <div>
+                  <h3 className="text-xl font-semibold text-slate-900 mb-3">2. Ultra-targeted, city-specific messaging</h3>
+                  <p className="text-slate-600 leading-relaxed">
+                    Using public information (websites, local news, city plans), we built personalized multi-channel outbound campaigns that highlighted the benefits of real-time cleanliness monitoring for elected officials and technical directors.
+                  </p>
+                </div>
                 
-                <p className="text-xl md:text-2xl text-primary-foreground/90 mb-8">
-                  Parmi une sélection de plus de 250 villes dans 3 pays, devlo a identifié plus de 500 prospects qualifiés. Ces décideurs sont des élus ou des responsables du service de la propreté urbaine. Les résultats obtenus sont impressionnants : cette campagne outbound a suscité l'intérêt de plus de 24% des villes contactées pour une réunion.
+                <div>
+                  <h3 className="text-xl font-semibold text-slate-900 mb-3">3. Multi-channel cold outreach: email + cold call + LinkedIn</h3>
+                  <p className="text-slate-600 leading-relaxed">
+                    We combined cold emails, cold calls and LinkedIn outreach to maximize reply rates. This multi-channel prospecting helped reach decision-makers who rarely reply to email but pick up the phone.
+                  </p>
+                </div>
+                
+                <div>
+                  <h3 className="text-xl font-semibold text-slate-900 mb-3">4. Native-language outreach in French and German</h3>
+                  <p className="text-slate-600 leading-relaxed">
+                    To boost relevance and trust, we contacted each prospect in their preferred language, which is key in B2G environments where local context and subtlety matter.
+                  </p>
+                </div>
+                
+                <div>
+                  <h3 className="text-xl font-semibold text-slate-900 mb-3">5. Qualification and appointment setting</h3>
+                  <p className="text-slate-600 leading-relaxed">
+                    Interested leads were qualified via discovery calls (pain points, current processes, budget, timing). Our SDRs then handled appointment setting for the client's sales team, ensuring every booked meeting was a qualified lead with clear potential.
+                  </p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        {/* Results */}
+        <section className="py-16 px-4 bg-blue-50">
+          <div className="max-w-4xl mx-auto">
+            <h2 className="text-3xl font-bold text-slate-900 mb-6">
+              Results: 71 qualified B2B meetings from 500 leads
+            </h2>
+            <div className="prose prose-lg max-w-none">
+              <p className="text-slate-600 leading-relaxed mb-4">
+                Across more than 500 decision-makers contacted in 3 countries, this outbound acquisition campaign generated:
+              </p>
+              <ul className="text-slate-600 space-y-2 mb-6">
+                <li>78% open rate</li>
+                <li>3% click rate</li>
+                <li>36% reply rate</li>
+                <li>71 qualified sales meetings with high-value cities</li>
+                <li>24% of contacted cities interested in a meeting after the first campaign</li>
+              </ul>
+              <p className="text-slate-600 leading-relaxed">
+                For a complex B2G environment, these numbers demonstrate the impact of a well-executed cold outreach strategy combined with Account-Based Sales.
+              </p>
+            </div>
+          </div>
+        </section>
+
+        {/* Key Takeaways */}
+        <section className="py-16 px-4">
+          <div className="max-w-4xl mx-auto">
+            <h2 className="text-3xl font-bold text-slate-900 mb-8">
+              Key takeaways for B2G / smart-city prospecting
+            </h2>
+            <div className="grid gap-6">
+              <div className="bg-white p-6 rounded-lg shadow-sm border border-slate-200">
+                <h3 className="text-xl font-semibold text-slate-900 mb-3">
+                  Rigorous research defines your success
+                </h3>
+                <p className="text-slate-600 leading-relaxed">
+                  The same job title can mean very different responsibilities across cities. A solid lead qualification phase is essential to reach the true decision-makers who can actually buy, not just intermediaries.
                 </p>
-
-                <div className="grid md:grid-cols-2 gap-6">
-                  <div className="bg-primary-foreground/10 backdrop-blur-sm rounded-lg p-6">
-                    <div className="text-4xl font-bold text-secondary mb-2">71</div>
-                    <div className="text-primary-foreground/90">Rendez-vous qualifiés</div>
-                  </div>
-                  <div className="bg-primary-foreground/10 backdrop-blur-sm rounded-lg p-6">
-                    <div className="text-4xl font-bold text-secondary mb-2">36%</div>
-                    <div className="text-primary-foreground/90">Taux de réponse</div>
-                  </div>
-                </div>
               </div>
-            </div>
-          </section>
-
-          {/* Context Section */}
-          <section className="py-16 md:py-20 bg-background">
-            <div className="container px-4 md:px-6">
-              <div className="max-w-4xl mx-auto">
-                <h2 className="text-3xl md:text-4xl font-bold mb-8">Contexte & Profil de l'entreprise</h2>
-                
-                <div className="prose prose-lg max-w-none">
-                  <p className="text-lg text-muted-foreground leading-relaxed mb-6">
-                    Notre client est une entreprise technologique B2B spécialisée dans la gestion de la propreté urbaine. Leur solution innovante aide les municipalités et les villes à optimiser leurs services de nettoyage et de gestion des déchets grâce à des technologies de pointe.
-                  </p>
-
-                  <h3 className="text-2xl font-bold mt-8 mb-4">Profils de Clients Idéaux (ICP)</h3>
-                  <ul className="space-y-3">
-                    <li className="flex items-start gap-3">
-                      <CheckCircle2 className="h-6 w-6 text-secondary shrink-0 mt-1" />
-                      <span className="text-muted-foreground">Élus politiques responsables de la propreté urbaine</span>
-                    </li>
-                    <li className="flex items-start gap-3">
-                      <CheckCircle2 className="h-6 w-6 text-secondary shrink-0 mt-1" />
-                      <span className="text-muted-foreground">Responsables des services de propreté urbaine</span>
-                    </li>
-                    <li className="flex items-start gap-3">
-                      <CheckCircle2 className="h-6 w-6 text-secondary shrink-0 mt-1" />
-                      <span className="text-muted-foreground">Directeurs techniques des municipalités</span>
-                    </li>
-                  </ul>
-                </div>
-              </div>
-            </div>
-          </section>
-
-          {/* Challenge Section */}
-          <section className="py-16 md:py-20 bg-muted/30">
-            <div className="container px-4 md:px-6">
-              <div className="max-w-4xl mx-auto">
-                <h2 className="text-3xl md:text-4xl font-bold mb-8">Problématique (avant devlo)</h2>
-                
-                <div className="bg-card border border-border rounded-lg p-8">
-                  <p className="text-lg text-muted-foreground leading-relaxed mb-6">
-                    Notre client faisait face à plusieurs défis majeurs dans sa stratégie de prospection :
-                  </p>
-
-                  <div className="space-y-6">
-                    <div>
-                      <h3 className="text-xl font-semibold mb-3 text-foreground">1. Identification des bons décideurs</h3>
-                      <p className="text-muted-foreground">
-                        Identifier les décideurs pertinents dans plus de 250 villes de 3 pays différents (Suisse, France, Belgique). Les structures organisationnelles varient considérablement d'une ville à l'autre, rendant l'identification complexe.
-                      </p>
-                    </div>
-
-                    <div>
-                      <h3 className="text-xl font-semibold mb-3 text-foreground">2. Approche personnalisée par ville</h3>
-                      <p className="text-muted-foreground">
-                        Adapter le message en fonction de la taille de la ville, des enjeux locaux et du niveau de maturité technologique. Chaque ville a des besoins et des priorités spécifiques.
-                      </p>
-                    </div>
-
-                    <div>
-                      <h3 className="text-xl font-semibold mb-3 text-foreground">3. Stratégie Account-Based Sales</h3>
-                      <p className="text-muted-foreground">
-                        Mettre en place une stratégie Account-Based Sales efficace pour cibler des comptes de grande valeur (les grandes villes) avec une approche ultra-personnalisée.
-                      </p>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </section>
-
-          {/* Solution Section */}
-          <section className="py-16 md:py-20 bg-background">
-            <div className="container px-4 md:px-6">
-              <div className="max-w-4xl mx-auto">
-                <h2 className="text-3xl md:text-4xl font-bold mb-8">
-                  Stratégie de prospection mise en place
-                </h2>
-
-                <div className="space-y-8">
-                  <div className="bg-gradient-to-br from-primary/5 to-secondary/5 rounded-lg p-8 border border-border">
-                    <h3 className="text-2xl font-bold mb-4 text-foreground">
-                      Stratégie Account-Based Sales (ABS)
-                    </h3>
-                    <p className="text-lg text-muted-foreground mb-6">
-                      devlo a mis en place une stratégie Account-Based Sales complète pour maximiser les résultats :
-                    </p>
-                    
-                    <div className="space-y-4">
-                      <div className="flex items-start gap-4">
-                        <div className="flex items-center justify-center w-10 h-10 rounded-full bg-primary text-primary-foreground font-bold shrink-0">
-                          1
-                        </div>
-                        <div>
-                          <h4 className="font-semibold mb-2 text-foreground">Identification des décideurs ville par ville</h4>
-                          <p className="text-muted-foreground">
-                            Recherche approfondie pour identifier les décideurs les plus pertinents dans chaque ville ciblée, en recueillant des informations détaillées sur leur rôle et leurs responsabilités.
-                          </p>
-                        </div>
-                      </div>
-
-                      <div className="flex items-start gap-4">
-                        <div className="flex items-center justify-center w-10 h-10 rounded-full bg-primary text-primary-foreground font-bold shrink-0">
-                          2
-                        </div>
-                        <div>
-                          <h4 className="font-semibold mb-2 text-foreground">Séquences ultra-ciblées</h4>
-                          <p className="text-muted-foreground">
-                            Élaboration de séquences de prospection multicanales (emails, appels à froid, LinkedIn) spécifiquement adaptées pour contacter les villes de premier plan.
-                          </p>
-                        </div>
-                      </div>
-
-                      <div className="flex items-start gap-4">
-                        <div className="flex items-center justify-center w-10 h-10 rounded-full bg-primary text-primary-foreground font-bold shrink-0">
-                          3
-                        </div>
-                        <div>
-                          <h4 className="font-semibold mb-2 text-foreground">Prospection et qualification</h4>
-                          <p className="text-muted-foreground">
-                            Prospection active via emails, appels à froid et messages LinkedIn, suivie d'une qualification approfondie des prospects intéressés avant l'organisation des réunions.
-                          </p>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-
-                  <div className="grid md:grid-cols-3 gap-6">
-                    <div className="bg-card border border-border rounded-lg p-6">
-                      <TrendingUp className="h-8 w-8 text-secondary mb-4" />
-                      <h4 className="font-semibold mb-2">Campagnes multicanales</h4>
-                      <p className="text-sm text-muted-foreground">
-                        Emails personnalisés, appels téléphoniques et messages LinkedIn pour maximiser les points de contact.
-                      </p>
-                    </div>
-                    <div className="bg-card border border-border rounded-lg p-6">
-                      <TrendingUp className="h-8 w-8 text-secondary mb-4" />
-                      <h4 className="font-semibold mb-2">Adaptation du discours</h4>
-                      <p className="text-sm text-muted-foreground">
-                        Messages adaptés en fonction du rôle, de la taille de la ville et du niveau de maturité technologique.
-                      </p>
-                    </div>
-                    <div className="bg-card border border-border rounded-lg p-6">
-                      <TrendingUp className="h-8 w-8 text-secondary mb-4" />
-                      <h4 className="font-semibold mb-2">Flexibilité opérationnelle</h4>
-                      <p className="text-sm text-muted-foreground">
-                        Adaptation aux préférences des prospects : certains préfèrent les appels téléphoniques aux emails.
-                      </p>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </section>
-
-          {/* Results Section */}
-          <section className="py-16 md:py-20 bg-muted/30">
-            <div className="container px-4 md:px-6">
-              <div className="max-w-4xl mx-auto">
-                <h2 className="text-3xl md:text-4xl font-bold mb-8">Résultats chiffrés</h2>
-                
-                <div className="bg-gradient-to-br from-secondary/10 to-primary/10 rounded-lg p-8 border border-secondary/20 mb-8">
-                  <p className="text-xl font-semibold mb-6 text-foreground">
-                    Sur les 500 prospects identifiés et contactés, notre client a reçu 71 réponses positives pour un rendez-vous grâce à cette première campagne outbound.
-                  </p>
-                  
-                  <div className="grid md:grid-cols-3 gap-6">
-                    <div className="text-center">
-                      <div className="text-4xl md:text-5xl font-bold text-secondary mb-2">78%</div>
-                      <div className="text-muted-foreground">Taux d'ouverture</div>
-                    </div>
-                    <div className="text-center">
-                      <div className="text-4xl md:text-5xl font-bold text-secondary mb-2">36%</div>
-                      <div className="text-muted-foreground">Taux de réponse</div>
-                    </div>
-                    <div className="text-center">
-                      <div className="text-4xl md:text-5xl font-bold text-secondary mb-2">71</div>
-                      <div className="text-muted-foreground">Rendez-vous qualifiés</div>
-                    </div>
-                  </div>
-                </div>
-
-                <div className="bg-card border border-border rounded-lg p-8">
-                  <h3 className="text-2xl font-bold mb-4">Impact Business</h3>
-                  <ul className="space-y-3">
-                    <li className="flex items-start gap-3">
-                      <CheckCircle2 className="h-6 w-6 text-secondary shrink-0 mt-1" />
-                      <span className="text-muted-foreground">
-                        <strong className="text-foreground">24% des villes contactées</strong> ont manifesté leur intérêt pour une réunion
-                      </span>
-                    </li>
-                    <li className="flex items-start gap-3">
-                      <CheckCircle2 className="h-6 w-6 text-secondary shrink-0 mt-1" />
-                      <span className="text-muted-foreground">
-                        <strong className="text-foreground">Pipeline commercial rempli</strong> pour plusieurs mois avec des opportunités de grande valeur
-                      </span>
-                    </li>
-                    <li className="flex items-start gap-3">
-                      <CheckCircle2 className="h-6 w-6 text-secondary shrink-0 mt-1" />
-                      <span className="text-muted-foreground">
-                        <strong className="text-foreground">Expansion géographique réussie</strong> dans 3 pays simultanément (Suisse, France, Belgique)
-                      </span>
-                    </li>
-                  </ul>
-                </div>
-              </div>
-            </div>
-          </section>
-
-          {/* Key Learnings Section */}
-          <section className="py-16 md:py-20 bg-background">
-            <div className="container px-4 md:px-6">
-              <div className="max-w-4xl mx-auto">
-                <h2 className="text-3xl md:text-4xl font-bold mb-8">Principaux enseignements</h2>
-                
-                <div className="space-y-6">
-                  <div className="bg-card border-l-4 border-secondary p-6 rounded-r-lg">
-                    <h3 className="text-xl font-semibold mb-3 text-foreground">
-                      1. Faire des recherches pour comprendre correctement qui est la cible
-                    </h3>
-                    <p className="text-muted-foreground">
-                      Une personne au même intitulé de poste peut avoir des responsabilités différentes en fonction de la taille et de l'organisation de la ville. L'objectif était de cibler le meilleur décideur concerné et susceptible de planifier un rendez-vous avec notre client.
-                    </p>
-                  </div>
-
-                  <div className="bg-card border-l-4 border-secondary p-6 rounded-r-lg">
-                    <h3 className="text-xl font-semibold mb-3 text-foreground">
-                      2. Adapter le discours à chaque Ideal Customer Profile (ICP)
-                    </h3>
-                    <p className="text-muted-foreground">
-                      Il est apparu clairement que certaines affirmations étaient dépassées en fonction des connaissances techniques et de l'expérience du prospect. Certains éléments d'information n'ont tout simplement pas retenu leur attention. Par exemple, nous avons décidé de mentionner un article de loi pour un certain type de prospect uniquement.
-                    </p>
-                  </div>
-
-                  <div className="bg-card border-l-4 border-secondary p-6 rounded-r-lg">
-                    <h3 className="text-xl font-semibold mb-3 text-foreground">
-                      3. Être flexibles pour s'adapter aux disponibilités de nos prospects
-                    </h3>
-                    <p className="text-muted-foreground">
-                      Nous nous sommes rendu compte que de nombreux prospects préféraient parler au téléphone plutôt que d'échanger par e-mail. En effet, certains d'entre eux passent la majeure partie de leur temps sur le terrain et ne consultent leurs courriels qu'une fois par jour. Notre équipe a obtenu de meilleurs résultats en appelant les prospects.
-                    </p>
-                  </div>
-
-                  <div className="bg-card border-l-4 border-secondary p-6 rounded-r-lg">
-                    <h3 className="text-xl font-semibold mb-3 text-foreground">
-                      4. Obtenir autant d'informations que possible lors des appels de qualification
-                    </h3>
-                    <p className="text-muted-foreground">
-                      Lors des appels de découverte, au cours desquels nous qualifions les prospects intéressés, nous posons des questions pour identifier leurs points faibles. Nous avons modifié notre processus afin de nous assurer que notre client et ses prospects obtiennent le plus de valeur au cours de leur entretien.
-                    </p>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </section>
-
-          {/* FAQ Section */}
-          <section className="py-16 md:py-20 bg-muted/30">
-            <div className="container px-4 md:px-6">
-              <div className="max-w-4xl mx-auto">
-                <h2 className="text-3xl md:text-4xl font-bold mb-8">Questions Fréquentes</h2>
-                
-                <div className="space-y-6">
-                  <div className="bg-card rounded-lg p-6">
-                    <h3 className="text-xl font-semibold mb-3">
-                      Qu'est-ce que l'Account-Based Sales (ABS) ?
-                    </h3>
-                    <p className="text-muted-foreground">
-                      L'Account-Based Sales est une stratégie permettant aux équipes de vente de se concentrer sur des comptes spécifiques de grande valeur et de gagner des affaires auprès d'eux. Cette approche implique une identification précise des comptes cibles, une personnalisation poussée des messages et une orchestration multicanale des touchpoints.
-                    </p>
-                  </div>
-
-                  <div className="bg-card rounded-lg p-6">
-                    <h3 className="text-xl font-semibold mb-3">
-                      Pourquoi cibler les municipalités et les villes ?
-                    </h3>
-                    <p className="text-muted-foreground">
-                      Les municipalités et les villes sont des comptes de grande valeur avec des budgets importants et des besoins récurrents en matière de gestion de la propreté urbaine. Ces contrats sont généralement de longue durée et représentent des opportunités commerciales significatives pour les entreprises technologiques B2B.
-                    </p>
-                  </div>
-
-                  <div className="bg-card rounded-lg p-6">
-                    <h3 className="text-xl font-semibold mb-3">
-                      Comment adapter son discours selon la taille de la ville ?
-                    </h3>
-                    <p className="text-muted-foreground">
-                      Les grandes villes ont souvent des équipes techniques plus développées et des connaissances approfondies des solutions existantes. Les petites villes peuvent avoir besoin d'une approche plus éducative. Il est essentiel d'adapter le niveau de détail technique et les arguments en fonction de la maturité de la ville.
-                    </p>
-                  </div>
-
-                  <div className="bg-card rounded-lg p-6">
-                    <h3 className="text-xl font-semibold mb-3">
-                      Quel est le délai moyen pour obtenir des rendez-vous avec des municipalités ?
-                    </h3>
-                    <p className="text-muted-foreground">
-                      Dans cette campagne, les premiers rendez-vous ont été obtenus en 3 semaines. Les cycles de vente avec les municipalités sont généralement plus longs que dans le secteur privé en raison des processus de décision plus complexes et des contraintes budgétaires.
-                    </p>
-                  </div>
-
-                  <div className="bg-card rounded-lg p-6">
-                    <h3 className="text-xl font-semibold mb-3">
-                      Pourquoi une approche multicanale est-elle importante pour les municipalités ?
-                    </h3>
-                    <p className="text-muted-foreground">
-                      Les décideurs dans les municipalités ont des préférences de communication variées. Certains préfèrent les appels téléphoniques car ils passent beaucoup de temps sur le terrain, tandis que d'autres privilégient les emails. Une approche multicanale permet de s'adapter à ces préférences et d'augmenter les chances d'engagement.
-                    </p>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </section>
-
-          {/* CTA Section */}
-          <section className="py-16 md:py-24 bg-gradient-to-br from-primary via-primary-dark to-primary text-primary-foreground">
-            <div className="container px-4 md:px-6">
-              <div className="max-w-4xl mx-auto text-center">
-                <h2 className="text-3xl md:text-4xl font-bold mb-6">
-                  Vous souhaitez reproduire ces résultats pour votre entreprise ?
-                </h2>
-                <p className="text-lg md:text-xl text-primary-foreground/90 mb-8">
-                  Planifiez une consultation gratuite et découvrez comment devlo peut vous aider à générer des rendez-vous qualifiés avec vos prospects idéaux grâce à nos campagnes de prospection B2B multicanales ultra-personnalisées.
+              
+              <div className="bg-white p-6 rounded-lg shadow-sm border border-slate-200">
+                <h3 className="text-xl font-semibold text-slate-900 mb-3">
+                  Messages must match each ICP
+                </h3>
+                <p className="text-slate-600 leading-relaxed">
+                  Technical directors care about operations and resource optimization; politicians care about service quality and citizen satisfaction. Tailoring the message to each ICP improved both reply rate and meeting rate.
                 </p>
-                <Button asChild size="lg" variant="secondary" className="text-lg px-8">
-                  <Link to="/contact">
-                    Planifier ma consultation gratuite
-                    <ArrowRight className="ml-2 h-5 w-5" />
-                  </Link>
-                </Button>
+              </div>
+              
+              <div className="bg-white p-6 rounded-lg shadow-sm border border-slate-200">
+                <h3 className="text-xl font-semibold text-slate-900 mb-3">
+                  Be flexible on channels and timings
+                </h3>
+                <p className="text-slate-600 leading-relaxed">
+                  Many prospects spent most of their time in the field and rarely checked email. Being proactive with cold calls dramatically improved the conversion from replies to meetings.
+                </p>
+              </div>
+              
+              <div className="bg-white p-6 rounded-lg shadow-sm border border-slate-200">
+                <h3 className="text-xl font-semibold text-slate-900 mb-3">
+                  Strong qualification improves conversion later in the pipeline
+                </h3>
+                <p className="text-slate-600 leading-relaxed">
+                  Thorough discovery calls allowed the client's sales team to run high-value demos, shorten the sales cycle and focus on accounts with real potential.
+                </p>
               </div>
             </div>
-          </section>
-        </main>
+          </div>
+        </section>
+
+        {/* CTA */}
+        <section className="py-16 px-4 bg-slate-50">
+          <div className="max-w-4xl mx-auto text-center">
+            <h2 className="text-3xl font-bold text-slate-900 mb-4">
+              Turn your smart-city solution into a predictable B2B sales engine
+            </h2>
+            <p className="text-xl text-slate-600 mb-8">
+              If your company sells complex solutions (AI, IoT, SaaS) to public or semi-public entities, an outsourced sales prospecting model can help you boost B2B client acquisition, increase the size of your pipeline and decrease the duration of your sales cycle.
+            </p>
+            <Link
+              to="/en/contact"
+              className="inline-block bg-blue-600 text-white px-8 py-4 rounded-lg font-semibold hover:bg-blue-700 transition-colors"
+            >
+              Book a Call
+            </Link>
+          </div>
+        </section>
 
         <Footer />
       </div>
     </>
   );
-};
-
-export default Cortexia;
+}
