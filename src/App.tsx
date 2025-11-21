@@ -60,6 +60,21 @@ const App = () => (
             <Route path="/en/results/lemanvisio-qualified-meetings" element={<Lemanvisio />} />
             <Route path="/en/results/cegos-training-45-responses" element={<Cegos />} />
             <Route path="/en/results/squareco-icp-identification" element={<SquareCo />} />
+            
+            {/* Redirect /case-studies/* to /results/* for backward compatibility */}
+            <Route path="/en/case-studies/CareerLunch" element={<Navigate to="/en/results/careerlunch-dach-recruitment" replace />} />
+            <Route path="/en/case-studies/Cortexia" element={<Navigate to="/en/results/cortexia-tech-b2b-meetings" replace />} />
+            <Route path="/en/case-studies/Saporo" element={<Navigate to="/en/results/saporo-cybersecurity-b2b" replace />} />
+            <Route path="/en/case-studies/Apidae" element={<Navigate to="/en/results/apidae-luxury-events" replace />} />
+            <Route path="/en/case-studies/Horus" element={<Navigate to="/en/results/horus-belgium-200k" replace />} />
+            <Route path="/en/case-studies/Abacus" element={<Navigate to="/en/results/abacus-interested-prospects" replace />} />
+            <Route path="/en/case-studies/Hiag" element={<Navigate to="/en/results/hiag-real-estate-b2b" replace />} />
+            <Route path="/en/case-studies/ManyWays" element={<Navigate to="/en/results/manyways-consulting-70-responses" replace />} />
+            <Route path="/en/case-studies/Locky" element={<Navigate to="/en/results/locky-interested-prospects" replace />} />
+            <Route path="/en/case-studies/Lemanvisio" element={<Navigate to="/en/results/lemanvisio-qualified-meetings" replace />} />
+            <Route path="/en/case-studies/Cegos" element={<Navigate to="/en/results/cegos-training-45-responses" replace />} />
+            <Route path="/en/case-studies/SquareCo" element={<Navigate to="/en/results/squareco-icp-identification" replace />} />
+            
             <Route path="*" element={<NotFound />} />
           </Routes>
         </BrowserRouter>
